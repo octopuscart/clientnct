@@ -8,7 +8,7 @@
                 <!--about us-->
                 <div class="col-lg-3 col-md-3 col-sm-3 fw_light m_bottom_30 color_light">
                     <h5 class="color_light m_bottom_20 ">Shortly About Us</h5>
-                    <p class='font_size_14'>New Century Tailor Co <span class="font_size_13"> 新世紀洋服公司 </span> - Best high end tailoring shop in Hong Kong. We provide the highest craftsmanship to our valuable customers with reasonable price.</p>
+                    <p class='font_size_14'>New Century Tailor Co. <span class="font_size_13"> 新世紀洋服公司 </span> - Best high end tailoring shop in Hong Kong. We provide the highest craftsmanship to our valuable customers with reasonable price.</p>
                 </div>
                 <!--contact info--> 
                 <div class="col-lg-6 col-md-6 col-sm-6 m_bottom_30">
@@ -115,7 +115,7 @@
                             </a>
                         </li>
 
-                        <p class="f_right color_light">©  <?php echo date('Y') ?> New Century Tailor Co 新世紀洋服公司
+                        <p class="f_right color_light">©  <?php echo date('Y') ?> New Century Tailor Co. 新世紀洋服公司
 
                             . All Rights Reserved.</p>
 
