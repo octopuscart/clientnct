@@ -317,10 +317,10 @@ thead td.cart-form-heading {
 }
 
 .header_bottom_part.type_2 {
-    padding: 50px 0;
+    padding: 0px 0;
 }
 
-.
+
 element.style {
 }
 .dropdown_2_container.login .dropdown_2 {
@@ -644,12 +644,17 @@ li a .relative:hover{
 }
 
 .shoppingcart{
-    float: right;
+/*    float: right;
     top: 28px;
-    right: -10px;
+    right: -10px;*/
 }
 
 a.hovertext:hover{
     color:red!important;
     text-decoration: none;
+}
+
+.main_menu.type_2 > li > a {
+    padding-top: 5px;
+    padding-bottom: 7px;
 }

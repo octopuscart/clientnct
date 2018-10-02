@@ -92,6 +92,7 @@
                 array(
                     "title" => "FAQ's",
                     "link" => '#',),
+                
             ]),
         array(
             "title" => "Customize Now",
@@ -259,59 +260,60 @@
                     </section>
 
                     <!--header bottom part-->
-                    <section class="header_bottom_part type_2 bg_light  ">
+                    <section class="header_bottom_part bg_light">
                         <div class="container">
                             <div class="d_table w_full d_xs_block">
                                 <!--logo-->
-                                <div class="col-lg-3 col-md-3 col-sm-3 d_table_cell d_xs_block f_none v_align_m logo t_xs_align_c first_logo1" >
-                                    <a href="/" class="d_inline_m m_xs_top_20 m_xs_bottom_20">
+                                <div class="col-lg-2 col-md-2 col-sm-2 d_table_cell d_xs_block f_none v_align_m logo t_xs_align_c">
+                                    <a href="<?php echo site_url();?>" class="d_inline_m m_xs_top_20 m_xs_bottom_20">
                                         <img src="<?php echo base_url(); ?>assets/images/logo21.png" alt="" style="    height: 90px;">
+
                                     </a>
                                 </div>
-                                <div class="col-lg-9 col-md-9 col-sm-9 d_table_cell d_xs_block f_none t_xs_align_c v_align_m ">
-
-                                    <div class="f_right header_mobile_left clearfix f_xs_none d_xs_inline_b t_xs_align_l m_xs_bottom_15">
-                                        <!--shopping cart-->
-                                        <div class="relative f_right dropdown_2_container shoppingcart">
-                                            <span class="cart_top_upper animated bounceIn">{{globleCartData.total_quantity}}</span>
-                                            <button class="icon_wrap_size_2 color_dark  circle tr_all">
-                                                <i class="icon-basket color_dark _2 tr_inherit"></i>
-                                            </button>
-                                            <div class="dropdown_2 bg_light shadow_1 tr_all p_top_0" ng-if="globleCartData.total_quantity">
-                                                <div class="sc_header bg_light_2 fs_small color_grey">
-                                                    Recently added item(s)
-                                                </div>
-                                                <ul class="added_items_list" >
-                                                    <li class="clearfix lh_large m_bottom_20 relative"  ng-repeat="product in globleCartData.products">
-                                                        <a href="#" class="d_block f_left m_right_10"><img src="{{product.file_name}}" alt="" style="height: 60px;width: 60px;"></a>
-                                                        <div class="f_left item_description lh_ex_small">
-                                                            <a href="#" class="color_dark fs_medium d_inline_b m_bottom_3">{{product.title}} - {{product.item_name}}</a>
-                                                            <p class="color_dark  fs_small">{{product.price|currency:" "}} X {{product.quantity}} </p>
-                                                        </div>
-                                                        <div class="f_right fs_small lh_medium d_xs_none">
-                                                            <span class="color_dark">{{product.total_price|currency:" "}}</span>
-                                                        </div>
-                                                        <i class="icon-cancel-circled-1 color_dark _2 fs_large color_dark_hover tr_all" ng-click="removeCart(product.product_id)"></i>
+                                <div class="col-lg-10 col-md-10 col-sm-10 t_align_r d_table_cell d_xs_block f_none">
+                                    <div class="relative clearfix t_align_r">
+                                        <button id="menu_button" class="r_corners tr_all color_blue db_centered m_bottom_20 d_none d_xs_block">
+                                            <i class="icon-menu"></i>
+                                        </button>
+                                        <!--main navigation-->
+                                        <nav role="navigation" class="d_inline_m d_xs_none m_xs_right_0 m_right_15 m_sm_right_5 t_align_l m_xs_bottom_15">
+                                            <ul class="hr_list main_menu fw_medium">
+                                                <?php
+                                                foreach ($menuitems as $key => $value) {
+                                                    $submenu = $value['submenu'] == 'yes' ? 'has_sub_menu' : '';
+                                                    ?>
+                                                    <li class=" container3d relative f_xs_none m_xs_bottom_5">
+                                                        <a class="color_dark fs_large relative r_xs_corners hovertext" href="<?php echo $value['link']; ?>"><?php echo $value['title']; ?>
+                                                            <?php if ($submenu) { ?>
+                                                                <i class="icon-angle-down d_inline_m"></i>
+                                                            <?php } ?>
+                                                        </a>
+                                                        <?php if ($submenu) { ?>
+                                                            <!--sub menu-->
+                                                            <ul class="sub_menu r_xs_corners bg_light vr_list tr_all tr_xs_none trf_xs_none bs_xs_none d_xs_none">
+                                                                <?php
+                                                                foreach ($value['submenuitems'] as $key => $value2) {
+                                                                    ?>
+                                                                    <li class="container3d relative ">
+                                                                        <a href="<?php echo $value2['link']; ?>" class="menu-link d_block hovertext color_dark relative main-menu-link"> <?php echo $value2['title']; ?> </a>
+                                                                    </li>
+                                                                    <?php
+                                                                }
+                                                                ?>
+                                                            </ul>
+                                                        <?php } ?>
                                                     </li>
-
-                                                </ul>
-                                                <div class="total_price bg_light_2 t_align_r fs_medium m_bottom_15">
-                                                    <ul>
-                                                        <li class="color_dark"><span class="fw_ex_bold">Total:</span> <span class="fw_ex_bold d_inline_b m_left_15 price t_align_l color_pink">{{globleCartData.total_price|currency:"<?php echo globle_currency; ?> "}}</span></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="clearfix border_none p_top_0 sc_footer">
-                                                    <a href="<?php echo site_url("Cart/checkoutInit"); ?>" class="button_type_1 d_block color_pink  color_pink_hover f_right r_corners tr_all fs_medium m_left_5 hide_from_mobile"><i class="icon-check-1 d_inline_b m_right_5"></i> Checkout</a>
-                                                    <a href="<?php echo site_url("Cart/details"); ?>" class="button_type_1 d_block color_pink f_left r_corners color_pink_hover tr_all fs_medium"><i class="icon-basket d_inline_b m_right_5"></i> View Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--login-->
-                                        <div class="relative f_right m_right_10 dropdown_2_container login">
+                                                    <?php
+                                                }
+                                                ?>
+                                            </ul>
+                                        </nav>
+                                        <!--searchform button-->
+                                        <div class="relative d_inline_m  d_xs_none dropdown_2_container login">
                                             <button class="icon_wrap_size_2 color_dark  circle tr_all">
                                                 <i class="icon-lock color_dark _2 tr_inherit"></i>
                                             </button>
-                                            <div class="dropdown_2 bg_light shadow_1 tr_all">
+                                            <div class="dropdown_2 bg_light shadow_1 tr_all" style="text-align: left;">
 
                                                 <?php
                                                 $session_data = $this->session->userdata('logged_in');
@@ -353,7 +355,7 @@
 
                                                             <li class="row">
                                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-4">
-                                                                    <button class="button_type_5 tr_all color_blue transparent fs_medium r_corners" name="signIn" type="submit" value="signIn">Login</button>
+                                                                    <button class="button_type_1 d_block d_block color_pink  color_pink_hover  r_corners tr_all fs_medium" name="signIn" type="submit" value="signIn"><i class="icon-login d_inline_b m_right_5"></i> Login</button>
                                                                 </div>
                                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-8 t_align_r lh_medium">
                                                                     <a href="#" class="color_scheme color_purple_hover fs_small">Forgot your password?</a><br>
@@ -364,7 +366,7 @@
                                                     <div class="bg_light_2 im_half_container sc_footer">
                                                         <h5 class="fw_light color_dark d_inline_m half_column">New Customer?</h5>
                                                         <div class="half_column t_align_r d_inline_m">
-                                                            <a href="#" class="button_type_5 t_xs_align_c d_inline_b tr_all r_corners color_purple transparent fs_medium">Create an Account</a>
+                                                            <a href="#" class="button_type_1 d_block d_block color_pink hovertext color_pink_hover f_right r_corners tr_all fs_medium"><i class="icon-edit d_inline_b m_right_5"></i>  Registration</a>
                                                         </div>
                                                     </div>
                                                     <?php
@@ -375,60 +377,49 @@
 
 
                                             </div>
+
+                                            <!--shopping cart-->
+
                                         </div>
-                                        <form role="search" class="relative type_2 f_left type_3 f_xs_none t_xs_align_l m_xs_bottom_15">
-                                            <input type="text" placeholder="Search" class="r_corners fw_light bg_light w_full">
-                                            <button class="color_grey_light color_purple_hover tr_all">
-                                                <i class="icon-search"></i>
+                                        
+                                        <div class="relative  dropdown_2_container shoppingcart">
+                                            <span class="cart_top_upper animated bounceIn">{{globleCartData.total_quantity}}</span>
+                                            <button class="icon_wrap_size_2 color_dark  circle tr_all">
+                                                <i class="icon-basket color_dark _2 tr_inherit"></i>
                                             </button>
-                                        </form>
+                                            <div class="dropdown_2 bg_light shadow_1 tr_all p_top_0" ng-if="globleCartData.total_quantity">
+                                                <div class="sc_header bg_light_2 fs_small color_grey">
+                                                    Recently added item(s)
+                                                </div>
+                                                <ul class="added_items_list" >
+                                                    <li class="clearfix lh_large m_bottom_20 relative"  ng-repeat="product in globleCartData.products">
+                                                        <a href="#" class="d_block f_left m_right_10"><img src="{{product.file_name}}" alt="" style="height: 60px;width: 60px;"></a>
+                                                        <div class="f_left item_description lh_ex_small">
+                                                            <a href="#" class="color_dark fs_medium d_inline_b m_bottom_3">{{product.title}} - {{product.item_name}}</a>
+                                                            <p class="color_dark  fs_small">{{product.price|currency:" "}} X {{product.quantity}} </p>
+                                                        </div>
+                                                        <div class="f_right fs_small lh_medium d_xs_none">
+                                                            <span class="color_dark">{{product.total_price|currency:" "}}</span>
+                                                        </div>
+                                                        <i class="icon-cancel-circled-1 color_dark _2 fs_large color_dark_hover tr_all" ng-click="removeCart(product.product_id)"></i>
+                                                    </li>
+
+                                                </ul>
+                                                <div class="total_price bg_light_2 t_align_r fs_medium m_bottom_15">
+                                                    <ul>
+                                                        <li class="color_dark"><span class="fw_ex_bold">Total:</span> <span class="fw_ex_bold d_inline_b m_left_15 price t_align_l color_pink">{{globleCartData.total_price|currency:"<?php echo globle_currency; ?> "}}</span></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="clearfix border_none p_top_0 sc_footer">
+                                                    <a href="<?php echo site_url("Cart/checkoutInit"); ?>" class="button_type_1 d_block color_pink  color_pink_hover f_right r_corners tr_all fs_medium m_left_5 hide_from_mobile"><i class="icon-check-1 d_inline_b m_right_5"></i> Checkout</a>
+                                                    <a href="<?php echo site_url("Cart/details"); ?>" class="button_type_1 d_block color_pink f_left r_corners color_pink_hover tr_all fs_medium"><i class="icon-basket d_inline_b m_right_5"></i> View Cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
-
-
-
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                <hr class="divider_type_2 m_bottom_0">
-
-                    <section class="sticky_part bg_light ">
-                        <div class="container">
-
-                            <!--main navigation-->
-                            <nav role="navigation" class="d_inline_m d_xs_none m_xs_right_0 m_right_15 m_sm_right_5 t_align_l m_xs_bottom_15">
-                                <ul class="hr_list main_menu type_2 fw_light">
-                                    <?php
-                                    foreach ($menuitems as $key => $value) {
-                                        $submenu = $value['submenu'] == 'yes' ? 'has_sub_menu' : '';
-                                        ?>
-                                        <li class=" container3d relative f_xs_none m_xs_bottom_5">
-                                            <a class="color_dark fs_large relative r_xs_corners" href="<?php echo $value['link']; ?>"><?php echo $value['title']; ?>
-                                                <?php if ($submenu) { ?>
-                                                    <i class="icon-angle-down d_inline_m"></i>
-                                                <?php } ?>
-                                            </a>
-                                            <?php if ($submenu) { ?>
-                                                <!--sub menu-->
-                                                <ul class="sub_menu r_xs_corners bg_light vr_list tr_all tr_xs_none trf_xs_none bs_xs_none d_xs_none">
-                                                    <?php
-                                                    foreach ($value['submenuitems'] as $key => $value2) {
-                                                        ?>
-                                                        <li class="container3d relative ">
-                                                            <a href="<?php echo $value2['link']; ?>" class="menu-link d_block color_dark relative main-menu-link"> <?php echo $value2['title']; ?> </a>
-                                                        </li>
-                                                        <?php
-                                                    }
-                                                    ?>
-                                                </ul>
-                                            <?php } ?>
-                                        </li>
-                                        <?php
-                                    }
-                                    ?>
-                                </ul>
-                            </nav>
-                            <!--<img src="<?php echo base_url(); ?>assets/theme/images/tradmark.png" class="hktradmark">-->
                         </div>
                     </section>
                 </header>

@@ -62,7 +62,42 @@ $this->load->view('layout/header');
             
 
 
+            
+            <li data-transition="fade" data-slotamount="10">
+                <img src="<?php echo base_url(); ?>assets/theme/slider/5a.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
+                <div class="caption sfl hide_from_mobile str " data-x="left" data-y="108" data-speed="700"><h1 class="color_dark fw_light text_padding_10 " style="font-size: 40px;">Welcome to <br/>New Century Tailor Co. 新世紀洋服公司
+                        <br/>custom clothing.</h1></div>
+                <div class="caption sfl hide_from_mobile str color_dark" data-x="10" data-x="left" data-y="243" data-speed="700" data-start="1200">Specializing in bespoke and made-to-measure <br/>apparel and alterations for men</div>
+                <div class="caption sfl hide_from_mobile str" data-x="10" data-x="left" data-y="300" data-speed="700" data-start="1400">
+                    <a href="#" role="button" class="tt_uppercase button_type_3 transparent r_corners fs_medium d_block tr_all">Try Now!</a>
+                </div>
+            </li>
 
+            
+            <li data-transition="fade" data-slotamount="10">
+                <img src="<?php echo base_url(); ?>assets/theme/slider/2bbb.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
+                               <div class="caption lfb ltb" data-x="left" data-x="700" data-y="bottom" data-hoffset="-118" data-speed="600"><img src="<?php echo base_url(); ?>assets/theme/slider/suit_trans1.png" alt=""></div>
+
+                <div class="caption sfl hide_from_mobile str" data-x="700" data-y="109" data-speed="700" data-start="1500"><h1 class="color_dark fw_medium  text_padding_10" style="font-size: 34px;">CUSTOM MADE SUITS & SHIRTS.
+                        <br>SETTING THE STANDARD.</h1></div>
+                <div class="caption sfl fw_medium hide_from_mobile str color_dark" data-x="700" data-y="244" data-speed="700" data-start="1700">Specializing in bespoke and made-to-measure <br/>apparel and alterations for men</div>
+                
+            </li>
+            <li data-transition="fade" data-slotamount="10">
+                <img src="<?php echo base_url(); ?>assets/theme/slider/4.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
+                <div class="caption sfl hide_from_mobile str" data-x="left" data-y="98" data-speed="700"><h1 class="color_light fw_light" style="font-size: 34px;">PREMIER <br/>MADE-TO-MEASURE CLOTHING</h1></div>
+                <div class="caption sfl hide_from_mobile str color_light" data-x="left" data-y="200" data-speed="700" data-start="1200"> Best high end tailoring shop in <br/>Hong Kong.</div>
+                <div class="caption sfl hide_from_mobile str" data-x="left" data-y="300" data-speed="700" data-start="1400">
+                    <a href="#" role="button" class="tt_uppercase button_type_3 transparent color_light r_corners fs_medium d_block tr_all" >Create Your Design</a>
+                </div>
+            </li>
+
+
+            
+
+            
+            
+            
             <li data-transition="fade" data-slotamount="10">
                 <img src="<?php echo base_url(); ?>assets/theme/slider/1bb.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
                 <div class="caption sfl hide_from_mobile str " data-x="left" data-y="108" data-speed="700"><h1 class="color_dark fw_light text_padding_10 " style="font-size: 40px;">Welcome to <br/>New Century Tailor Co. 新世紀洋服公司
@@ -77,24 +112,12 @@ $this->load->view('layout/header');
             <li data-transition="fade" data-slotamount="10">
                 <img src="<?php echo base_url(); ?>assets/theme/slider/2bbbb.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
                 <div class="caption lfb ltb" data-x="left" data-y="bottom" data-hoffset="-118" data-speed="600"><img src="<?php echo base_url(); ?>assets/theme/slider/suit_trans1.png" alt=""></div>
-                <div class="caption sfl hide_from_mobile str" data-x="600" data-y="109" data-speed="700" data-start="1500"><h1 class="color_light fw_light bg_dark text_padding_10" style="font-size: 34px;">CUSTOM MADE SUITS & SHIRTS.
+                <div class="caption sfl hide_from_mobile str" data-x="700" data-y="109" data-speed="700" data-start="1500"><h1 class="color_light fw_medium  text_padding_10" style="font-size: 34px;">CUSTOM MADE SUITS & SHIRTS.
                         <br>SETTING THE STANDARD.</h1></div>
-                <div class="caption sfl hide_from_mobile str color_light" data-x="600" data-y="244" data-speed="700" data-start="1700">Specializing in bespoke and made-to-measure <br/>apparel and alterations for men</div>
-                <div class="caption sfl hide_from_mobile str" data-x="600" data-y="339" data-speed="700" data-start="1900">
-                    <a href="#" role="button" class="tt_uppercase button_type_5 color_light bg_dark r_corners fs_medium d_block tr_all" >Customize Now!</a>
-                </div>
+                <div class="caption sfl hide_from_mobile fw_medium str color_dark" data-x="700" data-y="244" data-speed="700" data-start="1700">Specializing in bespoke and made-to-measure <br/>apparel and alterations for men</div>
+                
             </li>
-            <li data-transition="fade" data-slotamount="10">
-                <img src="<?php echo base_url(); ?>assets/theme/slider/2bbb.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
-                <div class="caption sfl hide_from_mobile str" data-x="600" data-y="109" data-speed="700" data-start="1500"><h1 class="color_light fw_light bg_dark text_padding_10" style="font-size: 34px;">CUSTOM MADE SUITS & SHIRTS.
-                        <br>SETTING THE STANDARD.</h1></div>
-                <div class="caption sfl hide_from_mobile str color_light" data-x="600" data-y="244" data-speed="700" data-start="1700">Specializing in bespoke and made-to-measure <br/>apparel and alterations for men</div>
-                <div class="caption sfl hide_from_mobile str" data-x="600" data-y="339" data-speed="700" data-start="1900">
-                    <a href="#" role="button" class="tt_uppercase button_type_5 color_light bg_dark r_corners fs_medium d_block tr_all" >Customize Now!</a>
-                </div>
-            </li>
-
-
+            
             <li data-transition="fade" data-slotamount="10">
                 <img src="<?php echo base_url(); ?>assets/theme/slider/3bb.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
                 <div class="caption sfl hide_from_mobile str" data-x="left" data-y="98" data-speed="700"><h1 class="color_light fw_light" style="font-size: 34px;">PREMIER <br/>MADE-TO-MEASURE CLOTHING</h1></div>
@@ -103,7 +126,6 @@ $this->load->view('layout/header');
                     <a href="#" role="button" class="tt_uppercase button_type_3 transparent color_light r_corners fs_medium d_block tr_all" >Create Your Design</a>
                 </div>
             </li>
-
 
 
             <li data-transition="fade" data-slotamount="10">
