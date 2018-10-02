@@ -336,7 +336,7 @@ foreach ($product_home_slider_bottom['home_slider'] as $key => $value) {
 <section class="section_offset relative wrapper" style="height: 500px">
     <div class="video_wrap">
         <video autoplay="" muted="" loop="">
-            <source src="<?php echo base_url(); ?>assets/theme/bigvideo/nct.mp4" type="video/mp4">
+            <source src="<?php echo base_url(); ?>assets/theme/bigvideo/nct1.mp4" type="video/mp4">
 
         </video>
     </div>
