@@ -66,8 +66,8 @@
             $(document).ready(function () {
                 $('html').show();
                 $("body").queryLoader2({
-                    backgroundColor: '#fff',
-                    barColor: '#35eef6',
+                    backgroundColor: '#000',
+                    barColor: '#fff',
                     barHeight: 4,
                     percentage: true,
                     deepSearch: true,
