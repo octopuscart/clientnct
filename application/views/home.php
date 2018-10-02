@@ -84,6 +84,15 @@ $this->load->view('layout/header');
                     <a href="#" role="button" class="tt_uppercase button_type_5 color_light bg_dark r_corners fs_medium d_block tr_all" >Customize Now!</a>
                 </div>
             </li>
+            <li data-transition="fade" data-slotamount="10">
+                <img src="<?php echo base_url(); ?>assets/theme/slider/2bbb.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
+                <div class="caption sfl hide_from_mobile str" data-x="600" data-y="109" data-speed="700" data-start="1500"><h1 class="color_light fw_light bg_dark text_padding_10" style="font-size: 34px;">CUSTOM MADE SUITS & SHIRTS.
+                        <br>SETTING THE STANDARD.</h1></div>
+                <div class="caption sfl hide_from_mobile str color_light" data-x="600" data-y="244" data-speed="700" data-start="1700">Specializing in bespoke and made-to-measure <br/>apparel and alterations for men</div>
+                <div class="caption sfl hide_from_mobile str" data-x="600" data-y="339" data-speed="700" data-start="1900">
+                    <a href="#" role="button" class="tt_uppercase button_type_5 color_light bg_dark r_corners fs_medium d_block tr_all" >Customize Now!</a>
+                </div>
+            </li>
 
 
             <li data-transition="fade" data-slotamount="10">
@@ -98,14 +107,15 @@ $this->load->view('layout/header');
 
 
             <li data-transition="fade" data-slotamount="10">
-                <img src="<?php echo base_url(); ?>assets/theme/slider/2bb.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
-                <div class="caption sfl hide_from_mobile str" data-x="10" data-y="109" data-speed="700" data-start="1500"><h1 class="color_light fw_light  text_padding_10" style="font-size: 34px;">CUSTOM MADE SUITS & SHIRTS.
+                <img src="<?php echo base_url(); ?>assets/theme/slider/10.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
+                <div class="caption sfl hide_from_mobile str" data-x="10" data-y="109" data-speed="700" data-start="1500"><h1 class="color_black fw_light  text_padding_10" style="font-size: 34px;">CUSTOM MADE SUITS & SHIRTS.
                         <br>SETTING THE STANDARD.</h1></div>
-                <div class="caption sfl hide_from_mobile str color_light" data-x="20" data-y="244" data-speed="700" data-start="1700">We provide the highest craftsmanship to <br/>our valuable customers with reasonable price.</div>
+                <div class="caption sfl hide_from_mobile str color_black" data-x="20" data-y="244" data-speed="700" data-start="1700">We provide the highest craftsmanship to <br/>our valuable customers with reasonable price.</div>
                 <div class="caption sfl hide_from_mobile str" data-x="20" data-y="339" data-speed="700" data-start="1900">
                     <a href="#" role="button" class="tt_uppercase button_type_3 color_light r_corners fs_medium d_block tr_all" >Customize Now!</a>
                 </div>
             </li>
+            
 
 
 

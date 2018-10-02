@@ -92,9 +92,7 @@
                 array(
                     "title" => "FAQ's",
                     "link" => '#',),
-                array(
-                    "title" => "Terms of Service",
-                    "link" => '#',),
+                
             ]),
         array(
             "title" => "Customize Now",
