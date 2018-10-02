@@ -60,7 +60,7 @@
                 <!--social buttons-->
                 <div class="col-lg-3 col-md-3 col-sm-3 m_bottom_20 m_xs_bottom_20">
 
-                    <h5 class="color_dark fw_light m_bottom_20">Newsletter</h5>
+                    <h5 class="color_light fw_light m_bottom_20">Newsletter</h5>
                     <p class="color_light fw_light m_bottom_25">Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>
                     <form class="subscribe_send_form">
                         <ul>
@@ -68,7 +68,7 @@
                                 <input type="email" name="subscribe_email" placeholder="Your email address" class="r_corners bg_light w_full fw_light">
                             </li>
                             <li>
-                                <button class="fs_medium button_type_2 color_purple transparent r_corners tr_all">Subscribe</button>
+                                <button class="fs_medium button_type_1 color_light r_corners tr_all">Subscribe</button>
                             </li>
                         </ul>
                         <div class="message_container d_none m_top_10"></div></form>
