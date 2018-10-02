@@ -30,13 +30,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $baselink = 'http://' . $_SERVER['SERVER_NAME'];
 switch ($baselink) {
     case "http://localhost":
-        $baselinkmain = $baselink . '/shanielfashions';
+        $baselinkmain = $baselink . '/newcenturytailor';
         break;
     case "http://192.168.1.2":
-        $baselinkmain = $baselink . '/shanielfashions';
+        $baselinkmain = $baselink . '/newcenturytailor';
         break;
     default:
-        $baselinkmain = 'http://www.shanielfashions.com/';
+        $baselinkmain = 'http://www.newcenturytailor.com/';
 }
 
 $config['base_url'] = $baselinkmain;

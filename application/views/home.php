@@ -1,131 +1,113 @@
 <?php
-        $this->load->view('layout/header');
+$this->load->view('layout/header');
 ?>
+
+<!--youtube video-->
+<!--<link href="https://pupunzi.com/mb.components/mb.YTPlayer/demo/css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+<script src="https://pupunzi.com/mb.components/mb.YTPlayer/demo/inc/jquery.mb.YTPlayer.js"></script>
+<script src="https://pupunzi.com/mb.components/mb.YTPlayer/demo/assets/apikey.js"></script>
+<div id="myPlayer" style="background: #000; height: 600px; width: 100%; position: relative; " ></div>
+<div id="customElement" class="player" data-property="{videoURL:'qvuILbcXlg8',containment:'#myPlayer', showControls:true, autoPlay:true, loop:false, mute:true, startAt:0, opacity:1, addRaster:true, quality:'default'}">
+    <div id="testText">
+        <h1>jQuery.mb.YTPlayer</h1>
+        <h2>An HTML5 Background player <br>for YouTube videos</h2>
+    </div>
+</div>-->
+<script>
+    var myPlayer;
+    jQuery(function () {
+
+        var options = {
+            mobileFallbackImage: "http://www.hdwallpapers.in/walls/pink_cosmos_flowers-wide.jpg",
+            playOnlyIfVisible: false
+        };
+
+//        myPlayer = jQuery(".player").YTPlayer(options);
+    });
+</script>
+<!--end of youtube video-->
+
+
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id))
+            return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
 
 <section class="relative w_full m_bottom_15">
     <div class="r_slider">
         <ul>
-            <!--            <li data-transition="fade" data-slotamount="10">
-                            <img src="<?php echo base_url(); ?>assets/theme/images/slide_02.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
-                            <div class="caption lfb ltb" data-x="left" data-y="bottom" data-hoffset="-118" data-speed="600"><img src="<?php echo base_url(); ?>assets/theme/images/sliderjacket2.png" alt="" style="height: 400px;"></div>
-                            <div class="caption sfl hide_from_mobile str" data-x="755" data-y="109" data-speed="700" data-start="1500"><h1 class="color_light fw_light">The best<br>priced product!</h1></div>
-                            <div class="caption sfl hide_from_mobile str color_light" data-x="755" data-y="244" data-speed="700" data-start="1700">Vestibulum ante ipsum primis in faucibus orci luctus<br>et ultrices posuere cubilia Curae; Suspendisse<br>sollicitudin velit sed leo. Ut pharetra augue nec.</div>
-                            <div class="caption sfl hide_from_mobile str" data-x="755" data-y="339" data-speed="700" data-start="1900">
-                                <a href="#" role="button" class="tt_uppercase button_type_3 color_purple r_corners fs_medium d_block tr_all">Buy Now!</a>
-                            </div>
-                        </li>-->
-            <li data-transition="fade" data-slotamount="10">
-                <img src="<?php echo base_url(); ?>assets/theme/slider/7.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
-                <div class="caption sfl hide_from_mobile str bg_color_blue2" data-x="left" data-y="108" data-speed="700"><h1 class="color_light fw_light text_padding_10 " style="font-size: 40px;">Welcome to Shaniel Fashions <br/>custom clothing.</h1></div>
-                <div class="caption sfl hide_from_mobile str color_light" data-x="left" data-y="243" data-speed="700" data-start="1200">Specializing in bespoke and made-to-measure <br/>apparel and alterations for men</div>
-                <div class="caption sfl hide_from_mobile str" data-x="left" data-y="339" data-speed="700" data-start="1400">
-                    <a href="#" role="button" class="tt_uppercase button_type_3 color_purple r_corners fs_medium d_block tr_all">Try Now!</a>
+
+
+
+
+
+            <li data-transition="fade" data-slotamount="100">
+
+                <div class="fb-video" data-href="https://www.facebook.com/facebook/videos/259525784902848/"  data-show-text="false" data-autoplay="true">
+
                 </div>
             </li>
+            
+
+
+
             <li data-transition="fade" data-slotamount="10">
-                <img src="<?php echo base_url(); ?>assets/theme/slider/9.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
-                <div class="caption lfb ltb" data-x="left" data-y="bottom" data-hoffset="-118" data-speed="600"><img src="<?php echo base_url(); ?>assets/theme/slider/suit_trans.png" alt=""></div>
-                <div class="caption sfl hide_from_mobile str" data-x="755" data-y="109" data-speed="700" data-start="1500"><h1 class="color_light fw_light bg_color_purple2 text_padding_10" style="font-size: 34px;">CUSTOM MADE SUITS & SHIRTS.
+                <img src="<?php echo base_url(); ?>assets/theme/slider/1bb.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
+                <div class="caption sfl hide_from_mobile str " data-x="left" data-y="108" data-speed="700"><h1 class="color_dark fw_light text_padding_10 " style="font-size: 40px;">Welcome to <br/>New Century Tailor Co. 新世紀洋服公司
+                        <br/>custom clothing.</h1></div>
+                <div class="caption sfl hide_from_mobile str color_dark" data-x="10" data-x="left" data-y="243" data-speed="700" data-start="1200">Specializing in bespoke and made-to-measure <br/>apparel and alterations for men</div>
+                <div class="caption sfl hide_from_mobile str" data-x="10" data-x="left" data-y="300" data-speed="700" data-start="1400">
+                    <a href="#" role="button" class="tt_uppercase button_type_3 transparent r_corners fs_medium d_block tr_all">Try Now!</a>
+                </div>
+            </li>
+            
+            
+            <li data-transition="fade" data-slotamount="10">
+                <img src="<?php echo base_url(); ?>assets/theme/slider/2bbbb.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
+                <div class="caption lfb ltb" data-x="left" data-y="bottom" data-hoffset="-118" data-speed="600"><img src="<?php echo base_url(); ?>assets/theme/slider/suit_trans1.png" alt=""></div>
+                <div class="caption sfl hide_from_mobile str" data-x="600" data-y="109" data-speed="700" data-start="1500"><h1 class="color_light fw_light bg_dark text_padding_10" style="font-size: 34px;">CUSTOM MADE SUITS & SHIRTS.
                         <br>SETTING THE STANDARD.</h1></div>
-                <div class="caption sfl hide_from_mobile str color_light" data-x="755" data-y="244" data-speed="700" data-start="1700"></div>
-                <div class="caption sfl hide_from_mobile str" data-x="755" data-y="339" data-speed="700" data-start="1900">
-                    <a href="#" role="button" class="tt_uppercase button_type_3 color_dark r_corners fs_medium d_block tr_all" >Customize Now!</a>
+                <div class="caption sfl hide_from_mobile str color_light" data-x="600" data-y="244" data-speed="700" data-start="1700">Specializing in bespoke and made-to-measure <br/>apparel and alterations for men</div>
+                <div class="caption sfl hide_from_mobile str" data-x="600" data-y="339" data-speed="700" data-start="1900">
+                    <a href="#" role="button" class="tt_uppercase button_type_5 color_light bg_dark r_corners fs_medium d_block tr_all" >Customize Now!</a>
                 </div>
             </li>
+
+
             <li data-transition="fade" data-slotamount="10">
-                <img src="<?php echo base_url(); ?>assets/theme/slider/71.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
+                <img src="<?php echo base_url(); ?>assets/theme/slider/3bb.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
                 <div class="caption sfl hide_from_mobile str" data-x="left" data-y="98" data-speed="700"><h1 class="color_light fw_light" style="font-size: 34px;">PREMIER <br/>MADE-TO-MEASURE CLOTHING</h1></div>
-                <div class="caption sfl hide_from_mobile str" data-x="left" data-y="339" data-speed="700" data-start="1400">
+                <div class="caption sfl hide_from_mobile str color_light" data-x="left" data-y="200" data-speed="700" data-start="1200"> Best high end tailoring shop in <br/>Hong Kong.</div>
+                <div class="caption sfl hide_from_mobile str" data-x="left" data-y="300" data-speed="700" data-start="1400">
                     <a href="#" role="button" class="tt_uppercase button_type_3 transparent color_light r_corners fs_medium d_block tr_all" >Create Your Design</a>
                 </div>
             </li>
 
-            <li data-transition="fade" data-slotamount="10">
-                <img src="<?php echo base_url(); ?>assets/theme/slider/10.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
-                <div class="caption sfl hide_from_mobile str" data-x="left" data-y="108" data-speed="700"><h1 class="color_dark fw_light">The New Direction<br> for Your Success</h1></div>
-                <div class="caption sfl hide_from_mobile str" data-x="left" data-y="339" data-speed="700" data-start="1400">
-                    <a href="#" role="button" class="tt_uppercase button_type_3 transparent color_dark r_corners fs_medium d_block tr_all" >Learn More</a>
-                </div>
-            </li>
+
 
             <li data-transition="fade" data-slotamount="10">
-                <img src="<?php echo base_url(); ?>assets/theme/slider/12.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
-                <div class="caption sfl hide_from_mobile str" data-x="755" data-y="109" data-speed="700" data-start="1500"><h1 class="color_light fw_light bg_color_purple2 text_padding_10" style="font-size: 34px;">CUSTOM MADE SUITS & SHIRTS.
+                <img src="<?php echo base_url(); ?>assets/theme/slider/2bb.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
+                <div class="caption sfl hide_from_mobile str" data-x="10" data-y="109" data-speed="700" data-start="1500"><h1 class="color_light fw_light  text_padding_10" style="font-size: 34px;">CUSTOM MADE SUITS & SHIRTS.
                         <br>SETTING THE STANDARD.</h1></div>
-                <div class="caption sfl hide_from_mobile str color_light" data-x="755" data-y="244" data-speed="700" data-start="1700"></div>
-                <div class="caption sfl hide_from_mobile str" data-x="755" data-y="339" data-speed="700" data-start="1900">
-                    <a href="#" role="button" class="tt_uppercase button_type_3 color_purple r_corners fs_medium d_block tr_all" >Customize Now!</a>
-                </div>
-            </li>
-
-            <li data-transition="fade" data-slotamount="10">
-                <img src="<?php echo base_url(); ?>assets/theme/slider/11.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
-                <div class="caption sfl hide_from_mobile str" data-x="left" data-y="108" data-speed="700"><h1 class="color_light fw_light">The New Direction<br> for Your Success</h1></div>
-                <div class="caption sfl hide_from_mobile str" data-x="left" data-y="339" data-speed="700" data-start="1400">
-                    <a href="#" role="button" class="tt_uppercase button_type_3 color_purple r_corners fs_medium d_block tr_all">Try Now!</a>
-                </div>
-            </li>
-            <li data-transition="fade" data-slotamount="10">
-                <img src="<?php echo base_url(); ?>assets/theme/slider/13.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
-                <div class="caption sfl hide_from_mobile str " data-x="left" data-y="108" data-speed="700"><h1 class="color_light fw_light text_padding_10" style="font-size: 34px;">CUSTOM MADE SUITS & SHIRTS.
-                        <br>SETTING THE STANDARD.</h1></div>
-                <div class="caption sfl hide_from_mobile str color_light" data-x="755" data-y="244" data-speed="700" data-start="1700"></div>
-                <div class="caption sfl hide_from_mobile str" data-x="left" data-y="339" data-speed="700" data-start="1400">
-                    <a href="#" role="button" class="tt_uppercase button_type_3 color_purple r_corners fs_medium d_block tr_all">Try Now!</a>
-                </div>
-            </li>
-            <li data-transition="fade" data-slotamount="10">
-                <img src="<?php echo base_url(); ?>assets/theme/slider/14.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
-                <div class="caption sfl hide_from_mobile str" data-x="left" data-x="-10" data-y="108" data-speed="700"><h1 class="color_dark fw_light">The New Direction<br> for Your Success</h1></div>
-                <div class="caption sfl hide_from_mobile str" data-x="left" data-y="339" data-speed="700" data-start="1400">
-                    <a href="#" role="button" class="tt_uppercase button_type_3 color_purple r_corners fs_medium d_block tr_all">Try Now!</a>
-                </div>
-            </li>
-            <li data-transition="fade" data-slotamount="10">
-                <img src="<?php echo base_url(); ?>assets/theme/slider/16.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
-                <div class="caption sfl hide_from_mobile str" data-x="755" data-y="109" data-speed="700" data-start="1500"><h1 class="color_dark fw_light  text_padding_10" style="font-size: 34px;">CUSTOM MADE SUITS & SHIRTS.
-                        <br>SETTING THE STANDARD.</h1></div>
-                <div class="caption sfl hide_from_mobile str color_light" data-x="755" data-y="244" data-speed="700" data-start="1700"></div>
-                <div class="caption sfl hide_from_mobile str" data-x="800" data-y="339" data-speed="700" data-start="1900">
-                    <a href="#" role="button" class="tt_uppercase button_type_3 color_purple r_corners fs_medium d_block tr_all" >Customize Now!</a>
-                </div>
-            </li>
-
-            <li data-transition="fade" data-slotamount="10">
-                <img src="<?php echo base_url(); ?>assets/theme/slider/15.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
-                <div class="caption sfl hide_from_mobile str" data-x="left" data-x="-10" data-y="108" data-speed="700"><h1 class="color_dark fw_light">The New Direction<br> for Your Success</h1></div>
-                <div class="caption sfl hide_from_mobile str" data-x="left" data-y="339" data-speed="700" data-start="1400">
-                    <a href="#" role="button" class="tt_uppercase button_type_3 color_purple r_corners fs_medium d_block tr_all">Try Now!</a>
-                </div>
-            </li>
-
-            <li data-transition="fade" data-slotamount="10">
-                <img src="<?php echo base_url(); ?>assets/theme/slider/17.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
-                <div class="caption sfl hide_from_mobile str" data-x="700" data-y="109" data-speed="700" data-start="1500"><h1 class="color_light fw_light  text_padding_10" style="font-size: 34px;">CUSTOM MADE SUITS & SHIRTS.
-                        <br>SETTING THE STANDARD.</h1></div>
-                <div class="caption sfl hide_from_mobile str color_light" data-x="755" data-y="244" data-speed="700" data-start="1700"></div>
-                <div class="caption sfl hide_from_mobile str" data-x="700" data-y="339" data-speed="700" data-start="1900">
-                    <a href="#" role="button" class="tt_uppercase button_type_3 color_purple r_corners fs_medium d_block tr_all" >Customize Now!</a>
+                <div class="caption sfl hide_from_mobile str color_light" data-x="20" data-y="244" data-speed="700" data-start="1700">We provide the highest craftsmanship to <br/>our valuable customers with reasonable price.</div>
+                <div class="caption sfl hide_from_mobile str" data-x="20" data-y="339" data-speed="700" data-start="1900">
+                    <a href="#" role="button" class="tt_uppercase button_type_3 color_light r_corners fs_medium d_block tr_all" >Customize Now!</a>
                 </div>
             </li>
 
 
-            <li data-transition="fade" data-slotamount="10">
-                <img src="<?php echo base_url(); ?>assets/theme/slider/15.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
-                <div class="caption sfl hide_from_mobile str" data-x="left" data-x="-10" data-y="108" data-speed="700"><h1 class="color_dark fw_light">The New Direction<br> for Your Success</h1></div>
-                <div class="caption sfl hide_from_mobile str" data-x="left" data-y="339" data-speed="700" data-start="1400">
-                    <a href="#" role="button" class="tt_uppercase button_type_3 color_purple r_corners fs_medium d_block tr_all">Try Now!</a>
-                </div>
-            </li>
-
-
-            <li data-transition="fade" data-slotamount="10">
-                <img src="<?php echo base_url(); ?>assets/theme/slider/18.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
-                <div class="caption sfl hide_from_mobile str" data-x="left" data-x="-10" data-y="108" data-speed="700"><h1 class="color_dark fw_light">The New Direction<br> for Your Success</h1></div>
-                <div class="caption sfl hide_from_mobile str" data-x="left" data-y="339" data-speed="700" data-start="1400">
-                    <a href="#" role="button" class="tt_uppercase button_type_3 color_purple r_corners fs_medium d_block tr_all">Try Now!</a>
-                </div>
-            </li>
 
         </ul>
     </div>
@@ -143,7 +125,7 @@
             <article id="tab-1" data-appear-animation="fadeInUp" data-appear-animation-delay="450">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6 m_xs_bottom_20">
-                        <img src="<?php echo base_url(); ?>assets/theme/images/halfcanvas1.jpg" class="r_corners" alt="" style="height: 350px;">
+                        <img src="<?php echo base_url(); ?>assets/theme/images/halfcanvas2.jpg" class="r_corners" alt="" style="    width: 100%;">
                     </div>
                     <div class="col-lg-6 col-md-6 t_align_l fw_light">
                         <p class="m_bottom_15">The canvas is cut to the jacket's shape, then the wool is stitched to the canvas. Over time, as you wear the jacket, the canvas conforms to your body's shape, creating an excellent fit.  </p>
@@ -243,7 +225,7 @@ $customarray = [
 ];
 foreach ($product_home_slider_bottom['home_slider'] as $key => $value) {
     ?>
- 
+                                                                             
     <?php
 }
 ?>
@@ -262,10 +244,9 @@ foreach ($product_home_slider_bottom['home_slider'] as $key => $value) {
         <div class="relative ">
             <div class="row">
                 <div class="owl-carousel t_xs_align_c featured_products" data-nav="fproducts_nav_" data-plugin-options='{"singleItem":false,"itemsCustom":[[992,4],[768,3],[600,2],[10,1]]}'>
-                    <?php 
-                    
+                    <?php
                     foreach ($product_home_slider_bottom['home_bottom'] as $key => $value) {
-                    ?>
+                        ?>
 
 
                         <!--product-->
@@ -273,11 +254,11 @@ foreach ($product_home_slider_bottom['home_slider'] as $key => $value) {
                             <div class="relative r_corners d_xs_inline_b d_mxs_block wrapper m_bottom_23">
                                 <!--images container-->
                                 <div class="fp_images relative">
-                                    <img class="lazyload tr_all" data-src="<?php echo imageserver . $value['file_name1']; ?>" alt=""  style="background: white;">
-                                    <img class="lazyload tr_all" data-src="<?php echo imageserver . $value['file_name']; ?>" alt="" >
+                                    <img class="lazyload tr_all" src="<?php echo imageserver . $value['file_name1']; ?>" alt=""  style="background: white;">
+                                    <img class="lazyload tr_all" src="<?php echo imageserver . $value['file_name']; ?>" alt="" >
                                 </div>
                                 <!--labels-->
-                               
+
                             </div>
                             <figcaption>
                                 <h6 class="m_bottom_5"><a href="#" class="color_dark"><?php $value['title']; ?></a></h6>
@@ -327,7 +308,7 @@ foreach ($product_home_slider_bottom['home_slider'] as $key => $value) {
 </section>
 
 
-<section class="section_offset_2 image_bg_3" id="pricing_tables_container">
+<!--<section class="section_offset_2 image_bg_3" id="pricing_tables_container">
     <div class="container">
         <h3 class="color_light fw_light m_bottom_15 t_align_c appear-animation bounceInUp appear-animation-visible" data-appear-animation="bounceInUp">ORIGINAL ITALIAN FABRICS</h3>
         <p class="m_bottom_35 t_align_c color_light appear-animation bounceInUp appear-animation-visible" data-appear-animation="bounceInUp" data-appear-animation-delay="200" style="animation-delay: 200ms;    font-size: 26px;
@@ -338,7 +319,96 @@ foreach ($product_home_slider_bottom['home_slider'] as $key => $value) {
             <br/>The best men's suits are tailored from the best cloth - this means pure merino wool fabric, <br/>woven in the traditional mills of Italy and England.     </p>
 
     </div>
+</section>-->
+
+
+
+<section class="section_offset relative wrapper" style="height: 500px">
+    <div class="video_wrap">
+        <video autoplay="" muted="" loop="">
+            <source src="<?php echo base_url(); ?>assets/theme/bigvideo/nct.mp4" type="video/mp4">
+
+        </video>
+    </div>
+    <div class="container" style="margin-top: 100px;background: #00000096;">
+        <h3 class="color_light fw_light m_bottom_15 t_align_c appear-animation bounceInUp appear-animation-visible" data-appear-animation="bounceInUp">ORIGINAL ITALIAN FABRICS</h3>
+        <p class="m_bottom_35 t_align_c color_light appear-animation bounceInUp appear-animation-visible" data-appear-animation="bounceInUp" data-appear-animation-delay="200" style="animation-delay: 200ms;    font-size: 26px;
+           line-height: 38px;
+           font-weight: 300;">
+            Our fabrics are sourced from only a handful of the finest mills across the globe.
+            <br/> Every detail is carefully constructed using precision technology and state-of-the-art machinery.   
+            <br/>The best men's suits are tailored from the best cloth - this means pure merino wool fabric, <br/>woven in the traditional mills of Italy and England.     </p>
+
+    </div>
 </section>
+
+
+<section class="section_offset bg_light_2">
+    <div class="container">
+        <h3 class="color_dark fw_light m_bottom_15 t_align_c" data-appear-animation="bounceInLeft">Latest Blog</h3>
+        <p class="m_bottom_35 t_align_c" data-appear-animation="bounceInLeft" data-appear-animation-delay="200">Read latest fashions and styling tips on our blog.</p>
+        <div class="relative">
+            <div class="row">
+                <div class="owl-carousel" data-plugin-options='{"singleItem":false,"itemsCustom":[[992,4],[768,3],[450,2],[10,1]]}' data-nav="ln_nav_">
+
+                    <?php
+                    for ($i = 0; $i < 7; $i++) {
+                        ?>
+                        <figure class="col-lg-12 col-md-12 col-sm-12" data-appear-animation="fadeInUp">
+                            <!--image-->
+                            <div class="popup_wrap relative r_corners wrapper m_bottom_20 db_xs_centered">
+                                <img src="<?php echo base_url(); ?>assets/demoblog/1.jpg" alt="">
+
+                            </div>
+                            <!--description-->
+                            <figcaption>
+                                <h6 class="lh_large m_bottom_3"><a href="#" class="color_dark tr_all">All our products are non-fused and with full canvas</a></h6>
+                                <!--project's info-->
+                                <ul class="dotted_list m_bottom_8 color_grey_light_2 lh_ex_small">
+                                    <li class="m_right_15 relative d_inline_m">
+                                        <a href="#" class="color_grey_light_2 fs_small">
+                                            <i class="icon-doc-text-inv"></i>
+                                        </a>
+                                    </li>
+                                    <li class="m_right_15 relative d_inline_m">
+                                        <a href="#" class="color_grey fs_small">
+                                            <i><?php echo date('y-M'); ?></i>
+                                        </a>
+                                    </li>
+                                    <li class="m_right_15 relative d_inline_m">
+                                        <a href="#" class="fs_medium color_grey"><i>Suit Style</i></a>,
+                                        <a href="#" class="fs_medium color_grey"><i>Fashion Tips</i></a>
+                                    </li>
+
+
+                                </ul>
+                                <p class="m_bottom_12">This is what's happening on a " FUSED " suit jacket, the " GLUED " area starting to detach after a multiple times of laundry washed!...</p>
+                                <div class="clearfix">
+                                    <a href="#" class="color_black  f_left d_block m_right_20 fw_light">
+                                        <span class="d_inline_m m_right_5 icon_wrap_size_0 circle color_grey_light tr_all">
+                                            <i class="icon-angle-right"></i>
+                                        </span>
+                                        Read More
+                                    </a>
+                                </div>
+                            </figcaption>
+                        </figure>
+                        <?php
+                    }
+                    ?>
+                </div>
+            </div>
+            <!--carousel nav-->
+            <button class="icon_wrap_size_4 circle color_grey_light tr_all color_blue_hover ln_nav_prev d_md_none" data-appear-animation="fadeIn">
+                <i class="icon-left-open-big"></i>
+            </button>
+            <button class="icon_wrap_size_4 circle color_grey_light tr_all color_blue_hover ln_nav_next d_md_none" data-appear-animation="fadeIn">
+                <i class="icon-right-open-big"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
 
 
 <section class="section_offset image_bg_7" id="how_it_works">
@@ -367,7 +437,7 @@ foreach ($product_home_slider_bottom['home_slider'] as $key => $value) {
                             <li class="m_bottom_8"><i class="icon-right m_right_15 fs_large"></i>Measure the Shoulder </li>
                             <li class="m_bottom_8"><i class="icon-right m_right_15 fs_large"></i>Measure the Sleeve Length</li>
                             <li class="m_bottom_8"><i class="icon-right m_right_15 fs_large"></i>Measure the Back Length </li>
- </ul>
+                        </ul>
                     </div>
                 </div>
                 <a href="#" class="color_green fs_medium button_type_3 tr_all r_corners tt_uppercase d_inline_b">Learn More</a>
@@ -384,48 +454,43 @@ foreach ($product_home_slider_bottom['home_slider'] as $key => $value) {
         <p class="m_bottom_35 t_align_c appear-animation bounceInLeft appear-animation-visible" data-appear-animation="bounceInLeft" data-appear-animation-delay="200" style="animation-delay: 200ms;"></p>
         <div class="relative appear-animation bounceInLeft appear-animation-visible" data-appear-animation="bounceInLeft" data-appear-animation-delay="400" style="animation-delay: 400ms;">
             <div class="t_xs_align_c">
-                <div class="owl-carousel clients brands t_align_c owl-theme owl-carousel-init" data-plugin-options="{&quot;pagination&quot;:true,&quot;transitionStyle&quot; : &quot;backSlide&quot;}" data-nav="c_nav_" style="display: block; opacity: 1;">
+                <div class="owl-carousel clients brands t_align_c owl-theme owl-carousel-init" data-plugin-options='{"singleItem":false,"itemsCustom":[[992,4],[768,3],[450,2],[10,1]]}' data-nav="c_nav_" style="display: block; opacity: 1;">
                     <!--item-->
-                    <div class="owl-wrapper-outer">
-                        <div class="owl-wrapper" style="width: 7020px; left: 0px; display: block;">
-                            <div class="owl-item" style="width: 1170px;"><div>
-                                    <div class="row">
-                                        <?php
-                                        for ($i = 1; $i < 7; $i++) {
-                                            ?>
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 m_bottom_20 f_mxs_none w_mxs_full m_mxs_bottom_10">
-                                                <div class="clients_item db_xs_centered wrapper relative r_corners d_xs_block d_mxs_inline_b">
-                                                    <a href="#" class="d_block  tr_all wrapper r_corners">
-                                                        <img src="<?php echo base_url(); ?>assets/brand/<?php echo $i; ?>.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <?php
-                                        }
-                                        ?>
 
-                                    </div>
-                                </div>
+
+                    <?php
+                    for ($i = 1; $i < 7; $i++) {
+                        ?>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-14 m_bottom_20 f_mxs_none w_mxs_full m_mxs_bottom_10">
+                            <div class="clients_item db_xs_centered wrapper relative r_corners d_xs_block d_mxs_inline_b">
+                                <a href="#" class="d_block  tr_all wrapper r_corners">
+                                    <img src="<?php echo base_url(); ?>assets/brand/<?php echo $i; ?>.jpg" alt="">
+                                </a>
                             </div>
-                            <!--item-->
+                        </div>
 
-                            <!--item-->
+                        <?php
+                    }
+                    ?>
 
-                            <div class="owl-controls clickable d_inline_b"><div class="owl-pagination"><div class="owl-page active"><span class=""></span></div><div class="owl-page"><span class=""></span></div><div class="owl-page"><span class=""></span></div></div></div></div>
-                    </div>
-                    <!--carousel nav-->
-                    <button class="icon_wrap_size_5 circle color_grey_light tr_all color_blue_hover c_nav_prev nav_type_2 d_md_none">
-                        <i class="icon-left-open-big"></i>
-                    </button>
-                    <button class="icon_wrap_size_5 circle color_grey_light tr_all color_blue_hover c_nav_next nav_type_2 d_md_none">
-                        <i class="icon-right-open-big"></i>
-                    </button>
+
+
+                    <!--item-->
+
                 </div>
+                <!--carousel nav-->
+                <button class="icon_wrap_size_5 circle color_grey_light tr_all color_blue_hover c_nav_prev nav_type_2 d_md_none">
+                    <i class="icon-left-open-big"></i>
+                </button>
+                <button class="icon_wrap_size_5 circle color_grey_light tr_all color_blue_hover c_nav_next nav_type_2 d_md_none">
+                    <i class="icon-right-open-big"></i>
+                </button>
             </div>
-            </section>
+        </div>
+</section>
 
 
 
-            <?php
-            $this->load->view('layout/footer');
-            ?>
+<?php
+$this->load->view('layout/footer');
+?>
