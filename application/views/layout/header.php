@@ -163,9 +163,9 @@
             <div id="side_menu" class='bg_dark'>
                 <header class="m_bottom_30 d_table w_full" >
                     <!--logo-->
-                    <div class="d_table_cell half_column v_align_m" style="background: white">
+                    <div class="d_table_cell half_column v_align_m" style="">
                         <a href="/">
-                            <img src="<?php echo base_url(); ?>assets/images/logo22.png" alt="">
+                            <img src="<?php echo base_url(); ?>assets/images/logo21.png" alt="" style="height: 100px">
                         </a>
                     </div>
                     <!--close sidemenu button-->
