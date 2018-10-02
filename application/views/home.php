@@ -293,8 +293,8 @@ foreach ($product_home_slider_bottom['home_slider'] as $key => $value) {
 
                             </div>
                             <figcaption>
-                                <h6 class="m_bottom_5"><a href="#" class="color_dark"><?php $value['title']; ?></a></h6>
-                                <a href="#" class="fs_medium color_grey d_inline_b m_bottom_3"><i><?php $value['short_description']; ?></i></a>
+                                <h6 class="m_bottom_5"><a href="#" class="color_dark"><?php echo $value['title']; ?></a></h6>
+                                <a href="#" class="fs_medium color_grey d_inline_b m_bottom_3"><i><?php echo $value['short_description']; ?></i></a>
                                 <div class="im_half_container m_bottom_10">
                                     <p class="color_dark fw_ex_bold half_column d_inline_m t_align_c tr_all animate_fctl fp_price with_ie">{{<?php echo "1022"; ?>|currency:"<?php echo globle_currency; ?> "}}</p>	
                                     <p class="color_dark fw_ex_bold half_column d_inline_m t_align_c tr_all animate_fctl fp_price with_ie hide_from_mobile"></p>	
