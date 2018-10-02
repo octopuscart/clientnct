@@ -8,7 +8,7 @@
                 <!--about us-->
                 <div class="col-lg-3 col-md-3 col-sm-3 fw_light m_bottom_30 color_light">
                     <h5 class="color_light m_bottom_20 ">Shortly About Us</h5>
-                    <p class='font_size_14'>New Century Tailor Co 新世紀洋服公司 - Best high end tailoring shop in Hong Kong. We provide the highest craftsmanship to our valuable customers with reasonable price.</p>
+                    <p class='font_size_14'>New Century Tailor Co <span class="font_size_13"> 新世紀洋服公司 </span> - Best high end tailoring shop in Hong Kong. We provide the highest craftsmanship to our valuable customers with reasonable price.</p>
                 </div>
                 <!--contact info--> 
                 <div class="col-lg-6 col-md-6 col-sm-6 m_bottom_30">
@@ -36,8 +36,8 @@
                                     <i class="icon-mail-alt"></i>
                                 </div>
 
-                                <a href="mailto:newcenturytailor@yahoo.com.hk" class="color_black color_light _hover">newcenturytailor@yahoo.com.hk</a><br/>
-                                <a href="mailto:sales@newcenturytailor.com" class="color_black color_light _hover" style='margin-left:35px'>sales@newcenturytailor.com</a>
+                                <a href="mailto:newcenturytailor@yahoo.com.hk" class="color_black color_light color_blue_hover">newcenturytailor@yahoo.com.hk</a><br/>
+                                <a href="mailto:sales@newcenturytailor.com" class="color_black color_light color_blue_hover" style='margin-left:35px'>sales@newcenturytailor.com</a>
                             </li>
 
                         </ul>
@@ -47,8 +47,8 @@
                                     <i class="icon-location"></i>
                                 </div>
 
-                                1/F AIE Building,<br/> 33 Connaught Road Central<br/> 中環干諾道中33號中亞洲大廈1樓
-                                Hong Kong
+                                1/F AIE Building,<br/> 33 Connaught Road Central<br/> <span class="font_size_13"> 中環干諾道中 33號中亞洲大廈1樓 </span>
+                                <br/>Hong Kong
 
                             </li>
                             <li>

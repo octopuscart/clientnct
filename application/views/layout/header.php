@@ -224,10 +224,10 @@
                                 <div class="col-lg-5 col-md-4 col-sm-5 t_xs_align_c">
                                     <ul class="hr_list fs_small color_light  contact_info_list" style="padding-top: 0px;">
                                         <li class="m_right_20 color_light f_xs_none m_xs_right_0 m_xs_bottom_5">
-                                            <a href="#" class="color_light hovertext"><span class="circle icon_wrap_size_1 d_inline_m m_right_8 "><i class="icon-phone-1"></i></span>+(852) 2868 3768 </a>
+                                            <a href="#" class="color_light color_blue_hover"><span class="circle icon_wrap_size_1 d_inline_m m_right_8 "><i class="icon-phone-1"></i></span>+(852) 2868 3768 </a>
                                         </li>
                                         <li class="m_right_20 color_light f_xs_none m_xs_right_0 m_xs_bottom_5">
-                                            <a href="mailto:#" class=" color_light d_inline_b hovertext"><span class="circle icon_wrap_size_1 d_inline_m m_right_8"><i class="icon-mail-alt"></i></span>newcenturytailor@yahoo.com.hk</a>
+                                            <a href="mailto:#" class=" color_light d_inline_b color_blue_hover"><span class="circle icon_wrap_size_1 d_inline_m m_right_8"><i class="icon-mail-alt"></i></span>newcenturytailor@yahoo.com.hk</a>
                                         </li>
 
                                     </ul>
@@ -236,9 +236,9 @@
                                     <!--mini nav-->
                                     <nav class="d_inline_m m_right_10 m_xs_right_0">
                                         <ul class="hr_list stripe_list fs_small">
-                                            <li><a href="#" class="color_light hovertext">About</a></li>
-                                            <li><a href="<?php echo site_url('Pages/contactus'); ?>" class="color_light hovertext">Contact</a></li>
-                                            <li><a href="#" class="color_light hovertext">FAQ</a></li>
+                                            <li><a href="#" class="color_light color_blue_hover">About</a></li>
+                                            <li><a href="<?php echo site_url('Pages/contactus'); ?>" class="color_light color_blue_hover">Contact</a></li>
+                                            <li><a href="#" class="color_light color_blue_hover">FAQ</a></li>
                                             <!--                                            <li><a href="#" class="color_light ">My Account</a></li>
                                                                                         <li><a href="#" class="color_light ">My Wishlist</a></li>-->
                                         </ul>
@@ -390,7 +390,7 @@
                             </div>
                         </div>
                     </section>
-                <hr class="divider_type_2 m_bottom_0">
+                <hr class="divider_type_2 m_bottom_0" style="height: 1px;"/>
 
                     <section class="sticky_part bg_light ">
                         <div class="container">

@@ -635,7 +635,7 @@ li a .relative:hover{
 
 .main_menu > li > a {
     display: block;
-    padding: 36px 15px 37px 14px;
+    /*padding: 36px 15px 37px 14px;*/
 }
 
 .main_menu > li > ul {
