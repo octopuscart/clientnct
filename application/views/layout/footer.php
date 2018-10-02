@@ -52,7 +52,7 @@
 
                             </li>
                             <li>
-                                <a href="https://www.google.co.in/maps/place/Shaniel+Custom+Tailors/@22.2990774,114.1726538,15z/data=!4m5!3m4!1s0x0:0x86434735e1a12048!8m2!3d22.2990774!4d114.1726538" target="_blank" class="button_type_2 color_light r_corners tr_all color_light _hover d_inline_m fs_medium t_md_align_c w_break">Open in Google Maps</a>
+                                <a href="https://www.google.co.in/maps/place/New+Century+Tailor+Co+%E6%96%B0%E4%B8%96%E7%B4%80%E6%B4%8B%E6%9C%8D%E5%85%AC%E5%8F%B8/@22.2837108,114.1571304,15z/data=!4m2!3m1!1s0x0:0xdb28bd0a01d76a2c?sa=X&ved=2ahUKEwi6tPyT9ufdAhXFOY8KHfRAAfoQ_BIwCnoECAoQCw" target="_blank" class="button_type_2 color_light r_corners tr_all color_light _hover d_inline_m fs_medium t_md_align_c w_break">Open in Google Maps</a>
                             </li>
                         </ul>
                     </div>
@@ -136,7 +136,7 @@
 </body>
 
 <script>
-    var sitebaseurlcontact = "<?php echo "http://192.168.1.2/shanielfashions/index.php/Pages/contactustest"; ?>";
+    var sitebaseurlcontact = "<?php echo site_url("Pages/contactustest"); ?>";
 </script>
 
 <!--Libs-->
