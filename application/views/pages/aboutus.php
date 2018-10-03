@@ -44,7 +44,7 @@ $this->load->view('layout/header');
         <div class="row">
             <section class="col-lg-6 col-md-6 t_align_l m_sm_bottom_30">
                 <h3 class="color_dark t_align_c m_bottom_15 fw_light heading_5">Testimonials</h3>
-                <p class="m_bottom_35 t_align_c heading_6">Quisque diam lorem, interdum vitae, dapibus ac, scelerisque vitae. </p>
+
                 <div class="owl-carousel" data-nav="t_nav_" data-plugin-options='{"autoPlay":true,"autoHeight":true,"transitionStyle": "backSlide"}'>
                     <!--item-->
 
@@ -115,6 +115,7 @@ $this->load->view('layout/header');
             <div class="col-lg-6 col-md-6 col-sm-6 m_bottom_20 m_sm_bottom_30">
                 <h5 class="color_dark fw_light m_bottom_15">Join Us on Facebook</h5>
                 <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fnewcenturytailor&amp;width=500&amp;height=500&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=438889712801266" style="border:none; overflow:hidden; width:100%; height:258px;"></iframe>
+                <div style="clear: both"></div>
             </div>
 
         </div>
