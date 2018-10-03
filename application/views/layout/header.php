@@ -130,7 +130,7 @@
         array(
             "title" => "Contact Us",
             "submenu" => "no",
-            "link" => site_url('Pages/contactus'),
+            "link" => site_url('Shop/contactus'),
         ),
     ];
     ?>
@@ -353,7 +353,7 @@
 
                                                             <li class="row">
                                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-4">
-                                                                    <button class="button_type_5 tr_all color_blue transparent fs_medium r_corners" name="signIn" type="submit" value="signIn">Login</button>
+                                                                    <button class="button_type_1 d_block d_block color_pink  color_pink_hover  r_corners tr_all fs_medium" name="signIn" type="submit" value="signIn"><i class="icon-login d_inline_b m_right_5"></i> Login</button>
                                                                 </div>
                                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-8 t_align_r lh_medium">
                                                                     <a href="#" class="color_scheme color_purple_hover fs_small">Forgot your password?</a><br>
@@ -364,7 +364,7 @@
                                                     <div class="bg_light_2 im_half_container sc_footer">
                                                         <h5 class="fw_light color_dark d_inline_m half_column">New Customer?</h5>
                                                         <div class="half_column t_align_r d_inline_m">
-                                                            <a href="#" class="button_type_5 t_xs_align_c d_inline_b tr_all r_corners color_purple transparent fs_medium">Create an Account</a>
+                                                            <a href="#" class="button_type_1 d_block d_block color_pink hovertext color_pink_hover f_right r_corners tr_all fs_medium"><i class="icon-edit d_inline_b m_right_5"></i>  Registration</a>
                                                         </div>
                                                     </div>
                                                     <?php
@@ -377,7 +377,7 @@
                                             </div>
                                         </div>
                                         <form role="search" class="relative type_2 f_left type_3 f_xs_none t_xs_align_l m_xs_bottom_15">
-                                            <input type="text" placeholder="Search" class="r_corners fw_light bg_light w_full">
+                                            <input type="text" placeholder="Search" class="r_corners fw_light bg_light w_full" style=" border: 1px solid #000000;">
                                             <button class="color_grey_light color_purple_hover tr_all">
                                                 <i class="icon-search"></i>
                                             </button>

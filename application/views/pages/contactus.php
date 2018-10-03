@@ -1,8 +1,7 @@
 <?php
 $this->load->view('layout/header');
 ?>
-
-<iframe class="w_full" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14765.77225006395!2d114.1726538!3d22.2990774!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x86434735e1a12048!2sShaniel+Custom+Tailors!5e0!3m2!1sen!2sin!4v1536712236300" width="600" height="250" frameborder="0" style="border:0" allowfullscreen></iframe><hr class="divider_type_1">
+<iframe class="w_full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.851052308715!2d114.15464130697005!3d22.28363136466797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400635c95e9d7%3A0xdb28bd0a01d76a2c!2zTmV3IENlbnR1cnkgVGFpbG9yIENvIOaWsOS4lue0gOa0i-acjeWFrOWPuA!5e0!3m2!1sen!2sin!4v1538525504584" width="600" height="250" frameborder="0" style="border:0" allowfullscreen></iframe><hr class="divider_type_1">
 
 
 <!--content-->
@@ -13,32 +12,32 @@ $this->load->view('layout/header');
                 <h3 class="color_dark fw_light m_bottom_15 heading_1 t_align_c">Contact Information</h3>
                 <p class="m_bottom_35 heading_2 t_align_c">You can get in touch with our team
                 </p>		
-                <p class="fw_light m_bottom_23">Mr.Shaniel is the owner of Shaniel Fashions Ltd. “We provide the modern gentleman with high quality menswear that fits your body perfectly. All of our products are hand tailored and delivered to any part of the world within 3 weeks.”</p>
+                <p class="fw_light m_bottom_23">New Century Tailor Co 新世紀洋服公司 - Best high end tailoring shop in Hong Kong. We provide the highest craftsmanship to our valuable customers with reasonable price.</p>
                 <div class="row">
                     <ul class="col-lg-6 col-md-6 col-sm-6 fw_light w_break m_bottom_45 m_xs_bottom_30">
                         <li class="m_bottom_8">
                             <div class="d_inline_m icon_wrap_size_1 color_dark  circle m_right_10">
                                 <i class="icon-phone-1"></i>
                             </div>
-                            +(852) 2730 1251 <br/> <span style="    margin-left: 36px;"> +(852) 2730 1287</span>
+                            +(852) 2868 3768
 
                         </li>
-
-                        <li class="m_bottom_8 fw_light">
-                            <div class="d_inline_m  color_dark   m_right_10" style='font-size: 24px;    margin-right: 11px;'>
-                                <i class="fa fa-whatsapp"></i>
+                        <li class='fw_light m_bottom_8'>
+                            <div class="d_inline_m icon_wrap_size_1 color_dark  fw_light circle m_right_10">
+                                <i class="icon icon-print"></i>
                             </div>
-                            +(852) 9342 1970<br/>
-                            <span style='margin-left: 35px'>  +(852) 9762 5792 </span>
+                            +(852) 2868 3782
                         </li>
+
+                        
 
                         <li class="m_bottom_8">
                             <div class="d_inline_m icon_wrap_size_1 color_dark  circle m_right_10">
                                 <i class="icon-mail-alt"></i>
                             </div>
-                            <a href="mailto:shaniel@netvigator.com" class=" color_dark ">shaniel@netvigator.com</a><br/>
-                            <a href="mailto:sales@shanielfashions.com" class=" color_dark " style='margin-left: 35px'>sales@shanielfashions.com</a>
-                        </li>
+                            <a href="mailto:newcenturytailor@yahoo.com.hk" class="  ">newcenturytailor@yahoo.com.hk</a><br/>
+                                <a href="mailto:sales@newcenturytailor.com" class="  " style='margin-left:35px'>sales@newcenturytailor.com</a>
+                            </li>
 
                     </ul>
                     <ul class="col-lg-6 col-md-6 col-sm-6 m_xs_bottom_30 vr_list_type_5">
@@ -47,49 +46,21 @@ $this->load->view('layout/header');
                             <div class="f_left icon_wrap_size_1 color_dark  circle">
                                 <i class="icon-location"></i>
                             </div>
-                            B & C, G/F, <br/>Comfort Building, <br/> 86-88A Nathan Road,<br/> Tsim Sha Tsui, <br/>Kowloon, Hong Kong
-
+1/F AIE Building,<br/> 33 Connaught Road Central<br/> <span class="font_size_13"> 中環干諾道中 33號中亞洲大廈1樓 </span>
+                                <br/>Hong Kong
                         </li>
-                        <li class='fw_light'>
-                            <div class="d_inline_m icon_wrap_size_1 color_dark  fw_light circle m_right_10">
-                                <i class="icon icon-print"></i>
-                            </div>
-                            +(852) 2730 1292
-                        </li>
+                        
 
 
                     </ul>
 
                 </div>
-                <h5 class="color_dark m_bottom_10 fw_light ">Opening Hours</h5>
-                <ul class="hr_list social_icons">
-                    <!--tooltip_container class is required-->
-                    <li class="m_right_ fw_light m_bottom_10 tooltip_container">
-                    <li class="m_bottom_8 color_dark fw_light font_size_14">
-                        <ul class='row'>
-                            <div class='m_bottom_8 col-md-6'>
-                                <div class="d_inline_m icon_wrap_size_1 color_dark  circle m_right_10">
-                                    <i class="icon-clock"></i>
-                                </div>
-                                <span class='font_size_12'>Monday to Saturday</span><br/>
-                                <span style='margin-left: 35px'>09:00 AM to 09:00 PM</span>
-                            </div>
-                            <div class='m_bottom_8 col-md-6'>
-                                <div class="d_inline_m icon_wrap_size_1 color_dark  circle m_right_10">
-                                    <i class="icon-clock"></i>
-                                </div> <span class='font_size_12'>Sunday</span><br/> 
-                                <span style='margin-left: 35px'>09:00 AM to 06:00 PM</span>
-                            </div>
-                        </ul>
-
-                    </li>
-
-                    </li>
+                
 
 
 
 
-                </ul>
+               
                 <h5 class="color_dark m_bottom_20 fw_light">Stay Connected</h5>
                 <ul class="hr_list social_icons">
                     <!--tooltip_container class is required-->
