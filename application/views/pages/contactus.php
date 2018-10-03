@@ -29,15 +29,15 @@ $this->load->view('layout/header');
                             +(852) 2868 3782
                         </li>
 
-                        
+
 
                         <li class="m_bottom_8">
                             <div class="d_inline_m icon_wrap_size_1 color_dark  circle m_right_10">
                                 <i class="icon-mail-alt"></i>
                             </div>
                             <a href="mailto:newcenturytailor@yahoo.com.hk" class="  ">newcenturytailor@yahoo.com.hk</a><br/>
-                                <a href="mailto:sales@newcenturytailor.com" class="  " style='margin-left:35px'>sales@newcenturytailor.com</a>
-                            </li>
+                            <a href="mailto:sales@newcenturytailor.com" class="  " style='margin-left:35px'>sales@newcenturytailor.com</a>
+                        </li>
 
                     </ul>
                     <ul class="col-lg-6 col-md-6 col-sm-6 m_xs_bottom_30 vr_list_type_5">
@@ -46,21 +46,21 @@ $this->load->view('layout/header');
                             <div class="f_left icon_wrap_size_1 color_dark  circle">
                                 <i class="icon-location"></i>
                             </div>
-1/F AIE Building,<br/> 33 Connaught Road Central<br/> <span class="font_size_13"> 中環干諾道中 33號中亞洲大廈1樓 </span>
-                                <br/>Hong Kong
+                            1/F AIE Building,<br/> 33 Connaught Road Central<br/> <span class="font_size_13"> 中環干諾道中 33號中亞洲大廈1樓 </span>
+                            <br/>Hong Kong
                         </li>
-                        
+
 
 
                     </ul>
 
                 </div>
-                
 
 
 
 
-               
+
+
                 <h5 class="color_dark m_bottom_20 fw_light">Stay Connected</h5>
                 <ul class="hr_list social_icons">
                     <!--tooltip_container class is required-->
