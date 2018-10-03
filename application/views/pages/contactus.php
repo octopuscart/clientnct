@@ -12,7 +12,7 @@ $this->load->view('layout/header');
                 <h3 class="color_dark fw_light m_bottom_15 heading_1 t_align_c">Contact Information</h3>
                 <p class="m_bottom_35 heading_2 t_align_c">You can get in touch with our team
                 </p>		
-                <p class="fw_light m_bottom_23">New Century Tailor Co 新世紀洋服公司 - Best high end tailoring shop in Hong Kong. We provide the highest craftsmanship to our valuable customers with reasonable price.</p>
+                <p class="fw_light m_bottom_23">New Century Tailor Co. 新世紀洋服公司 - Best high end tailoring shop in Hong Kong. We provide the highest craftsmanship to our valuable customers with reasonable price.</p>
                 <div class="row">
                     <ul class="col-lg-6 col-md-6 col-sm-6 fw_light w_break m_bottom_45 m_xs_bottom_30">
                         <li class="m_bottom_8">
