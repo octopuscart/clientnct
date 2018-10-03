@@ -78,9 +78,7 @@ $this->load->view('layout/header');
                 <img src="<?php echo base_url(); ?>assets/theme/slider/2bbb.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
                                <div class="caption lfb ltb" data-x="left" data-x="700" data-y="bottom" data-hoffset="-118" data-speed="600"><img src="<?php echo base_url(); ?>assets/theme/slider/suit_trans1.png" alt=""></div>
 
-                <div class="caption sfl hide_from_mobile str" data-x="700" data-y="109" data-speed="700" data-start="1500"><h1 class="color_dark fw_medium  text_padding_10" style="font-size: 34px;">CUSTOM MADE SUITS & SHIRTS.
-                        <br>SETTING THE STANDARD.</h1></div>
-                <div class="caption sfl fw_medium hide_from_mobile str color_dark" data-x="730" data-y="244" data-speed="700" data-start="1700">Specializing in bespoke and made-to-measure <br/>apparel and alterations for men</div>
+      
                 
             </li>
             <li data-transition="fade" data-slotamount="10">
@@ -93,8 +91,30 @@ $this->load->view('layout/header');
             </li>
 
 
+            <li data-transition="fade" data-slotamount="10">
+                <img src="<?php echo base_url(); ?>assets/theme/slider/10.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
+                <div class="caption sfl hide_from_mobile str" data-x="10" data-y="109" data-speed="700" data-start="1500"><h1 class="color_black fw_light  text_padding_10" style="font-size: 34px;">CUSTOM MADE SUITS & SHIRTS.
+                        <br>SETTING THE STANDARD.</h1></div>
+                <div class="caption sfl hide_from_mobile str color_black" data-x="20" data-y="244" data-speed="700" data-start="1700">We provide the highest craftsmanship to <br/>our valuable customers with reasonable price.</div>
             
+            </li>
+            
+            
+            <li data-transition="fade" data-slotamount="10">
+                <img src="<?php echo base_url(); ?>assets/theme/slider/15.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
+                <div class="caption sfl hide_from_mobile str" data-x="left" data-y="98" data-speed="700"><h1 class="color_dark fw_light" style="font-size: 34px;">PREMIER <br/>MADE-TO-MEASURE CLOTHING</h1></div>
+                <div class="caption sfl hide_from_mobile str color_dark" data-x="left" data-y="200" data-speed="700" data-start="1200"> Best high end tailoring shop in <br/>Hong Kong.</div>
+               
+            </li>
+            
+            <li data-transition="fade" data-slotamount="10">
+                <img src="<?php echo base_url(); ?>assets/theme/slider/18.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
 
+                <div class="caption sfl hide_from_mobile str" data-x="10" data-y="109" data-speed="700" data-start="1500"><h1 class="color_dark fw_medium  text_padding_10" style="font-size: 34px;">CUSTOM MADE SUITS & SHIRTS.
+                        <br>SETTING THE STANDARD.</h1></div>
+                <div class="caption sfl fw_medium hide_from_mobile str color_dark" data-x="10" data-y="244" data-speed="700" data-start="1700">Specializing in bespoke and made-to-measure <br/>apparel and alterations for men</div>
+                
+            </li>
             
             
             
@@ -112,9 +132,9 @@ $this->load->view('layout/header');
             <li data-transition="fade" data-slotamount="10">
                 <img src="<?php echo base_url(); ?>assets/theme/slider/2bbbb.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
                 <div class="caption lfb ltb" data-x="left" data-y="bottom" data-hoffset="-118" data-speed="600"><img src="<?php echo base_url(); ?>assets/theme/slider/suit_trans1.png" alt=""></div>
-                <div class="caption sfl hide_from_mobile str" data-x="700" data-y="109" data-speed="700" data-start="1500"><h1 class="color_dark fw_medium  text_padding_10" style="font-size: 34px;">CUSTOM MADE SUITS & SHIRTS.
+                <div class="caption sfl hide_from_mobile str" data-x="700" data-y="109" data-speed="700" data-start="1500"><h1 class="color_light fw_medium  text_padding_10" style="font-size: 34px;">CUSTOM MADE SUITS & SHIRTS.
                         <br>SETTING THE STANDARD.</h1></div>
-                <div class="caption sfl hide_from_mobile fw_medium str color_dark" data-x="700" data-y="244" data-speed="700" data-start="1700">Specializing in bespoke and made-to-measure <br/>apparel and alterations for men</div>
+                <div class="caption sfl hide_from_mobile fw_medium str color_light" data-x="700" data-y="244" data-speed="700" data-start="1700">Specializing in bespoke and made-to-measure <br/>apparel and alterations for men</div>
                 
             </li>
             
@@ -128,15 +148,7 @@ $this->load->view('layout/header');
             </li>
 
 
-            <li data-transition="fade" data-slotamount="10">
-                <img src="<?php echo base_url(); ?>assets/theme/slider/10.jpg" alt="" data-bgfit="cover" data-bgposition="center center">
-                <div class="caption sfl hide_from_mobile str" data-x="10" data-y="109" data-speed="700" data-start="1500"><h1 class="color_black fw_light  text_padding_10" style="font-size: 34px;">CUSTOM MADE SUITS & SHIRTS.
-                        <br>SETTING THE STANDARD.</h1></div>
-                <div class="caption sfl hide_from_mobile str color_black" data-x="20" data-y="244" data-speed="700" data-start="1700">We provide the highest craftsmanship to <br/>our valuable customers with reasonable price.</div>
-                <div class="caption sfl hide_from_mobile str" data-x="20" data-y="339" data-speed="700" data-start="1900">
-                    <a href="#" role="button" class="tt_uppercase button_type_3 color_light r_corners fs_medium d_block tr_all" >Customize Now!</a>
-                </div>
-            </li>
+            
             
 
 
