@@ -74,7 +74,7 @@ hr {
     }
 }
 .cart-page-area .cart-page-top {
-   
+
 }
 .cart-page-area .cart-page-top table {
     margin-bottom: 0px;
@@ -445,6 +445,16 @@ element.style {
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
+    [role="search"].type_3 {
+        width: 239px;
+        float: left;
+        margin-right: 14px;
+    }
+
+    .first_logo1{
+        margin-bottom: 30px;
+    }
+
     .half_column.w_md_full {
         float: left;
         width: 50%;
@@ -487,6 +497,15 @@ element.style {
     }
 }
 @media only screen and (max-width: 479px) {
+
+.first_logo1{
+        margin-bottom: 30px;
+    }
+    [role="search"].type_3 {
+        width: 239px;
+        float: left;
+        margin-right: 14px;
+    }
     .half_column.w_md_full {
         float: left;
         width: 50%;
@@ -587,7 +606,7 @@ li a .relative:hover{
     padding: 12px 10px 12px;
     color: white;
     line-height: 15px;
-  
+
 }
 
 .btn-apply-coupon:hover, .checkout_button_next:hover  {
@@ -595,8 +614,8 @@ li a .relative:hover{
 
     color: white!important;
     text-decoration: none;
-    
-   
+
+
 }
 
 .checkout_button_next i {
@@ -604,7 +623,7 @@ li a .relative:hover{
 }
 
 .cart_top_upper{
-   background: #cd322c;
+    background: #cd322c;
     color: white;
     width: 25px;
     height: 25px;
@@ -644,9 +663,9 @@ li a .relative:hover{
 }
 
 .shoppingcart{
-/*    float: right;
-    top: 28px;
-    right: -10px;*/
+    /*    float: right;
+        top: 28px;
+        right: -10px;*/
 }
 
 a.hovertext:hover{

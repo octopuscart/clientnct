@@ -120,7 +120,7 @@
         array(
             "title" => "Blog",
             "submenu" => "no",
-            "link" => '#',
+            "link" => site_url("Shop/blog"),
         ),
         array(
             "title" => "Look Book",
