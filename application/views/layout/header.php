@@ -88,7 +88,7 @@
             "submenuitems" => [
                 array(
                     "title" => "About Us",
-                    "link" => '#',),
+                    "link" => site_url("Shop/aboutus"),),
                 array(
                     "title" => "FAQ's",
                     "link" => '#',),
