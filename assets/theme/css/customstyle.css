@@ -678,3 +678,28 @@ a.hovertext:hover{
     padding-bottom: 7px;
 }
 
+form li label {
+    width: 100%;
+}
+
+.registration_corner {
+       background: #fff;
+    padding: 20px;
+    margin: 14px;
+    border-radius: 10px;
+}
+
+.registration_corner .button_type_3:hover{
+    color:black;
+}
+
+.guestlogintext{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 41px;
+    width: 61px;
+    /* float: left; */
+    text-align: center;
+    color: red;
+}
+
