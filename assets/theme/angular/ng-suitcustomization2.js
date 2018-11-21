@@ -183,10 +183,7 @@ $timeout(function () {
 //end of shirt implemantation
 
     setTimeout(function () {
-        $('.images-slider').flexslider({
-            animation: "fade",
-            controlNav: "thumbnails"
-        });
+    
 
 
         //zoom plugin
