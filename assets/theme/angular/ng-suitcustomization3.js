@@ -285,7 +285,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $timeou
             $scope.cartFabrics = [rdata.data];
             console.log($scope.fabricCartData)
             $scope.fabricCartData['grand_total'] = $scope.fabricCartData['total_price'];
-
+ $("accordion").accordion();
             $scope.shirtimplement();
             $scope.canvasCustom.product = $scope.cartFabrics[0].product_id;
 

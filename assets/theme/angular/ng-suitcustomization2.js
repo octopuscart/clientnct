@@ -149,8 +149,8 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
             $scope.cartFabrics = [rdata.data];
             console.log($scope.fabricCartData)
             $scope.fabricCartData['grand_total'] = $scope.fabricCartData['total_price'];
-
-            $scope.shirtimplement()
+ $("accordion").accordion();
+            $scope.shirtimplement();
         }, function (r) {
         })
     }

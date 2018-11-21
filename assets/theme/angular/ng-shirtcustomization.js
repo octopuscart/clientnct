@@ -56,6 +56,10 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
                     }
                 }
             }
+            
+            
+            
+            
 
 
             setTimeout(function () {
@@ -118,7 +122,12 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
             console.log($scope.fabricCartData)
             $scope.fabricCartData['grand_total'] = $scope.fabricCartData['total_price'];
 
-            $scope.shirtimplement()
+            $scope.shirtimplement();
+            $("accordion").accordion();
+            
+            
+            
+            
         }, function (r) {
         })
     }
