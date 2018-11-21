@@ -430,7 +430,7 @@ $paymentstatus = "";
     
                                   
                                     <tr>
-                                        <td colspan="2" style="text-align: right">Total Quantity</td>
+                                        <td colspan="3" style="text-align: right">Total Quantity</td>
                                         <td style="text-align: right;width: 60px">{{<?php echo $order_data->total_quantity;?>}} </td>
                                     </tr>
 
