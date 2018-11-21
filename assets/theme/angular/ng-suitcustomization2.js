@@ -1,7 +1,7 @@
 
 
 
-App.controller('customizationShirt', function ($scope, $http, $location, $filter) {
+App.controller('customizationShirt', function ($scope, $http, $location, $filter, $timeout) {
     $scope.fabricurl = "http://api.octopuscart.com/output/";
     var currencyfilter = $filter('currency');
 

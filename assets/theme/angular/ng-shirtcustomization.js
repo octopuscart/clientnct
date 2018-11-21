@@ -1,7 +1,7 @@
 
 
 
-App.controller('customizationShirt', function ($scope, $http, $location, $filter) {
+App.controller('customizationShirt', function ($scope, $http, $location, $filter, $timeout) {
 
     var globlecart = baseurl + "customApi/cartOperationSingle/" + product_id + "/" + gcustome_id;
     $scope.product_quantity = 1;
@@ -416,7 +416,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
 
 });
 
-App.controller('customizationShirtMulti', function ($scope, $http, $location, $filter) {
+App.controller('customizationShirtMulti', function ($scope, $http, $location, $filter, $timeout) {
 
     var globlecart = baseurl + "ApiMulti/cartOperationShirt";
     $scope.product_quantity = 1;
