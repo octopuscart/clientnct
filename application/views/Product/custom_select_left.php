@@ -12,9 +12,7 @@
             <p class="selected-element-title_text">
                 {{screencustom.productobj.short_description}}
             </p>
-            <p class="selected-element-title_text_price">
-                {{screencustom.productobj.price|currency:"<?php echo globle_currency_type; ?>"}}
-            </p>
+            
         </div>
     </div>
     <div class="selected-fabric-block elementItemDesktop" style='width: 100%;    margin-bottom: 10px'>
@@ -29,9 +27,7 @@
                         <p class="selected-element-title_text">
                             {{screencustom.productobj.short_description}}
                         </p>
-                        <p class="selected-element-title_text_price">
-                            {{screencustom.productobj.price|currency:"<?php echo globle_currency_type; ?>"}}
-                        </p>
+                        
                     </div>
                 </div>
             </div>
@@ -56,7 +52,7 @@
                 <span class="icon_wrap_size_1 circle d_block show">
                     <i class="icon-plus"></i>
                 </span>
-                <div class="" style="margin: 0px;background: url(<?php echo base_url(); ?>assets/images/customization/{{selecteElements[screencustom.fabric][k.title].image}});    float: left;
+                <div class="" style="margin: 0px;background: url(<?php echo base_url(); ?>assets/images/{{selecteElements[screencustom.fabric][k.title].image}});    float: left;
                      height: 23px;
                      width: 23px;
                      background-size: cover;
@@ -79,7 +75,7 @@
                                         <div class="col-md-3 col-xs-6 custome_element_col" ng-repeat="ele in data_list[k.title]"  ng-if="ele.not_show_when.indexOf(selecteElements[screencustom.fabric][ele.checkwith].title) == (-1)">
                                             <div class="item elementItem {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'' :'noselected' }} "  ng-click='selectElement(k, ele)'>
                                                 <div >
-                                                    <div class="elementStyle customization_box_element {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/customization/{{ele.image}}')" > </div>
+                                                    <div class="elementStyle customization_box_element {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/{{ele.image}}')" > </div>
                                                     <div class='customization_title' style="    height: 22px;">
                                                         {{ele.title}} 
                                                     </div>
@@ -136,7 +132,7 @@
                                 <div class="col-md-2 col-xs-6 custome_element_col" ng-repeat="ele in data_list[k.title]" >
                                     <div class="item elementItem {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'' :'noselected' }} "  ng-click='selectElement(k, ele)'>
                                         <div >
-                                            <div class="elementStyle customization_box_element {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/customization/{{ele.image}}')" > </div>
+                                            <div class="elementStyle customization_box_element {{  ele.title == selecteElements[screencustom.fabric][k.title].title?'activestyle' :'noselected' }}" style="background:url('<?php echo base_url(); ?>assets/images/{{ele.image}}')" > </div>
                                             <div class='customization_title'>
                                                 {{ele.title}} 
                                             </div>

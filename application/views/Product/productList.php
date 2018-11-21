@@ -126,29 +126,36 @@ $image2 = "";
                                         case "1":
                                             ?>
                                             <img class="img-responsive" src="<?php echo custome_image_server; ?>/shirt/output/{{product.folder}}/shirt_model10001.png" alt="product" style="background: white;">
-                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/shirt/output/{{product.folder}}/fabricx0001.png" alt="product">
+                                              <img class="img-responsive" src="<?php echo base_url(); ?>assets/images/styleblank.png" style="background: url(<?php echo custome_image_server; ?>/shirt/output/{{product.folder}}/fabricx0001.png);    background-size: 145%;
+                                                 background-color: white;
+                                                 background-repeat: no-repeat;" alt="product">
 
                                             <?php
                                             break;
                                         case "2":
                                             ?>
                                             <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product" style="background: white;">
-                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/style_buttons.png" alt="product">
+                                            <img class="img-responsive" src="<?php echo base_url(); ?>assets/images/styleblank.png" style="background: url(<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/style_buttons.png);    background-size: 145%;
+                                                 background-color: white;
+                                                 background-repeat: no-repeat;" alt="product">
 
                                             <?php
                                             break;
                                         case "3":
                                             ?>
                                             <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/pant_style10001.png" alt="product" style="background: white;">
-                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/fabricx0001.png" alt="product">
 
+  <img class="img-responsive" src="<?php echo base_url(); ?>assets/images/styleblank.png" style="background: url(<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/fabricx0001.png);    background-size: 145%;
+                                                 background-color: white;
+                                                 background-repeat: no-repeat;" alt="product">
                                             <?php
                                             break;
                                         case "4":
                                             ?>
                                             <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product" style="background: white;">
-                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/style_buttons.png" alt="product">
-
+  <img class="img-responsive" src="<?php echo base_url(); ?>assets/images/styleblank.png" style="background: url(<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/style_buttons.png);    background-size: 145%;
+                                                 background-color: white;
+                                                 background-repeat: no-repeat;" alt="product">
                                             <?php
                                             break;
                                         default:
