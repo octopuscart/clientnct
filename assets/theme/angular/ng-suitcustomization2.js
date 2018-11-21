@@ -139,6 +139,9 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
         $scope.screencustom.style_select = shirtstyle;
     }
 
+$timeout(function () {
+        $(".accordion").accordion();
+    }, 1500)
 
     $scope.fabricCartData = {};//cart data
 
@@ -149,7 +152,10 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
             $scope.cartFabrics = [rdata.data];
             console.log($scope.fabricCartData)
             $scope.fabricCartData['grand_total'] = $scope.fabricCartData['total_price'];
- $("accordion").accordion();
+$timeout(function () {
+        $(".accordion").accordion();
+    }, 1500)
+
             $scope.shirtimplement();
         }, function (r) {
         })

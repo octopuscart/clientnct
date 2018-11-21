@@ -56,10 +56,10 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
                     }
                 }
             }
-            
-            
-            
-            
+
+
+
+
 
 
             setTimeout(function () {
@@ -110,6 +110,9 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
     }
 
 
+    $timeout(function () {
+        $(".accordion").accordion();
+    }, 1500)
 
 
     $scope.fabricCartData = {};//cart data
@@ -123,11 +126,14 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
             $scope.fabricCartData['grand_total'] = $scope.fabricCartData['total_price'];
 
             $scope.shirtimplement();
-            $("accordion").accordion();
-            
-            
-            
-            
+            $timeout(function () {
+                $(".accordion").accordion();
+            }, 1500)
+
+
+
+
+
         }, function (r) {
         })
     }
@@ -632,7 +638,7 @@ App.controller('customizationShirtMulti', function ($scope, $http, $location, $f
         $scope.screencustom.view_type = obj.viewtype;
         $scope.selecteElements[$scope.screencustom.fabric][obj.title] = element;
         $scope.selecteElements[$scope.screencustom.fabric]['summary'][obj.title] = element.title;
-       
+
         if (obj.title == 'Cuff & Sleeve') {
             $scope.selecteElements[$scope.screencustom.fabric].sleeve = element.sleeve;
             console.log(element.sleeve)
