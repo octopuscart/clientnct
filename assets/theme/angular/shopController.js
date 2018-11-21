@@ -135,7 +135,9 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
             swal({
                 title: 'Added To Cart',
                 type: 'success',
-                html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, globlecurrency) + ", Quantity: " + rdata.data.quantity + "</p>",
+                //html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, globlecurrency) + ", Quantity: " + rdata.data.quantity + "</p>",
+                html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Quantity: " + rdata.data.quantity + "</p>",
+
                 imageUrl: rdata.data.file_name,
                 imageWidth: 100,
                 timer: 1500,
