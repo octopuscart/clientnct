@@ -221,7 +221,7 @@
                
                 <tr>
                     <td colspan="3" style="text-align: right"> Total Quantity</td>
-                    <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->sub_total_price, 2, '.', ''); ?> </td>
+                    <td style="text-align: right;width: 60px"><?php echo $order_data->total_quantity; ?> </td>
                 </tr>
                 
 
