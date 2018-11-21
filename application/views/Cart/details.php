@@ -30,9 +30,7 @@ $this->load->view('layout/header');
 
                         <th colspan="2">Product Description</th>
 
-                        <th style='    width: 100px;'>Price</th>
                         <th style='    width: 140px;'>Quantity</th>
-                        <th style='    width: 100px;'>Total</th>
                         <th style='    width: 100px;'></th>
                     </tr>
                 </thead>
@@ -47,7 +45,6 @@ $this->load->view('layout/header');
                             <h6 class="m_bottom_5"><a href="#" class="color_dark tr_all">{{product.title}} - {{product.item_name}}</a></h6>
                             <p class="fw_light">{{product.attrs}}</p>
                         </td>
-                        <td data-title="Price">{{product.price|currency:" "}}</td>
                         <td data-title="Quantity" >
                             <div class="wrapper fs_medium r_corners d_inline_b quantity clearfix">
                                 <button class="f_left bg_light_3" data-count="minus" ng-click="updateCart(product, 'sub')">
@@ -60,9 +57,7 @@ $this->load->view('layout/header');
                             </div>
                         </td>
 
-                        <td data-title="Total" class="fw_ex_bold color_dark ">
-                            {{product.total_price|currency:" "}}
-                        </td>
+                     
                         <td>
                             <button class="color_grey_light_2 color_dark_hover tr_all" ng-click="removeCart(product.product_id)">
                                 <i class="icon-cancel-circled-1 fs_large"></i>
@@ -73,7 +68,7 @@ $this->load->view('layout/header');
 
 
                     <tr class="bg_light_2">
-                        <td colspan="4" class="v_align_m">
+                        <td colspan="2" class="v_align_m">
                             <div class="d_table w_full">
                                 <!--                                <div class="col-lg-9 col-md-9 col-sm-11 d_table_cell f_none d_xs_block">
                                                                     <p class="fw_light d_inline_m m_right_5 d_xs_block">Coupon Code:</p>
@@ -87,7 +82,7 @@ $this->load->view('layout/header');
                                 </div>
                             </div>
                         </td>
-                        <td colspan="2" class="fw_ex_bold color_pink v_align_m">{{globleCartData.total_price|currency:" "}}</td>
+                        <td colspan="2" class="fw_ex_bold color_pink v_align_m">{{globleCartData.total_quantity}}</td>
                     </tr>
                 </tbody>
             </table>

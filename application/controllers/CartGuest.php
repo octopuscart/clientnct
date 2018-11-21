@@ -54,7 +54,7 @@ class CartGuest extends CI_Controller {
         $data['user_details'] = $address ? $this->session->userdata('customer_inforamtion') : array();
 
 
-        $this->load->view('CartGuest/checkoutInit', $data);
+        $this->load->view('Cart/checkoutInit', $data);
     }
 
     function checkoutSize() {

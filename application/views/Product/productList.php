@@ -133,7 +133,7 @@ $image2 = "";
                                         case "2":
                                             ?>
                                             <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product" style="background: white;">
-                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/fabricx0001.png" alt="product">
+                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/style_buttons.png" alt="product">
 
                                             <?php
                                             break;
@@ -147,7 +147,7 @@ $image2 = "";
                                         case "4":
                                             ?>
                                             <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product" style="background: white;">
-                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/fabricx0001.png" alt="product">
+                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/style_buttons.png" alt="product">
 
                                             <?php
                                             break;
