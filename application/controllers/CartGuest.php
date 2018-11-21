@@ -23,9 +23,9 @@ class CartGuest extends CI_Controller {
     
     function redirectCart() {
         if ($this->checklogin) {
-            $session_cart = $this->Product_model->cartData($this->user_id);
+            $session_cart = $this->Product_model->cartDataCustome($this->user_id);
         } else {
-            $session_cart = $this->Product_model->cartData();
+            $session_cart = $this->Product_model->cartDataCustome();
         }
         if (count($session_cart['custome_items'])) {
             
@@ -67,9 +67,9 @@ class CartGuest extends CI_Controller {
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
         if ($this->checklogin) {
-            $session_cart = $this->Product_model->cartData($this->user_id);
+            $session_cart = $this->Product_model->cartDataCustome($this->user_id);
         } else {
-            $session_cart = $this->Product_model->cartData();
+            $session_cart = $this->Product_model->cartDataCustome();
         }
 
         $custome_items = $session_cart['custome_items'];
@@ -158,7 +158,7 @@ class CartGuest extends CI_Controller {
     }
 
     function checkoutPayment() {
-$this->redirectCart();
+        $this->redirectCart();
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
@@ -174,9 +174,9 @@ $this->redirectCart();
 
             if ($this->checklogin) {
 
-                $session_cart = $this->Product_model->cartData($this->user_id);
+                $session_cart = $this->Product_model->cartDataCustome($this->user_id);
             } else {
-                $session_cart = $this->Product_model->cartData();
+                $session_cart = $this->Product_model->cartDataCustome();
             }
 
             $sub_total_price = $session_cart['total_price'];

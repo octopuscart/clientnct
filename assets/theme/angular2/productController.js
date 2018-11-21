@@ -8,10 +8,8 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
     $scope.init = 0;
     $scope.checkproduct = 0;
     $scope.pricerange = {'min': 0, 'max': 0};
-    $scope.productProcess = {'state': 1};
 
     $scope.getProducts = function (attrs) {
-        $scope.productProcess.state = 1;
         var argsk = [];
         for (i in $scope.attribute_checked) {
             var at = $scope.attribute_checked[i];
@@ -41,7 +39,6 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
 
 
 
-
         var url = baseurl + "Api/productListApi/" + category_id + "";
 
         if (stargs) {
@@ -51,77 +48,39 @@ App.controller('ProductController', function ($scope, $http, $timeout, $interval
         $http.get(url).then(function (result) {
             if ($scope.productResults.products) {
                 $scope.productResults.products = result.data.products;
+                  lazyload();
             }
             else {
                 $scope.productResults = result.data;
                 if ($scope.productResults.products.length) {
                     $scope.checkproduct = 1;
                 }
-                else {
-//                    $scope.productProcess.state = 2;
-                }
             }
 
-            if ($scope.productResults.products.length) {
-                $scope.productProcess.state = 2;
-            }
-            else {
-                $scope.productProcess.state = 0;
-            }
-
-
-//            $timeout(function () {
-//                $scope.productProcess.state = 2;
-//            }, 2000)
 
             $timeout(function () {
 
-                $('#paging_container1').pajinate({
-                    items_per_page: 12,
-                    num_page_links_to_display: 5,
-                });
-
-
-                $(".page_link").click(function () {
-                    $("html, body").animate({scrollTop: 0}, "slow")
-                })
-
-
-
-                //  Price Filter ( noUiSlider Plugin)
-                $("#price-range").noUiSlider({
-                    range: {
-                        'min': [Number($scope.productResults.price.minprice)],
-                        'max': [Number($scope.productResults.price.maxprice)]
-                    },
-                    start: [Number($scope.productResults.price.minprice), Number($scope.productResults.price.maxprice)],
-                    connect: true,
-                    serialization: {
-                        lower: [
-                            $.Link({
-                                target: $("#price-min")
-                            })
-                        ],
-                        upper: [
-                            $.Link({
-                                target: $("#price-max")
-                            })
-                        ],
-                        format: {
-                            // Set formatting
-                            decimals: 2,
-                            prefix: '$'
+                if ($("#slider-range").length) {
+                    $("#slider-range").slider({
+                        range: true,
+                        min: Number($scope.productResults.price.minprice),
+                        max: Number($scope.productResults.price.maxprice),
+                        values: [Number($scope.productResults.price.minprice), Number($scope.productResults.price.maxprice)],
+                        slide: function (event, ui) {
+                            $("#amount").val("$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ]);
                         }
-                    }
-                })
+                    });
+                    $("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
 
-                
-                $("#amount").val("$" + $("#price-range").slider("values", 0) + " - $" + $("#price-range").slider("values", 1));
+
+                }
+
+
+
             }, 1000)
 
             $scope.init = 1;
         }, function () {
-            $scope.productProcess.state = 0;
         });
     }
 

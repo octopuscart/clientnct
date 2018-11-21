@@ -2,7 +2,12 @@
  Shop Cart product controllers
  */
 App.controller('ShopController', function ($scope, $http, $timeout, $interval, $filter) {
-
+    
+    $timeout(function(){
+        lazyload();
+    }, 1500)
+    
+     lazyload();
 
     var searchProducts = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('title'),
@@ -59,101 +64,27 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
 //        });
     });
     //searchdata 
-    //cart general
-    $scope.gcheckcart = {'status': 1};
+
     var globlecart = baseurl + "Api/cartOperation";
     $scope.product_quantity = 1;
     var currencyfilter = $filter('currency');
     $scope.globleCartData = {'total_quantity': 0}; //cart data
+
     //get cart data
     $scope.getCartData = function () {
-        $scope.gcheckcart.status = 1;
         $http.get(globlecart).then(function (rdata) {
-            $scope.gcheckcart.status = 2;
             $scope.globleCartData = rdata.data;
             $scope.globleCartData['grand_total'] = $scope.globleCartData['total_price'];
-            
-            if($scope.globleCartData.total_quantity==0){
-                $scope.gcheckcart.status = 0;
-            }
-            
             $(".cartquantity").text($scope.globleCartData.total_quantity);
         }, function (r) {
-            $scope.gcheckcart.status = 0;
         })
     }
     $scope.getCartData();
-    //general cart
-    
-    
-        //cart non custome
-    $scope.gcheckcartnc = {'status': 1};
-    var globlecartnc = baseurl + "Api/cartOperationNoCustom";
-    $scope.product_quantitync = 1;
-    var currencyfilter = $filter('currency');
-    $scope.globleCartDatanc = {'total_quantity': 0}; //cart data
-    //get cart data
-    $scope.getCartDatanc = function () {
-        $scope.gcheckcartnc.status = 1;
-        $http.get(globlecartnc).then(function (rdata) {
-            $scope.gcheckcartnc.status = 2;
-            $scope.globleCartDatanc = rdata.data;
-            $scope.globleCartDatanc['grand_total'] = $scope.globleCartDatanc['total_price'];
-            
-            
-            
-            if($scope.globleCartDatanc.total_quantity==0){
-                $scope.gcheckcartnc.status = 0;
-            }
-            
-            
-        }, function (r) {
-            $scope.gcheckcartnc.status = 0;
-        })
-    }
-    $scope.getCartDatanc();
-    //general non custome
-    
-    
-          //cart  custome
-    $scope.gcheckcartc = {'status': 1};
-    var globlecartc = baseurl + "Api/cartOperationCustom";
-    $scope.product_quantitync = 1;
-    var currencyfilter = $filter('currency');
-    $scope.globleCartDatac = {'total_quantity': 0}; //cart data
-    //get cart data
-    $scope.getCartDatac = function () {
-        $scope.gcheckcartc.status = 1;
-        $http.get(globlecartc).then(function (rdata) {
-            $scope.gcheckcartc.status = 2;
-            $scope.globleCartDatac = rdata.data;
-            $scope.globleCartDatac['grand_total'] = $scope.globleCartDatac['total_price'];
-            
-            if($scope.globleCartDatanc.total_quantity==0){
-                $scope.gcheckcartc.status = 0;
-            }
-            
-         
-        }, function (r) {
-            $scope.gcheckcartc.status = 0;
-        })
-    }
-    $scope.getCartDatac();
-    //general  custome
-    
-    
-    
-    
-    
-    
-    
     //remove cart data
     $scope.removeCart = function (product_id) {
-         $http.get(globlecart+"Delete" + "/" + product_id).then(function (rdata) {
-            
+        $http.delete(globlecart + "/" + product_id).then(function (rdata) {
+            console.log("asdfsadf");
             $scope.getCartData();
-            $scope.getCartDatac();
-            $scope.getCartDatanc();
         }, function (r) {
         })
     }
@@ -175,10 +106,8 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
             }
         }
         console.log(productobj.quantity)
-         $http.get(globlecart+"Put"  + "/" + productobj.product_id + "/" + productobj.quantity).then(function (rdata) {
+        $http.put(globlecart + "/" + productobj.product_id + "/" + productobj.quantity).then(function (rdata) {
             $scope.getCartData();
-            $scope.getCartDatac();
-            $scope.getCartDatanc();
         }, function (r) {
         })
     }
@@ -203,16 +132,12 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
         $http.post(globlecart, form).then(function (rdata) {
             swal.close();
             $scope.getCartData();
-            $scope.getCartDatac();
-            $scope.getCartDatanc();
-            //custome model
-           
-            //
-            
             swal({
                 title: 'Added To Cart',
                 type: 'success',
-                html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, globlecurrency) + ", Quantity: " + rdata.data.quantity + "</p>",
+                //html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, globlecurrency) + ", Quantity: " + rdata.data.quantity + "</p>",
+                html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Quantity: " + rdata.data.quantity + "</p>",
+
                 imageUrl: rdata.data.file_name,
                 imageWidth: 100,
                 timer: 1500,
@@ -223,11 +148,9 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
 
             }).then(
                     function () {
-                        
                     },
                     function (dismiss) {
                         if (dismiss === 'timer') {
-                             $("#productcustome").modal("show");
                         }
                     }
             )
@@ -311,7 +234,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
     }, function (e) {
     })
 
-    $scope.projectDetailsModel = {'productobj': {}, 'quantity': 1, "link":""};
+    $scope.projectDetailsModel = {'productobj': {}, 'quantity': 1, "link": ""};
     //get product detail model
     $scope.viewShortDetails = function (detailobj, link) {
         $scope.projectDetailsModel.productobj = detailobj;
@@ -340,11 +263,8 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
         customhtmlarray = customhtmlarray.join("");
         var customdiv = "<div class='custome_summary_popup'><table>" + customhtmlarray + "</table></div>";
         swal({
-            title: product.title+" - "+product.item_name,
+            title: product.title + " - " + product.item_name,
             html: customdiv,
-             imageUrl: product.file_name,
-             imageWidth: 100,
-               confirmButtonClass: 'btn btn-default',
         })
     }
 
