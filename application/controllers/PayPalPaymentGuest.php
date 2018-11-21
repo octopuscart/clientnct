@@ -11,14 +11,17 @@ class PayPalPaymentGuest extends CI_Controller {
         $this->load->model('User_model');
         $this->checklogin = $this->session->userdata('logged_in');
         $this->user_id = $this->session->userdata('logged_in')['login_id'];
+        $query = $this->db->get('configuration_site');
+        $siteconfiguration = $query->row();
+        
     }
 
     public function process() {
         $PayPalMode = ''; // sandbox or live
-        $PayPalApiUsername = 'octopuscartltd_api1.gmail.com'; //PayPal API Username
-        $PayPalApiPassword = '66ZLFS5QP6WHV58H'; //Paypal API password
-        $PayPalApiSignature = 'AFcWxV21C7fd0v3bYYYRCpSSRl31AtRlYclVHieqMP.mCqq5eNqN-DpU'; //Paypal API Signature
-        $PayPalCurrencyCode = 'USD'; //Paypal Currency Code
+        $PayPalApiUsername = paypal_api_username; //PayPal API Username
+        $PayPalApiPassword = paypal_api_password; //Paypal API password
+        $PayPalApiSignature = paypal_api_signature; //Paypal API Signature
+        $PayPalCurrencyCode = paypal_api_currency_code; //Paypal Currency Code
         $data = [];
         if ($this->checklogin) {
             $session_cart = $this->Product_model->cartData($this->user_id);
@@ -92,15 +95,15 @@ class PayPalPaymentGuest extends CI_Controller {
             $data["error"] = '<div style="color:red"><b>Error : </b>' . urldecode($httpParsedResponseAr["L_LONGMESSAGE0"]) . '</div>';
             $this->load->view('paypal/error', $data);
         }
-        $this->load->view('paypal/process', $data);
+       // $this->load->view('paypal/process', $data);
     }
 
     public function success() {
         $PayPalMode = ''; // sandbox or live
-        $PayPalApiUsername = 'octopuscartltd_api1.gmail.com'; //PayPal API Username
-        $PayPalApiPassword = '66ZLFS5QP6WHV58H'; //Paypal API password
-        $PayPalApiSignature = 'AFcWxV21C7fd0v3bYYYRCpSSRl31AtRlYclVHieqMP.mCqq5eNqN-DpU'; //Paypal API Signature
-        $PayPalCurrencyCode = 'USD'; //Paypal Currency Code
+        $PayPalApiUsername = paypal_api_username; //PayPal API Username
+        $PayPalApiPassword = paypal_api_password; //Paypal API password
+        $PayPalApiSignature = paypal_api_signature; //Paypal API Signature
+        $PayPalCurrencyCode = paypal_api_currency_code; //Paypal Currency Code
         $data = [];
         //Paypal redirects back to this page using ReturnURL, We should receive TOKEN and Payer ID
         if ($this->input->get("token") && $this->input->get("PayerID")) {

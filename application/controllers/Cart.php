@@ -20,15 +20,41 @@ class Cart extends CI_Controller {
         $this->user_id = $this->session->userdata('logged_in')['login_id'];
     }
 
+    function redirectCart() {
+        if ($this->checklogin) {
+            $session_cart = $this->Product_model->cartDataCustome($this->user_id);
+        } else {
+            $session_cart = $this->Product_model->cartDataCustome();
+        }
+        if (count($session_cart['custome_items'])) {
+            
+        } else {
+            redirect('Cart/details');
+        }
+    }
+
     public function index() {
+        $this->redirectCart();
         redirect('Cart/details');
     }
 
     function details() {
+
         $this->load->view('Cart/details');
     }
 
+    function detailsc() {
+        redirect('Cart/details');
+        $this->load->view('Cart/details');
+    }
+
+    function detailsmulti() {
+
+        $this->load->view('Cart/details_multiple');
+    }
+
     function checkoutInit() {
+        $this->redirectCart();
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
@@ -43,38 +69,32 @@ class Cart extends CI_Controller {
     }
 
     function checkoutSize() {
+        $this->redirectCart();
+
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
-    
-        
-        
         if ($this->checklogin) {
-            $session_cart = $this->Product_model->cartData($this->user_id);
-             $user_details = $this->User_model->user_details($this->user_id);
+            $session_cart = $this->Product_model->cartDataCustome($this->user_id);
+            $user_details = $this->User_model->user_details($this->user_id);
             $data['user_details'] = $user_details;
 
             $user_address_details = $this->User_model->user_address_details($this->user_id);
             $data['user_address_details'] = $user_address_details;
-
-            $user_credits = $this->User_model->user_credits($this->user_id);
-            $data['user_credits'] = $user_credits;
         } else {
-            $session_cart = $this->Product_model->cartData();
+            $session_cart = $this->Product_model->cartDataCustome();
         }
 
         $custome_items = $session_cart['custome_items'];
-        if(count($custome_items)){
-            
-        }
-        else{
-            redirect('Cart/checkoutInit');
-        }
 
         $this->db->select("group_concat(measurements) as measurement");
         $this->db->where_in('id', $custome_items);
         $query = $this->db->get('custome_items');
         $custome_measurements = $query->row();
+        $data['customitems'] = $custome_measurements;
+
+        $data['custome_items'] = $custome_items;
+
 
         $measurementarray = explode(",", $custome_measurements->measurement);
 
@@ -105,7 +125,7 @@ class Cart extends CI_Controller {
     }
 
     function checkoutShipping() {
-
+        $this->redirectCart();
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
@@ -159,8 +179,12 @@ class Cart extends CI_Controller {
     }
 
     function checkoutPayment() {
+        $this->redirectCart();
         $measurement_style = $this->session->userdata('measurement_style');
         $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
+
+        $data['checkoutmode'] = '';
+
 
         $session_data = $this->session->userdata('logged_in');
         if ($session_data) {
@@ -228,7 +252,7 @@ class Cart extends CI_Controller {
 
                 $this->db->insert('user_order', $order_array);
                 $last_id = $this->db->insert_id();
-                $orderno = "BT" . date('Y/m/d') . "/" . $last_id;
+                $orderno = "RT" . date('Y/m/d') . "/" . $last_id;
                 $orderkey = md5($orderno);
                 $this->db->set('order_no', $orderno);
                 $this->db->set('order_key', $orderkey);
@@ -285,7 +309,7 @@ class Cart extends CI_Controller {
                     'order_id' => $last_id,
                     'status' => "Order Confirmed",
                     'user_id' => $this->user_id,
-                    'remark' => "Order Confirmed By Customer Using " . $paymentmathod . ", Now Waiting for payment",
+                    'remark' => "Order Confirmed By Using " . $paymentmathod . ",  Waiting For Payment",
                 );
                 $this->db->insert('user_order_status', $order_status_data);
 //                    $this->Product_model->order_to_vendor($last_id);

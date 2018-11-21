@@ -120,15 +120,50 @@ $image2 = "";
                             <div class="relative r_corners d_xs_inline_b d_mxs_block wrapper m_bottom_23">
                                 <!--images container-->
                                 <div class="fp_images relative">
-                                    <img src="<?php echo imageserver; ?>{{product.file_name1}}" alt="" class="tr_all" style="background: white">
-                                    <img src="<?php echo imageserver; ?>{{product.file_name}}" alt="" class="tr_all">
+
+                                    <?php
+                                    switch ($custom_id) {
+                                        case "1":
+                                            ?>
+                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/shirt/output/{{product.folder}}/shirt_model10001.png" alt="product" style="background: white;">
+                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/shirt/output/{{product.folder}}/fabricx0001.png" alt="product">
+
+                                            <?php
+                                            break;
+                                        case "2":
+                                            ?>
+                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product" style="background: white;">
+                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/fabricx0001.png" alt="product">
+
+                                            <?php
+                                            break;
+                                        case "3":
+                                            ?>
+                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/pant_style10001.png" alt="product" style="background: white;">
+                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/fabricx0001.png" alt="product">
+
+                                            <?php
+                                            break;
+                                        case "4":
+                                            ?>
+                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product" style="background: white;">
+                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/fabricx0001.png" alt="product">
+
+                                            <?php
+                                            break;
+                                        default:
+                                            echo $custom_item;
+                                    }
+                                    ?>
+
+
                                 </div>
 
                             </div>
                             <figcaption>
                                 <h6 class="m_bottom_8"><a href="#" class="color_dark">{{product.title}} </a></h6>
                                 <div class="im_half_container m_bottom_10">
-                                    <p class="color_dark w_sm_full d_sm_block d_xs_inline_m w_xs_half_column fw_ex_bold half_column d_inline_m t_align_c tr_all animate_fctl fp_price with_ie">{{<?php echo $item_price; ?>|currency:"<?php echo globle_currency; ?> "}}</p>	
+                                    <!--<p class="color_dark w_sm_full d_sm_block d_xs_inline_m w_xs_half_column fw_ex_bold half_column d_inline_m t_align_c tr_all animate_fctl fp_price with_ie">{{<?php echo $item_price; ?>|currency:"<?php echo globle_currency; ?> "}}</p>-->	
                                     <div class="half_column w_sm_full d_sm_block t_sm_align_c d_xs_inline_m w_xs_half_column d_inline_m t_align_r tr_all animate_fctr with_ie">
                                         <ul class="rating_list d_inline_m hr_list tr_all">
                                             <li class="relative active lh_ex_small">

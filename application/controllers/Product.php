@@ -24,12 +24,7 @@ class Product extends CI_Controller {
         $customeitem = $query->row();
 
         if ($cat_id == 0) {
-            if ($customeitem) {
-                $cat_id = $customeitem->category_id;
-            }
-            else{
-                 redirect('Product/ProductList/1/100');
-            }
+            $cat_id = $customeitem->category_id;
         }
 
         $categories = $this->Product_model->productListCategories($cat_id, $custom_id);
@@ -120,7 +115,7 @@ class Product extends CI_Controller {
     }
 
     function customizationShirt($productid, $custom_id) {
-        $productdetails = $this->Product_model->productDetails($productid, $custom_id);
+        $productdetails = $this->Product_model->productDetails($productid , $custom_id);
         $data['productdetails'] = $productdetails;
         $data["custom_item"] = "Pant";
         $data['custom_id'] = $custom_id;
@@ -134,6 +129,14 @@ class Product extends CI_Controller {
         $data['custom_id'] = $custom_id;
         $this->load->view('Product/customization_suit_v2', $data);
     }
+    
+    function customizationSuitV2($productid, $custom_id) {
+        $productdetails = $this->Product_model->productDetails($productid, $custom_id);
+        $data['productdetails'] = $productdetails;
+        $data["custom_item"] = "Suit";
+        $data['custom_id'] = $custom_id;
+        $this->load->view('Product/customization_suit_v3', $data);
+    }
 
     function customizationPant($productid, $custom_id) {
         $productdetails = $this->Product_model->productDetails($productid, $custom_id);
@@ -141,6 +144,15 @@ class Product extends CI_Controller {
         $data["custom_item"] = "Pant";
         $data['custom_id'] = $custom_id;
         $this->load->view('Product/customization_suit_v2', $data);
+    }
+    
+    
+    function customizationPantV2($productid, $custom_id) {
+        $productdetails = $this->Product_model->productDetails($productid, $custom_id);
+        $data['productdetails'] = $productdetails;
+        $data["custom_item"] = "Pant";
+        $data['custom_id'] = $custom_id;
+        $this->load->view('Product/customization_suit_v3', $data);
     }
 
     function customizationJacket($productid, $custom_id) {

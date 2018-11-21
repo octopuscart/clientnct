@@ -100,16 +100,16 @@
             "submenuitems" => [
                 array(
                     "title" => "Suits",
-                    "link" => '#',),
+                    "link" => site_url('Product/ProductList/2/0'),),
                 array(
                     "title" => "Jackets",
-                    "link" => '#',),
+                    "link" => site_url('Product/ProductList/4/0'),),
                 array(
                     "title" => "Shirts",
-                    "link" => '#',),
+                    "link" => site_url('Product/ProductList/1/0'),),
                 array(
                     "title" => "Pants",
-                    "link" => '#',)
+                    "link" => site_url('Product/ProductList/3/0'),)
             ]
         ),
         array(
@@ -122,11 +122,7 @@
             "submenu" => "no",
             "link" => site_url("Shop/blog"),
         ),
-        array(
-            "title" => "Look Book",
-            "submenu" => "no",
-            "link" => '#',
-        ),
+      
         array(
             "title" => "Contact Us",
             "submenu" => "no",

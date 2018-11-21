@@ -101,52 +101,42 @@ $this->load->view('layout/header');
                 <h3 class="color_dark fw_light m_bottom_15 heading_1 t_align_c">Contact Form</h3>
                 <p class="m_bottom_35 heading_2 t_align_c">For any further queries
                 </p>	
-                <?php
-                if ($checksent == 1) {
-                    ?>
-                    <div class="alert_box success r_corners relative fs_medium m_bottom_10">
-                        <b>Well done!</b> Mail Sent!!!
-                        <i class="icon-cancel close_alert_box tr_all translucent circle t_align_c"></i>
-                    </div>
-                    <script>
-                        setTimeout(function () {
-                            window.location = "<?php echo site_url('Pages/contactus') ?>";
-                        }, 2000)
-                    </script>
-                    <?php
-                }
-                ?>
-                <?php
-                if ($checksent == 2) {
-                    ?>
-                    <div class="alert_box error r_corners relative fs_medium">
-                        <b>Connection Error!</b> Unable to sent mail.
-                        <i class="icon-cancel close_alert_box tr_all translucent circle t_align_c"></i>
-                    </div><?php
-                }
-                ?>
+               
                 <form method="post" action="#">
                     <ul>
                         <li class="row m_bottom_10">
                             <div class="col-lg-6 col-md-6 col-sm-6 w_xs_full m_xs_bottom_10">
-                                <input type="text" name="cf_name" placeholder="Name*" class="w_full r_corners fw_light">
+                                <input type="text" name="last_name" placeholder="Last Name*" class="w_full r_corners fw_light" required="">
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 w_xs_full">
-                                <input type="email" name="cf_email" placeholder="Email*" class="w_full r_corners fw_light">
+                            <div class="col-lg-6 col-md-6 col-sm-6 w_xs_full m_xs_bottom_10" >
+                                <input type="text" name="first_name" placeholder="First Name*" class="w_full r_corners fw_light" required="">
                             </div>
+
+                        </li>  
+                        <li class="m_bottom_10">
+                            <input type="email" name="email" placeholder="Email*" class="w_full r_corners fw_light" required="">
                         </li>
                         <li class="m_bottom_10">
-                            <input type="text" name="cf_subject" placeholder="Subject" class="w_full r_corners fw_light">
+                            <input type="tel" name="contact" placeholder="Contact No." class="w_full r_corners fw_light">
                         </li>
+                        <li class="m_bottom_10">
+                            <select name="subject" placeholder="Subject" class="form-control" style="  height: 50px;
+                                    background: #fafafa; " required="">
+                                <option>Enquiry</option>
+                                <option>Send Swatches</option>
+                                <option>Feedback</option>
+                                <option>Appointment</option>
+                                <option>Alteration</option> 
+                            </select>                        </li>
                         <li class="m_bottom_5">
-                            <textarea class="w_full r_corners fw_light height_3" name="cf_message" placeholder="Message"></textarea>
+                            <textarea class="w_full r_corners fw_light height_3" name="message" placeholder="Message"></textarea>
                         </li>
                         <li class="m_bottom_20">
                             <label for="capcha" class="d_inline_m fw_light m_right_5 w_auto">Anti-spam test: 4+4=</label>
                             <input id="capcha" type="text" name="cf_anti_spam" class="r_corners fw_light d_inline_m w_auto">
                         </li>
                         <li class="m_bottom_10">
-                            <button class="button_type_5 color_blue transparent r_corners fs_medium tr_all m_right_10 m_sm_bottom_10">Submit</button>
+                            <button type="submit" name="sendmessage" class="button_type_2  color_dark  r_corners fs_medium tr_all m_right_10 m_sm_bottom_10">Submit</button>
                         </li>
                     </ul>
                 </form>
