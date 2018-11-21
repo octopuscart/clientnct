@@ -82,7 +82,7 @@ $this->load->view('layout/header');
                                 </div>
                             </div>
                         </td>
-                        <td colspan="2" class="fw_ex_bold color_pink v_align_m">{{globleCartData.total_price|currency:" "}}</td>
+                        <td colspan="2" class="fw_ex_bold color_pink v_align_m">{{globleCartData.total_quantity}}</td>
                     </tr>
                 </tbody>
             </table>

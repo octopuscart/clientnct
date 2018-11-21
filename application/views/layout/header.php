@@ -282,10 +282,9 @@
                                                         <a href="#" class="d_block f_left m_right_10"><img src="{{product.file_name}}" alt="" style="height: 60px;width: 60px;"></a>
                                                         <div class="f_left item_description lh_ex_small">
                                                             <a href="#" class="color_dark fs_medium d_inline_b m_bottom_3">{{product.title}} - {{product.item_name}}</a>
-                                                            <p class="color_dark  fs_small">{{product.price|currency:" "}} X {{product.quantity}} </p>
                                                         </div>
                                                         <div class="f_right fs_small lh_medium d_xs_none">
-                                                            <span class="color_dark">{{product.total_price|currency:" "}}</span>
+                                                            <span class="color_dark">{{product.quantity}}</span>
                                                         </div>
                                                         <i class="icon-cancel-circled-1 color_dark _2 fs_large color_dark_hover tr_all" ng-click="removeCart(product.product_id)"></i>
                                                     </li>
@@ -293,7 +292,7 @@
                                                 </ul>
                                                 <div class="total_price bg_light_2 t_align_r fs_medium m_bottom_15">
                                                     <ul>
-                                                        <li class="color_dark"><span class="fw_ex_bold">Total:</span> <span class="fw_ex_bold d_inline_b m_left_15 price t_align_l color_pink">{{globleCartData.total_price|currency:"<?php echo globle_currency; ?> "}}</span></li>
+                                                        <li class="color_dark"><span class="fw_ex_bold">Total:</span> <span class="fw_ex_bold d_inline_b m_left_15 price t_align_l color_pink">{{globleCartData.total_quantity}}</span></li>
                                                     </ul>
                                                 </div>
                                                 <div class="clearfix border_none p_top_0 sc_footer">

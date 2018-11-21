@@ -5,7 +5,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
     $scope.fabricurl = "http://api.octopuscart.com/output/";
     var currencyfilter = $filter('currency');
 
-    var globlecart = baseurl + "customApi/cartOperationSingle/" + product_id+"/"+gcustome_id;
+    var globlecart = baseurl + "customApi/cartOperationSingle/" + product_id + "/" + gcustome_id;
     $scope.product_quantity = 1;
 
 
@@ -139,7 +139,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
         $scope.screencustom.style_select = shirtstyle;
     }
 
-$timeout(function () {
+    $timeout(function () {
         $(".accordion").accordion();
     }, 1500)
 
@@ -152,9 +152,9 @@ $timeout(function () {
             $scope.cartFabrics = [rdata.data];
             console.log($scope.fabricCartData)
             $scope.fabricCartData['grand_total'] = $scope.fabricCartData['total_price'];
-$timeout(function () {
-        $(".accordion").accordion();
-    }, 1500)
+            $timeout(function () {
+                $(".accordion").accordion();
+            }, 1500)
 
             $scope.shirtimplement();
         }, function (r) {
@@ -183,7 +183,7 @@ $timeout(function () {
 //end of shirt implemantation
 
     setTimeout(function () {
-    
+
 
 
         //zoom plugin
@@ -351,10 +351,10 @@ $timeout(function () {
         }
     }
 
-$scope.changeViews = function (viewtype) {
-       
-            $scope.screencustom.view_type = viewtype;
-        
+    $scope.changeViews = function (viewtype) {
+
+        $scope.screencustom.view_type = viewtype;
+
     }
 
     //add to cart
@@ -409,11 +409,11 @@ $scope.changeViews = function (viewtype) {
                     swal({
                         title: 'Added To Cart',
                         type: 'success',
-                        html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, globlecurrency) + ", Quantity: " + rdata.data.quantity + "</p>",
+//                        html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, globlecurrency) + ", Quantity: " + rdata.data.quantity + "</p>",
+                        html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Quantity: " + rdata.data.quantity + "</p>",
                         imageUrl: rdata.data.file_name,
                         imageWidth: 100,
                         timer: 1500,
-
                         imageAlt: 'Custom image',
                         showConfirmButton: false,
                         animation: true,
@@ -495,7 +495,7 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
     $scope.fabricurl = "http://api.octopuscart.com/output/";
     var currencyfilter = $filter('currency');
 
-    var globlecart = baseurl + "ApiMulti/cartOperationSuit/"+gcustome_id;
+    var globlecart = baseurl + "ApiMulti/cartOperationSuit/" + gcustome_id;
     $scope.product_quantity = 1;
 
 
@@ -544,8 +544,8 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
             default:
                 viewtype = "front";
         }
-        var custometype  = "";
-         switch (gcustome_id) {
+        var custometype = "";
+        switch (gcustome_id) {
             case 4:
                 custometype = "Jacket";
                 break;
@@ -554,7 +554,7 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
                 break;
             case 2:
                 custometype = "Suit";
-                break;    
+                break;
             default:
                 custometype = "Suit";
         }
@@ -577,7 +577,7 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
             $scope.parents = 'Body Fit';
             for (i in $scope.keys) {
                 var temp = $scope.data_list[$scope.keys[i].title];
-       
+
                 for (j in temp) {
                     if (temp[j]['status'] == 1) {
                         for (f in $scope.cartFabrics) {
@@ -677,7 +677,7 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
         console.log(canvas);
         var ctx = $scope.canvasCustom[canvas].getContext("2d");
         ctx.clearRect(0, 0, 600, 600);
-        
+
         for (imgi in imagelist) {
             var img = imagelist[imgi];
             $scope.images1 = customeimageserver + '/jacket/output/' + $scope.screencustom.productobj.folder + '/' + img;
@@ -877,16 +877,16 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
     function setJacketBody() {
         console.log("hello check1");
         var jacketleft = $scope.selecteElements[$scope.canvasCustom.product]['Jacket Style'].left;
-        
+
         $timeout(function () {
             $scope.setImageElementsDirect(jacketleft, 'jacketstylel');
-        }, 100) 
+        }, 100)
 
         var jacketstyleoverlay = $scope.selecteElements[$scope.canvasCustom.product]['Jacket Style'].overlay;
         $timeout(function () {
             $scope.setImageElementsOverlay(jacketstyleoverlay, 'jacketstyleoverlay');
         }, 1000)
-        
+
 
         var jacketright = $scope.selecteElements[$scope.canvasCustom.product]['Jacket Style'].right;
         $timeout(function () {
@@ -904,11 +904,11 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
 
     $scope.selectElement = function (obj, element) {
 
-         $scope.screencustom.view_type = obj.viewtype;
+        $scope.screencustom.view_type = obj.viewtype;
         $scope.selecteElements[$scope.screencustom.fabric][obj.title] = element;
         $scope.selecteElements[$scope.screencustom.fabric]['summary'][obj.title] = element.title;
-         console.log($scope.selecteElements);
-       
+        console.log($scope.selecteElements);
+
 
 
 //        $("html, body").animate({scrollTop: 0}, "slow")
@@ -949,7 +949,7 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
     }
 
     //add to cart
-  $scope.addToCartCustome = function () {
+    $scope.addToCartCustome = function () {
         var summerydata = $scope.selecteElements;
         var customarray = [];
 
