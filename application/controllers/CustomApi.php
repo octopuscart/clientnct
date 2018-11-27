@@ -181,7 +181,7 @@ class CustomApi extends REST_Controller {
                         "buttons" => "cuff_s_button10001.png",
                     ), array(
                         "status" => "0",
-                        "title" => "Single Cuff Squred",
+                        "title" => "Single Cuff Squared",
                         "elements" => [ "cuff_m_squre20001.png"],
                         "insertele" => [ "cuff_m_cutaway30001.png"],
                         "inserteleo" => [ "cuff_m_cutaway30001.png"],
@@ -229,7 +229,7 @@ class CustomApi extends REST_Controller {
                         "buttons" => "cuff_s_button20001.png",
                     ), array(
                         "status" => "0",
-                        "title" => "French Cuff Squred",
+                        "title" => "French Cuff Squared",
                         "sleeve1" => ["shirt_sleeve0001.png"],
                         "customization_category_id" => "3",
                         "elements" => [ "cuff_m_franch_squre_insert0001.png", "cuff_m_franch_squre0001.png"],
@@ -748,7 +748,7 @@ class CustomApi extends REST_Controller {
                         "show_buttons" => "true",
                     ), array(
                         "status" => "0",
-                        "title" => "Cuff 1 1/3",
+                        "title" => "Cuff 1 3/8",
                         "elements" => ["pant_cuff.png",],
                         "customization_category_id" => "4",
                         "image" => "pant_elements/pant_cuff/pant_cuff.png",
@@ -1614,7 +1614,7 @@ class CustomApi extends REST_Controller {
                         "show_buttons" => "true",
                     ), array(
                         "status" => "0",
-                        "title" => "Cuff 1 1/3",
+                        "title" => "Cuff 1 3/8",
                         "elements" => ["pant_cuff.png",],
                         "customization_category_id" => "4",
                         "image" => "pant_elements/pant_cuff/pant_cuff.png",
