@@ -40,7 +40,7 @@ code {
 .fixpos{
     position: absolute;
     left: 0;
-    height: 485px;
+        height: 600px;
 }
 
 
@@ -676,7 +676,7 @@ p.selected-element-title_text_price{
 }
 
 .customization_margin_top_2 {
-        margin-top: 80px;
+        /*margin-top: 80px;*/
 }
 
 .color_light{

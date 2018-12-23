@@ -809,7 +809,7 @@ class CustomApi extends REST_Controller {
                         "status" => "1",
                         "title" => "Slanted Pocket",
                         "customization_category_id" => "4",
-                        "elements" => ["breast_pocket_v30001.png"],
+                        "elements" => ["breast_pocket0001.png"],
                         "image" => "suit_elements/breastpocket/breast_pocket_yes.png",
                         "show_buttons" => "true",
                     ), array(
@@ -902,7 +902,9 @@ class CustomApi extends REST_Controller {
                         "status" => "1",
                         "title" => "Straight Flap Pocket",
                         "customization_category_id" => "4",
-                        "elements" => ["lower_flap_pocket0001.png", ],
+                        "elements" => ["pocket_lower_flap_right10001.png", ],
+                        "overlayin" => ["flappocketoverlayin.png", ],
+                        "overlay" => ["flappocketoverlay.png", ],
                         "image" => "suit_elements/pocket/pocket_flap.png",
                         "show_buttons" => "true",
                         "style_l"=>"   ",
@@ -912,7 +914,7 @@ class CustomApi extends REST_Controller {
                     array(
                         "status" => "0",
                         "title" => "Slanting Pipe Pocket",
-                        "elements" => ["pocket_lower_pipe_left0001.png", "pocket_lower_pipe_right0001.png"],
+                        "elements" => ["pocket_lower_pipe_left0001.png", "pocket_lower_pipe_right_slanting0001.png"],
                         "customization_category_id" => "4",
                         "image" => "suit_elements/pocket/pocket_pipe.png",
                         "show_buttons" => "true",
@@ -925,12 +927,13 @@ class CustomApi extends REST_Controller {
                         "customization_category_id" => "4",
                         "elements" => ['body_single_410001.png',],
                         "image" => "suit_elements/suittype/1_button.png",
-                        "left" => "body_single_41_l0001.png",
-                        "right" => "body_single_41_r0001.png",
+                        "left" => "body_single_41_r0001.png",
+                        "right" => "body_single_41_lv20001.png",
                         "buttons" => ["buttons_10001"],
                         "button_hole" => ["button_1_hole10001.png"],
                         "show_buttons" => "true",
-                        "overlay" => ["single_overlay2.png","single_overlay.png"],
+                        "overlay" => ["singleoverlay2.png","singleoverlay.png", "singlebottomoverlay.png", "singlebottomoverlay2.png.png"],
+                        "overlayinner"=>["singleoverlayinner.png"]
                     ), array(
                         "status" => "0",
                         "title" => "2 Buttons",
@@ -938,12 +941,13 @@ class CustomApi extends REST_Controller {
                           "elements" => ['body_single_410001.png',],
                         "image" => "suit_elements/suittype/2_button.png",
                         "left" => "body_single_41_r0001.png",
-                        "right" => "body_single_41_l0001.png",
+                        "right" => "body_single_41_lv20001.png",
                         "buttons" => ["buttons_10001"],
                         "buttons2" => ["buttons_20001"],
                         "button_hole" => ["button_1_hole10001.png", "button_1_hole20001.png"],
                         "show_buttons" => "false",
-                        "overlay" => ["single_overlay2.png","single_overlay.png"],
+                        "overlay" => ["singleoverlay2.png","singleoverlay.png"],
+                         "overlayinner"=>["singleoverlayinner.png"]
                     )
                     , array(
                         "status" => "0",
@@ -982,14 +986,16 @@ class CustomApi extends REST_Controller {
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
-                                    "laple_notch_v20001.png"
+                                "laple_notch_v2_l0001.png",
+                                    "laple_notch_v210001.png"
                                 ],
                                 "stitcing" => ['laple_notch_stitching1.png'],
                                 "hole" => ["laple_double_notch_button_hole0001.png"],
                                 "overelay" => []),
                             "2 Buttons" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
-                                    "laple_notch_v20001.png"
+                                "laple_notch_v2_l0001.png",
+                                    "laple_notch_v210001.png"
                                 ],
                                 "stitcing" => ['laple_notch_stitching1.png'],
                                 "hole" => ["laple_double_notch_button_hole0001.png"],
@@ -1286,7 +1292,8 @@ class CustomApi extends REST_Controller {
                         "status" => "1",
                         "title" => "Straight Flap Pocket",
                         "customization_category_id" => "4",
-                        "elements" => ["lower_flap_pocket0001.png", ],
+                        "elements" => ["pocket_lower_flap_right10001.png", ],
+                        "overlayin" => ["flappocketoverlayin.png", ],
                         "image" => "suit_elements/pocket/pocket_flap.png",
                         "show_buttons" => "true",
                         "style_l"=>"   ",
@@ -1296,7 +1303,7 @@ class CustomApi extends REST_Controller {
                     array(
                         "status" => "0",
                         "title" => "Slanting Pipe Pocket",
-                        "elements" => ["pocket_lower_pipe_left0001.png", "pocket_lower_pipe_right0001.png"],
+                        "elements" => ["pocket_lower_pipe_left0001.png", "pocket_lower_pipe_right_slanting0001.png"],
                         "customization_category_id" => "4",
                         "image" => "suit_elements/pocket/pocket_pipe.png",
                         "show_buttons" => "true",
@@ -1309,12 +1316,12 @@ class CustomApi extends REST_Controller {
                         "customization_category_id" => "4",
                         "elements" => ['body_single_410001.png',],
                         "image" => "suit_elements/suittype/1_button.png",
-                        "left" => "body_single_41_l0001.png",
+                        "left" => "body_single_41_lv20001.png",
                         "right" => "body_single_41_r0001.png",
                         "buttons" => ["buttons_10001"],
                         "button_hole" => ["button_1_hole10001.png"],
                         "show_buttons" => "true",
-                        "overlay" => ["single_overlay2.png","single_overlay.png"],
+                        "overlay" => ["singleoverlay2.png","singleoverlay.png"],
                     ), array(
                         "status" => "0",
                         "title" => "2 Buttons",
@@ -1322,12 +1329,12 @@ class CustomApi extends REST_Controller {
                           "elements" => ['body_single_410001.png',],
                         "image" => "suit_elements/suittype/2_button.png",
                         "left" => "body_single_41_r0001.png",
-                        "right" => "body_single_41_l0001.png",
+                        "right" => "body_single_41_lv20001.png",
                         "buttons" => ["buttons_10001"],
                         "buttons2" => ["buttons_20001"],
                         "button_hole" => ["button_1_hole10001.png", "button_1_hole20001.png"],
                         "show_buttons" => "false",
-                        "overlay" => ["single_overlay2.png","single_overlay.png"],
+                        "overlay" => ["singleoverlay2.png","singleoverlay.png"],
                     )
                     , array(
                         "status" => "0",
