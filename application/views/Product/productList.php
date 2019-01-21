@@ -16,7 +16,7 @@ $image1 = "";
 $image2 = "";
 ?>
 
-
+<div ng-controller="ProductController">
 <section class="page_title_1 bg_light_2 t_align_c relative wrapper" style="margin-top: 0px;">
     <div class="container">
         <h3 class="color_dark fw_light m_bottom_5"><?php
@@ -30,7 +30,7 @@ $image2 = "";
             ?>
         </ul>
 
-        <button class="btn btn-danger btn-small pull-right color_dark" style="  right: 100px;
+        <button class="btn btn-danger btn-small pull-right color_dark"  ng-click="changeDesingStyle('Shop Stored')" style="  right: 100px;
                 top: 17px;
                 position: absolute;
                 background: black;
@@ -45,7 +45,7 @@ $image2 = "";
 
 
 <!-- Shop Page Area Start Here -->
-<div class="shop-page-area" ng-controller="ProductController">
+<div class="shop-page-area" >
     <div class="container">
         <div class="row"  ng-if="productResults.products.length">
 
@@ -221,9 +221,9 @@ $image2 = "";
 
                                     </div>
                                     <div class="half_column w_md_full animate_fctr tr_all f_left clearfix with_ie f_md_none">
-                                        <a href="#" class="button_type_6 m_left_5 relative tooltip_container f_right f_md_none d_md_inline_b d_block color_dark r_corners vc_child tr_all color_purple_hover t_align_c m_right_5 m_md_right_0" ><i class="icon-heart d_inline_m fs_large"></i>
+                                        <button type="button" class="button_type_6 m_left_5 relative tooltip_container f_right f_md_none d_md_inline_b d_block color_dark r_corners vc_child tr_all color_purple_hover t_align_c m_right_5 m_md_right_0" >Ask Price
 
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                             </figcaption>
@@ -340,13 +340,7 @@ $image2 = "";
                         <div ng-switch-when="New Design">
                             <div class="alert_box info r_corners relative fs_medium" >
                                 Are you expecting the same design on your now recently picked?
-                                <div class="btn-group pull-right" role="group" aria-label="..." style="    margin-top: -6px;
-                                     float: right;
-                                     margin-right: -46px;">
-                                    <a href="<?php echo site_url("Customization/applyLastCustom/" . $citem_id); ?>" class="btn btn-default" ng-click="changeDesingStyle('Shop Stored')">Yes</a>
-                                    <button type="button" class="btn btn-default" ng-click="changeDesingStyle('Customize Now')">No</button>
-                                    <button type="button" class="btn btn-default" ng-click="changeDesingStyle('Shop Stored')"><i class="fa fa-times d_inline_m fs_large"></i></button>
-                                </div>
+
                             </div>
                             <?php
                             if (isset($session_last_custom[$citem_id])) {
@@ -356,6 +350,17 @@ $image2 = "";
                                     <div class="col-md-2"></div>
                                     <div class="col-md-8">
                                         <table class="table">
+                                            <tr>
+                                                <td colspan="2">
+                                                    <center>
+                                                    <div class="btn-group " role="group" aria-label="..." style="  ">
+                                                        <a href="<?php echo site_url("Customization/applyLastCustom/" . $citem_id); ?>" class="btn btn-default" ng-click="changeDesingStyle('Shop Stored')">Yes</a>
+                                                        <button type="button" class="btn btn-default" ng-click="changeDesingStyle('Customize Now')">No</button>
+                                                        <button type="button" class="btn btn-default" ng-click="changeDesingStyle('Shop Stored')"><i class="fa fa-times d_inline_m fs_large"></i></button>
+                                                    </div>
+                                                    </center>
+                                                </td>
+                                            </tr>
                                             <?php
                                             foreach ($custompredict as $key => $value) {
                                                 ?>
@@ -374,9 +379,15 @@ $image2 = "";
                                                 <?php
                                             }
                                             ?>
+
                                         </table>
                                     </div>
                                     <div class="col-md-2"></div>
+                                    <div class="col-md-12">
+
+
+
+                                    </div>
                                 </div>
 
                                 <?php
@@ -422,7 +433,7 @@ $image2 = "";
 </div>
 <!-- Shop Page Area End Here -->
 
-
+</div>
 
 <script>
     var category_id = <?php echo $category; ?>;

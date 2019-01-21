@@ -67,15 +67,29 @@ switch ($citem_id) {
                         </thead>
                         <tbody>
                             <tr class="tr_delay" ng-repeat="product in globleCartDatanc.products" ng-if="product.item_id == '<?php echo $citem_id; ?>'">
+
                                 <td data-title="Product Image" style='    width: 100px;'>
                                     <a href="#" class="r_corners d_inline_b wrapper">
                                         <img src="{{product.file_name}}" alt="" style='height: 80px'>
                                     </a>
                                 </td>
                                 <td data-title="Description">
-                                    <h6 class="m_bottom_5"><a href="#" class="color_dark tr_all">{{product.title}} - {{product.item_name}}</a></h6>
-                                    <button type="button" ng-click="viewStyle(product)" class="btn btn-primary btn-xs desing_view_button"  style="margin-top: 10px;">View Design</a>
+                                    <h6 class="m_bottom_5"><a href="#" class="color_dark tr_all">{{product.title}} <br/> {{product.item_name}}</a></h6>
+                                    <div ng-if="designSelection.desing_status == 'Shop Stored No'" >
+                                        Please give comments in the box.
+                                        <div class="btn-group pull-right" role="group" aria-label="..." style="    margin-top: -6px;
+                                             float: right;
+                                             margin-right: -46px;">
+                                        </div>
 
+                                        <form action="#" method="post">
+                                            <textarea class="form-control" name="comment" required=""></textarea>
+                                          <div class="btn-group" style="    margin-top: 5px;">
+                                            <button type="submit" name="submitcomment" value="submitcomment" class="btn btn-primary">Submit</button>
+                                            <button type="button" class="btn btn-default" ng-click="changeDesingStyle('Shop Stored Yes')"><i class="fa fa-times d_inline_m fs_large"></i></button>
+                                          </div>
+                                        </form>
+                                    </div>
                                 </td>
                                 <td data-title="Quantity" >
                                     {{product.quantity}}
@@ -83,7 +97,7 @@ switch ($citem_id) {
                             </tr>
                         </tbody>
 
-                        <tfoot>
+                        <tfoot style="border-top:1px solid #000;">
                             <tr class="bg_light_2 color_dark">
 
                                 <th colspan="3">
@@ -91,12 +105,12 @@ switch ($citem_id) {
 
                             <div class="alert_box info r_corners relative fs_medium" ng-switch-when="Shop Stored Yes">
                                 <form action="#" method="post">
-                                    How would like the latest batch of your order?
+                                    Do you like the latest batch of your order for all products?
                                     <div class="btn-group pull-right" role="group" aria-label="..." style="    margin-top: -6px;
                                          float: right;
                                          margin-right: -46px;">
 
-                                        <button type="submit" value="submitonly" name="submitonly" class="btn btn-default" ng-click="changeDesingStyle('Shop Stored')">Yes</button>
+                                        <button type="submit" value="submitonly" name="submitonly" class="btn btn-default" >Yes</button>
                                         <button type="button" class="btn btn-default" ng-click="changeDesingStyle('Shop Stored No')">No</button>
                                     </div>
                                 </form>

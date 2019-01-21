@@ -120,16 +120,17 @@ $this->load->view('Cart/checkoutheader');
                                     <div class="row">
 
                                         <div class="col-lg-12 col-md-12 col-sm-12">
-                                            
-                                            <p class="fw_light m_bottom_40 m_xs_bottom_30 text-center">
-                                                Due to some particular reasons,			
-we cannot provide the unit price on the website	<br/>		
-when you have done with your selection, 		
-please just simply send the order to us,<br/>			
-we will contact you for the further details.<br/>
+ <h2 class="text-center color_red">Order Price</h2>   
+                                            <p class="fw_medium m_bottom_40 m_xs_bottom_30 text-center">
+                                           
+                                            Due to some particular reasons,			
+                                            we cannot provide the unit price on the website	<br/>		
+                                            when you have done with your selection, 		
+                                            please just simply send the order to us,<br/>			
+                                            we will contact you for the further details.<br/>
                                             </p>
-                                            
-			
+
+
 
 
                                             <table class="table table-hover">

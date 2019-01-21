@@ -76,10 +76,8 @@
                         <span class="fa-stack">
                             <i class="fa fa-money fa-stack-1x"></i>
                             <i class="ion-bag fa-stack-1x "></i>
-                        </span>  Payment Method
-                        <span class="process_block">
-                            Bank Transfer
-                        </span> 
+                        </span>  Confirm Order 
+                        
                     </h4>
                     <?php
                 }
