@@ -873,7 +873,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $product_dict = array(
                 'title' => $product_details['title'],
                 'price' => $product_details['price'] + $extra_cost,
-                'extra_price' => $extra_cost,
+               // 'extra_price' => $extra_cost,
                 'sku' => $product_details['sku'], 'folder' => $product_details['folder'],
                 'attrs' => "",
                 'vendor_id' => $product_details['user_id'],
@@ -945,7 +945,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                     'price' => ($product_details['price'] + ($extra_cost)),
                     'sku' => $product_details['sku'], 'folder' => $product_details['folder'],
                     'attrs' => "",
-                    'extra_price' => $extra_cost,
+                   // 'extra_price' => $extra_cost,
                     'vendor_id' => $product_details['user_id'],
                     'total_price' => ($product_details['price'] + ($extra_cost)),
                     'file_name' => custome_image_server . PRODUCT_PATH_PRE . $product_details['folder'] . PRODUCT_PATH_POST,
@@ -996,7 +996,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 $cid = $cartdata['products'][$product_id]['id'];
                 $this->db->set('total_price', $total_price);
                 $this->db->set('price', $mprice);
-                $this->db->set('extra_price', $extra_cost);
+               // $this->db->set('extra_price', $extra_cost);
                 $this->db->where('id', $cid); //set column_name and value in which row need to update
                 $this->db->update('cart'); //
                 $display_index = 1;
@@ -1031,7 +1031,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 $extprice = $session_cart['products'][$product_id]['price'] + $extra_cost;
                 $quantity = $session_cart['products'][$product_id]['quantity'];
                 $session_cart['products'][$product_id]['price'] = $extprice;
-                $session_cart['products'][$product_id]['extra_price'] = $extra_cost;
+                //$session_cart['products'][$product_id]['extra_price'] = $extra_cost;
                 $session_cart['products'][$product_id]['total_price'] = $extprice * $quantity;
                 $session_cart['products'][$product_id]['custom_dict'] = $custom_dict;
                 $this->session->set_userdata('session_cart', $session_cart);
@@ -1058,7 +1058,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $product_dict = array(
                 'title' => $product_details['title'],
                 'price' => $value['price'],
-                'extra_price' => isset($value['extra_price']) ? $value['extra_price'] : 0,
+                //'extra_price' => isset($value['extra_price']) ? $value['extra_price'] : 0,
                 'sku' => $product_details['sku'], 'folder' => $product_details['folder'],
                 'attrs' => "",
                 'vendor_id' => $product_details['user_id'],
@@ -1105,7 +1105,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $product_dict = array(
                 'title' => $product_details['title'],
                 'price' => $value['price'],
-                'extra_price' => isset($value['extra_price']) ? $value['extra_price'] : 0,
+                //'extra_price' => isset($value['extra_price']) ? $value['extra_price'] : 0,
                 'sku' => $product_details['sku'], 'folder' => $product_details['folder'],
                 'attrs' => "",
                 'vendor_id' => $product_details['user_id'],

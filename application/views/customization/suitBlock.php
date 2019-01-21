@@ -11,7 +11,6 @@
     <div class="fontview_custom customization_block animated zoom "  ng-if="screencustom.view_type == 'front'" >
         <img src="<?php echo custome_image_server; ?>/jacket/output/1084/shirt0001.png" class="fixpos animated" style="    margin-left: 10px;margin-top: -2px;">
         <img src="<?php echo custome_image_server; ?>/jacket/output/overlay/sleeve_new_olverlay.png" class="fixpos animated" >
-        <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/pant_suit_model0001.png" class="fixpos animated " >
 
         <!--breast pocket-->
         <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Breast Pocket'].elements">
@@ -67,9 +66,9 @@
         <img src="<?php echo custome_image_server; ?>/jacket/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lower Pocket'].overlay">
 
 
-        <img src="<?php echo custome_image_server; ?>/jacket/output/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lapel Style'].laple_style[selecteElements[fab.product_id]['Jacket Style'].title].overelay">
 
         <img src="<?php echo custome_image_server; ?>/jacket/output/{{screencustom.productobj.folder}}/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lapel Style'].laple_style[selecteElements[fab.product_id]['Jacket Style'].title].elements">
+        <img src="<?php echo custome_image_server; ?>/jacket/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lapel Style'].laple_style[selecteElements[fab.product_id]['Jacket Style'].title].overelay">
 
 
         <div class="" ng-if="selecteElements[fab.product_id]['Handstitching'].title == 'Yes'">
@@ -81,7 +80,8 @@
         </div>
 
         <img src="<?php echo custome_image_server; ?>/jacket/output/1084/shirt00012.png" class="fixpos animated" style="    margin-left: 10px;margin-top: -2px;">
-        <img src="<?php echo custome_image_server; ?>/jacket/overlay/laple_notch_v21overlay.png" class="fixpos animated" >
+        <!--<img src="<?php echo custome_image_server; ?>/jacket/overlay/laple_notch_v21overlay.png" class="fixpos animated" >-->
+        <img src="<?php echo custome_image_server; ?>/jacket/overlay/{{img}}" class="fixpos animated" ng-repeat="img in selecteElements[fab.product_id]['Lapel Style'].laple_style[selecteElements[fab.product_id]['Jacket Style'].title].overlay">
 
                                         <!--<img src="<?php echo custome_image_server; ?>/jacket/overlay/overlayall.png" class="fixpos animated" >-->
 

@@ -165,7 +165,7 @@ $image2 = "";
                                                  break;
                                              case "4":
                                                  ?>
-                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product" style="background: white;">
+                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/coman/output/{{product.folder}}/cutting20001.png" alt="product" style="background: white;">
                                             <img class="img-responsive" src="<?php echo base_url(); ?>assets/images/styleblank.png" style="background: url(<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/style_buttons.png);    background-size: 145%;
                                                  background-color: white;
                                                  background-repeat: no-repeat;" alt="product">
@@ -349,35 +349,48 @@ $image2 = "";
                                 </div>
                             </div>
                             <?php
-                            $custompredict = $session_last_custom[$citem_id];
-                            ?>
-                            <div class="row">
-                                <div class="col-md-2"></div>
-                                <div class="col-md-8">
-                                    <table class="table">
-                                        <?php
-                                        foreach ($custompredict as $key => $value) {
-                                            ?>
-                                            <tr>
-                                                <th>
-                                                    <?php
-                                                    echo $key;
-                                                    ?>
-                                                </th>
-                                                <td>
-                                                    <?php
-                                                    echo $value;
-                                                    ?>
-                                                </td>
-                                            </tr>
+                            if (isset($session_last_custom[$citem_id])) {
+                                $custompredict = $session_last_custom[$citem_id];
+                                ?>
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-8">
+                                        <table class="table">
                                             <?php
-                                        }
-                                        ?>
-                                    </table>
+                                            foreach ($custompredict as $key => $value) {
+                                                ?>
+                                                <tr>
+                                                    <th>
+                                                        <?php
+                                                        echo $key;
+                                                        ?>
+                                                    </th>
+                                                    <td>
+                                                        <?php
+                                                        echo $value;
+                                                        ?>
+                                                    </td>
+                                                </tr>
+                                                <?php
+                                            }
+                                            ?>
+                                        </table>
+                                    </div>
+                                    <div class="col-md-2"></div>
                                 </div>
-                                <div class="col-md-2"></div>
-                            </div>
 
+                                <?php
+                            } else {
+                                ?>
+                                <center>
+                                    <br/>
+                                    <p style="    font-size: 12px;">No recent design found, click below to create design</p>
+                                    <a href="<?php echo $item_array['link']; ?>" class="btn btn-default ">Customize Now <i class="fa fa-arrow-right d_inline_m fs_large"></i></a> 
+
+                                </center>
+                                <?php
+                            }
+                            ?>
                         </div>
                         <div class="alert_box info r_corners relative fs_medium" ng-switch-when="Customize Now">
                             Create New Design

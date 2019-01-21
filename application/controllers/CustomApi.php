@@ -1532,7 +1532,7 @@ class CustomApi extends REST_Controller {
                             ],
                             "stitcing" => ['laple_peak_stitch.png'],
                             "hole" => ["laple_double_peak_button_hole0001.png"],
-                            "overelay" => ["laple_peak_overlay.png"]),
+                            "overelay" => ["laple_peak_v21overlay.png"]),
                         "2 Buttons" => array("elements" => [
                                 "laple_notch_peak_upper_v40001.png",
                                 "laple_peak_v20001.png"
@@ -2071,7 +2071,7 @@ class CustomApi extends REST_Controller {
                                 ],
                                 "stitcing" => ['laple_notch_stitching1.png'],
                                 "hole" => ["laple_double_notch_button_hole0001.png"],
-                                "overelay" => []),
+                                "overelay" => ["laple_notch_v21overlay.png"]),
                             "2 Buttons" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_notch_v2_l0001.png",
@@ -2079,12 +2079,15 @@ class CustomApi extends REST_Controller {
                                 ],
                                 "stitcing" => ['laple_notch_stitching1.png'],
                                 "hole" => ["laple_double_notch_button_hole0001.png"],
-                                "overelay" => []),
+                                "overelay" => ["laple_notch_v21overlay.png"]),
                             "3 Buttons" => array("elements" => [
-                                    "laple_single_3_notch_peak_upper0001.png",
+                                      "laple_notch_peak_upper_v40001.png",
+                                    "laple_notch_v2_l0001.png",
                                     "laple_single_3_notch_modern0001.png"
                                 ], "overelay" => []),
                             "4 Buttons" => array("elements" => [
+                                  "laple_notch_peak_upper_v40001.png",
+                                    "laple_notch_v2_l0001.png",
                                     "laple_single_3_notch_peak_upper0001.png",
                                     "laple_single_3_notch_modern0001.png"
                                 ], "overelay" => []),
@@ -2094,25 +2097,27 @@ class CustomApi extends REST_Controller {
                                 ],
                                 "stitcing" => ['laple_double_notch_stitch.png'],
                                 "hole" => ["laple_double_notch_button_hole0001.png"],
-                                "overelay" => []),
+                                "overelay" => ["laple_double_notch_voverlay.png"]),
                             "4 Buttons 2 Buttons Fasten" => array("elements" => [
+                                 "laple_notch_peak_upper_v40001.png",
+                                    "laple_notch_v2_l0001.png",
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_double_notch_v20001.png"
                                 ],
                                 "stitcing" => ['laple_double_notch_stitch.png'],
                                 "hole" => ["laple_double_notch_button_hole0001.png"],
-                                "overelay" => []),
+                                "overelay" => ["laple_double_notch_voverlay.png"]),
                             "6 Buttons 1 Button Fasten" => array("elements" => [
                                     "laple_notch_upper0001.png",
                                     "laple_6_notch_modrn0001.png"
-                                ], "overelay" => []),
+                                ], "overelay" => ["laple_double_notch_voverlay.png"]),
                             "6 Buttons 2 Buttons Fasten" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_double_notch_v20001.png"
                                 ],
                                 "stitcing" => ['laple_double_notch_stitch.png'],
                                 "hole" => ["laple_double_notch_button_hole0001.png"],
-                                "overelay" => []),
+                                "overelay" => ["laple_double_notch_voverlay.png"]),
                         ),
                         "customization_category_id" => "6",
                         "image" => "suit_elements/laple/notch.png"
@@ -2124,18 +2129,20 @@ class CustomApi extends REST_Controller {
                         "laple_style" => array(
                             "1 Button" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
+                                "laple_notch_v2_l0001.png",
                                     "laple_peak_v20001.png"
                                 ],
                                 "stitcing" => ['laple_peak_stitch.png'],
                                 "hole" => ["laple_double_peak_button_hole0001.png"],
-                                "overelay" => ["laple_peak_overlay.png"]),
+                                "overelay" => ["laple_peak_v21overlay.png"]),
                             "2 Buttons" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
+                                "laple_notch_v2_l0001.png",
                                     "laple_peak_v20001.png"
                                 ],
                                 "stitcing" => ['laple_peak_stitch.png'],
                                 "hole" => ["laple_double_peak_button_hole0001.png"],
-                                "overelay" => ["laple_peak_overlay.png"]),
+                                "overelay" => ["laple_peak_v21overlay.png"]),
                             "3 Buttons" => array("elements" => [
                                     "laple_single_3_notch_peak_upper0001.png",
                                     "laple_single_3_peak_morden0001.png"
@@ -2143,36 +2150,37 @@ class CustomApi extends REST_Controller {
                             "4 Buttons" => array("elements" => [
                                     "laple_single_3_notch_peak_upper0001.png",
                                     "laple_single_3_peak_morden0001.png"
-                                ], "overelay" => []),
+                                ], "overelay" => ["laple_double_peak_voverlay.png"]),
                             "4 Buttons 1 Button Fasten" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_double_peak_v20001.png"
                                 ],
                                 "stitcing" => ['laple_double_peak_stitch.png'],
                                 "hole" => ["laple_double_peak_button_hole0001.png"],
-                                "overelay" => []),
+                                "overelay" => ["laple_double_peak_voverlay.png"]),
                             "4 Buttons 2 Buttons Fasten" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_double_peak_v20001.png"
                                 ],
                                 "stitcing" => ['laple_double_peak_stitch.png'],
                                 "hole" => ["laple_double_peak_button_hole0001.png"],
-                                "overelay" => []),
+                                "overelay" => ["laple_double_peak_voverlay.png"]),
                             "6 Buttons 1 Button Fasten" => array("elements" => [
                                     "laple_peak_upper0001.png",
                                     "laple_6_peack_morden0001.png"
-                                ], "overelay" => ["4_peak_m.png"]),
+                                ], "overelay" => ["laple_double_peak_voverlay.png"]),
                             "6 Buttons 2 Buttons Fasten" => array("elements" => [
                                     "laple_notch_peak_upper_v40001.png",
                                     "laple_double_peak_v20001.png"
                                 ],
                                 "stitcing" => ['laple_double_peak_stitch.png'],
                                 "hole" => ["laple_double_peak_button_hole0001.png"],
-                                "overelay" => []),
+                                "overelay" => ["laple_double_peak_voverlay.png"]),
                         ),
                         "customization_category_id" => "6",
                         "image" => "suit_elements/laple/peak.png"
                     ),
+                    
                 ],
             ),
         );
