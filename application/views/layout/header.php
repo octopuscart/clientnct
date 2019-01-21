@@ -39,7 +39,7 @@
         <script src="<?php echo base_url(); ?>assets/theme/plugins/modernizr.js"></script>
 
 
-        <link href="<?php echo base_url(); ?>assets/theme/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
+            <link href="<?php echo base_url(); ?>assets/theme/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
 
         <link href="<?php echo base_url(); ?>assets/theme/css/customstyle.css" rel="stylesheet" type="text/css" media="all" />
 
@@ -281,7 +281,7 @@
                                                     <li class="clearfix lh_large m_bottom_20 relative"  ng-repeat="product in globleCartData.products">
                                                         <a href="#" class="d_block f_left m_right_10"><img src="{{product.file_name}}" alt="" style="height: 60px;width: 60px;"></a>
                                                         <div class="f_left item_description lh_ex_small">
-                                                            <a href="#" class="color_dark fs_medium d_inline_b m_bottom_3">{{product.title}} - {{product.item_name}}</a>
+                                                            <a href="#" class="color_dark fs_medium d_inline_b m_bottom_3">{{product.title}} <br/><br/>{{product.item_name}}</a>
                                                         </div>
                                                         <div class="f_right fs_small lh_medium d_xs_none">
                                                             <span class="color_dark">{{product.quantity}}</span>
@@ -292,7 +292,7 @@
                                                 </ul>
                                                 <div class="total_price bg_light_2 t_align_r fs_medium m_bottom_15">
                                                     <ul>
-                                                        <li class="color_dark"><span class="fw_ex_bold">Total:</span> <span class="fw_ex_bold d_inline_b m_left_15 price t_align_l color_pink">{{globleCartData.total_quantity}}</span></li>
+                                                        <li class="color_dark"><span class="fw_ex_bold text-right"></span> <span class="fw_ex_bold d_inline_b m_left_15 price t_align_l color_pink text-right">Total: {{globleCartData.total_quantity}}</span></li>
                                                     </ul>
                                                 </div>
                                                 <div class="clearfix border_none p_top_0 sc_footer">

@@ -1,7 +1,7 @@
 
 
 
-App.controller('customizationShirt', function ($scope, $http, $location, $filter, $timeout) {
+App.controller('customizationShirt', function ($scope, $http, $location, $filter) {
     $scope.fabricurl = "http://api.octopuscart.com/output/";
     var currencyfilter = $filter('currency');
 
@@ -41,6 +41,8 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
                 "Monogram Background": "black",
                 "Monogram Style": "Style 1",
                 "summary": {},
+                "extraprice": {},
+                "totalextracost": 0,
             };
         }
         var viewtype = "front";
@@ -49,6 +51,9 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
                 viewtype = "front";
                 break;
             case "Pant":
+                viewtype = "pant";
+                break;
+            case "TuxedoPant":
                 viewtype = "pant";
                 break;
             default:
@@ -139,9 +144,6 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
         $scope.screencustom.style_select = shirtstyle;
     }
 
-    $timeout(function () {
-        $(".accordion").accordion();
-    }, 1500)
 
     $scope.fabricCartData = {};//cart data
 
@@ -152,11 +154,8 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
             $scope.cartFabrics = [rdata.data];
             console.log($scope.fabricCartData)
             $scope.fabricCartData['grand_total'] = $scope.fabricCartData['total_price'];
-            $timeout(function () {
-                $(".accordion").accordion();
-            }, 1500)
 
-            $scope.shirtimplement();
+            $scope.shirtimplement()
         }, function (r) {
         })
     }
@@ -183,7 +182,10 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
 //end of shirt implemantation
 
     setTimeout(function () {
-
+        $('.images-slider').flexslider({
+            animation: "fade",
+            controlNav: "thumbnails"
+        });
 
 
         //zoom plugin
@@ -291,14 +293,37 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
     }
 
     // monogram style 
+    $scope.extracostcalculation = function () {
+        var array = $scope.selecteElements[$scope.screencustom.fabric]['extraprice'];
+        $scope.selecteElements[$scope.screencustom.fabric].totalextracost = 0;
+        for (i in array) {
+            var prc = array[i];
+            $scope.selecteElements[$scope.screencustom.fabric].totalextracost += Number(prc);
+        }
+    }
 
 
     $scope.selectElement = function (obj, element) {
-        console.log(element)
+
 
         $scope.screencustom.view_type = obj.viewtype;
         $scope.selecteElements[$scope.screencustom.fabric][obj.title] = element;
-        $scope.selecteElements[$scope.screencustom.fabric]['summary'][obj.title] = element.title;
+        if (element.extracost) {
+            $scope.selecteElements[$scope.screencustom.fabric]['summary'][obj.title] = element.title + " ($" + element.extracost + ")";
+        }
+        else {
+            $scope.selecteElements[$scope.screencustom.fabric]['summary'][obj.title] = element.title;
+        }
+
+        if (element.extracost) {
+            $scope.selecteElements[$scope.screencustom.fabric]['extraprice'][obj.title] = element.extracost;
+        }
+        else {
+            $scope.selecteElements[$scope.screencustom.fabric]['extraprice'][obj.title] = 0;
+        }
+
+        $scope.extracostcalculation();
+
         if (obj.title == 'Cuff & Sleeve') {
             $scope.selecteElements[$scope.screencustom.fabric].sleeve = element.sleeve;
 
@@ -312,6 +337,28 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
         if (element.monogram_change_css) {
             if ($scope.selecteElements[$scope.screencustom.fabric]['Monogram'].title != 'No') {
                 $scope.selecteElements[$scope.screencustom.fabric]['Monogram'] = element.monogram_position;
+            }
+        }
+
+        if (obj.title == 'Waistband') {
+            if ($scope.selecteElements[$scope.screencustom.fabric]['Waistband'].wbtype == 'long') {
+                var longele = $scope.selecteElements[$scope.screencustom.fabric]['Waistband'].longele;
+                $scope.selecteElements[$scope.screencustom.fabric]['Waistband Adjustment'] = longele;
+                $scope.selecteElements[$scope.screencustom.fabric]['summary']['Waistband Adjustment'] = longele.title;
+            }
+            else {
+                var wbsummary = $scope.selecteElements[$scope.screencustom.fabric]['Waistband Adjustment'];
+                console.log(wbsummary);
+                if (wbsummary.wbtype == 'long') {
+                    var longele = $scope.selecteElements[$scope.screencustom.fabric]['Waistband'].longele;
+                    console.log(longele);
+                    $scope.selecteElements[$scope.screencustom.fabric]['Waistband Adjustment'] = longele;
+                    $scope.selecteElements[$scope.screencustom.fabric]['summary']['Waistband Adjustment'] = longele.title;
+
+                }
+                else {
+
+                }
             }
         }
 
@@ -360,6 +407,8 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
     //add to cart
     $scope.addToCartCustome = function () {
         var summerydata = $scope.selecteElements[product_id].summary;
+        var extraprice = $scope.selecteElements[product_id].totalextracost;
+
         var customhtmlarray = [];
         var form = new FormData()
         for (i in summerydata) {
@@ -401,6 +450,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
 
 //                var form = new FormData()
                 form.append('product_id', product_id);
+                form.append('extra_price', extraprice);
                 form.append('quantity', 1);
                 form.append('custome_id', gcustome_id);
                 $http.post(globlecart, form).then(function (rdata) {
@@ -409,8 +459,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $filter
                     swal({
                         title: 'Added To Cart',
                         type: 'success',
-//                        html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, globlecurrency) + ", Quantity: " + rdata.data.quantity + "</p>",
-                        html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Quantity: " + rdata.data.quantity + "</p>",
+                        html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, globlecurrency) + ", Quantity: " + rdata.data.quantity + "</p>",
                         imageUrl: rdata.data.file_name,
                         imageWidth: 100,
                         timer: 1500,
@@ -531,6 +580,8 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
                 "Monogram Background": "black",
                 "Monogram Style": "Style 1",
                 "summary": {},
+                "extraprice": {},
+                "totalextracost": 0,
             };
         }
         var viewtype = "front";
@@ -541,23 +592,29 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
             case 3:
                 viewtype = "pant";
                 break;
+
+            case 7:
+                viewtype = "pant";
+                break;
+
             default:
                 viewtype = "front";
         }
-        var custometype = "";
-        switch (gcustome_id) {
-            case 4:
-                custometype = "Jacket";
-                break;
-            case 3:
-                custometype = "Pant";
-                break;
-            case 2:
-                custometype = "Suit";
-                break;
-            default:
-                custometype = "Suit";
-        }
+        var custometype = defaut_view;
+
+//        switch (gcustome_id) {
+//            case 4:
+//                custometype = "Jacket";
+//                break;
+//            case 3:
+//                custometype = "Pant";
+//                break;
+//            case 2:
+//                custometype = "Suit";
+//                break;
+//            default:
+//                custometype = "Suit";
+//        }
 
 
         $scope.screencustom = {
@@ -595,7 +652,7 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
 
 
                 //zoom plugin
-
+ $(".accordion").accordion()
                 $(document).on('mousemove', '.frame', function () {
 
                     var element = {
@@ -899,17 +956,36 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
 
 
 
-
+    $scope.extracostcalculation = function () {
+        var array = $scope.selecteElements[$scope.screencustom.fabric]['extraprice'];
+        $scope.selecteElements[$scope.screencustom.fabric].totalextracost = 0;
+        for (i in array) {
+            var prc = array[i];
+            $scope.selecteElements[$scope.screencustom.fabric].totalextracost += Number(prc);
+        }
+    }
 
 
     $scope.selectElement = function (obj, element) {
 
         $scope.screencustom.view_type = obj.viewtype;
         $scope.selecteElements[$scope.screencustom.fabric][obj.title] = element;
-        $scope.selecteElements[$scope.screencustom.fabric]['summary'][obj.title] = element.title;
         console.log($scope.selecteElements);
 
+        if (element.extracost) {
+            $scope.selecteElements[$scope.screencustom.fabric]['summary'][obj.title] = element.title + " ($" + element.extracost + ")";
+        }
+        else {
+            $scope.selecteElements[$scope.screencustom.fabric]['summary'][obj.title] = element.title;
 
+        }
+        if (element.extracost) {
+            $scope.selecteElements[$scope.screencustom.fabric]['extraprice'][obj.title] = element.extracost;
+        }
+        else {
+            $scope.selecteElements[$scope.screencustom.fabric]['extraprice'][obj.title] = 0;
+        }
+        $scope.extracostcalculation();
 
 //        $("html, body").animate({scrollTop: 0}, "slow")
     }
@@ -958,6 +1034,7 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
             var ks = i;
             var kv = summerydata[i];
             console.log(kv.summary)
+            var extraprice = kv.totalextracost;
             for (kvk in kv.summary) {
                 var kvv = kv.summary[kvk];
                 form.append("customekey[]", kvk);
@@ -966,6 +1043,7 @@ App.controller('customizationSuitMulti', function ($scope, $http, $location, $ti
             form.append('product_id', ks);
             form.append('quantity', 1);
             form.append('custome_id', 1);
+            form.append('extra_price', extraprice);
             console.log(form)
 //            console.log(ks, kv);
 //            var summaryhtml = "<tr><th>" + ks + "</th><td>" + kv + "</td></tr>";

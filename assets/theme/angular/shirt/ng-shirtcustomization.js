@@ -135,6 +135,8 @@ App.controller('customizationShirt', function ($scope, $http, $location) {
 
     $scope.monogramSetting = function () {
         if ($scope.selecteElements[$scope.screencustom.fabric]['Monogram'].title != 'No') {
+                        $scope.screencustom.view_type = $scope.selecteElements[$scope.screencustom.fabric]['Monogram'].view_type;
+
             var monoposition = $scope.selecteElements[$scope.screencustom.fabric]['Monogram'].title;
             var monograminit = $scope.selecteElements[$scope.screencustom.fabric]['Monogram Initial'];
             var monocolor = $scope.selecteElements[$scope.screencustom.fabric]['Monogram ColorBack'];

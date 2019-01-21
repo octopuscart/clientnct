@@ -173,7 +173,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $timeou
         console.log(canvas);
         var ctx = $scope.canvasCustom[canvas].getContext("2d");
         ctx.clearRect(0, 0, 600, 600);
-
+        
         for (imgi in imagelist) {
             var img = imagelist[imgi];
             $scope.images1 = customeimageserver + '/jacket/output/' + $scope.screencustom.productobj.folder + '/' + img;
@@ -273,9 +273,7 @@ App.controller('customizationShirt', function ($scope, $http, $location, $timeou
 
     //end of canvas
 
-    $timeout(function () {
-        $(".accordion").accordion();
-    }, 1500)
+
 
 
     $scope.fabricCartData = {};//cart data
@@ -290,9 +288,6 @@ App.controller('customizationShirt', function ($scope, $http, $location, $timeou
 
             $scope.shirtimplement();
             $scope.canvasCustom.product = $scope.cartFabrics[0].product_id;
-            $timeout(function () {
-                $(".accordion").accordion();
-            }, 1500)
 
 
 
@@ -379,16 +374,16 @@ App.controller('customizationShirt', function ($scope, $http, $location, $timeou
     function setJacketBody() {
         console.log("hello check1");
         var jacketleft = $scope.selecteElements[$scope.canvasCustom.product]['Jacket Style'].left;
-
+        
         $timeout(function () {
             $scope.setImageElementsDirect(jacketleft, 'jacketstylel');
-        }, 100)
+        }, 100) 
 
         var jacketstyleoverlay = $scope.selecteElements[$scope.canvasCustom.product]['Jacket Style'].overlay;
         $timeout(function () {
             $scope.setImageElementsOverlay(jacketstyleoverlay, 'jacketstyleoverlay');
         }, 1000)
-
+        
 
         var jacketright = $scope.selecteElements[$scope.canvasCustom.product]['Jacket Style'].right;
         $timeout(function () {

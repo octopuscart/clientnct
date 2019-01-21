@@ -24,9 +24,9 @@ class PayPalPaymentGuest extends CI_Controller {
         $PayPalCurrencyCode = paypal_api_currency_code; //Paypal Currency Code
         $data = [];
         if ($this->checklogin) {
-            $session_cart = $this->Product_model->cartData($this->user_id);
+            $session_cart = $this->Product_model->cartDataCustome($this->user_id);
         } else {
-            $session_cart = $this->Product_model->cartData();
+            $session_cart = $this->Product_model->cartDataCustome();
         }
         $PayPalReturnURL = site_url("PayPalPaymentGuest/success");
         $PayPalCancelURL = site_url("PayPalPaymentGuest/cancel");

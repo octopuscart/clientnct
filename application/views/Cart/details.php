@@ -14,7 +14,7 @@ $this->load->view('layout/header');
 </section>
 <!--content-->
 <div class="section_offset counter" ng-if="globleCartData.total_quantity">
-    <div class="container">
+    <div class="container" ng-if="gcheckcart.status == 2">
         <div class="im_half_container m_bottom_10">
             <div class="half_column d_inline_m w_xs_full m_xs_bottom_10">
                 <p class="fw_light">Your shopping cart contains {{globleCartData.total_quantity}} product(s)</p>
@@ -43,7 +43,8 @@ $this->load->view('layout/header');
                         </td>
                         <td data-title="Description">
                             <h6 class="m_bottom_5"><a href="#" class="color_dark tr_all">{{product.title}} - {{product.item_name}}</a></h6>
-                            <p class="fw_light">{{product.attrs}}</p>
+                            <button type="button" ng-click="viewStyle(product)" class="btn btn-primary btn-xs desing_view_button"  style="margin-top: 10px;">View Design</a>
+
                         </td>
                         <td data-title="Quantity" >
                             <div class="wrapper fs_medium r_corners d_inline_b quantity clearfix">
@@ -57,7 +58,7 @@ $this->load->view('layout/header');
                             </div>
                         </td>
 
-                      
+
                         <td>
                             <button class="color_grey_light_2 color_dark_hover tr_all" ng-click="removeCart(product.product_id)">
                                 <i class="icon-cancel-circled-1 fs_large"></i>

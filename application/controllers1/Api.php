@@ -155,7 +155,7 @@ class Api extends REST_Controller {
     }
 
     //ProductList APi
-    public function productListApi_get($category_id, $custom_id) {
+    public function productListApi_get($category_id) {
         $attrdatak = $this->get();
         $products = [];
         $countpr = 0;
@@ -220,9 +220,6 @@ class Api extends REST_Controller {
 
         foreach ($product_result as $key => $value) {
             $value['attr'] = $this->Product_model->singleProductAttrs($value['product_id']);
-            $item_price = $this->Product_model->category_items_prices_id($value['category_items_id'], $custom_id);
-
-            $value['price'] =$item_price ? $item_price->price :0;
             array_push($productListSt, $value['product_id']);
             array_push($pricecount, $value['price']);
             array_push($productListFinal, $value);
@@ -452,13 +449,12 @@ class Api extends REST_Controller {
         $custome_id = $this->post('custome_id');
         $customekey = $this->post('customekey');
         $customevalue = $this->post('customevalue');
-        $extra_cost = $this->post('extra_price');
 
         if ($this->checklogin) {
-            $session_cart = $this->Product_model->cartOperationCustom($product_id, $quantity, $custome_id, $customekey, $customevalue, $extra_cost, $this->user_id);
+            $session_cart = $this->Product_model->cartOperationCustom($product_id, $quantity, $custome_id, $customekey, $customevalue, $this->user_id);
             $session_cart = $this->Product_model->cartDataCustome($this->user_id);
         } else {
-            $session_cart = $this->Product_model->cartOperationCustom($product_id, $quantity, $custome_id, $customekey, $customevalue, $extra_cost);
+            $session_cart = $this->Product_model->cartOperationCustom($product_id, $quantity, $custome_id, $customekey, $customevalue);
             $session_cart = $this->Product_model->cartDataCustome();
         }
 
@@ -472,14 +468,13 @@ class Api extends REST_Controller {
         $custome_id = $this->post('custome_id');
         $customekey = $this->post('customekey');
         $customevalue = $this->post('customevalue');
-        $extra_cost = $this->post('extra_price');
 
         if ($this->checklogin) {
-            $session_cart = $this->Product_model->cartOperationCustomMulti($product_id, $quantity, $custome_id, $customekey, $customevalue,$extra_cost, $this->user_id);
-            $session_cart = $this->Product_model->cartDataCustome($this->user_id);
+            $session_cart = $this->Product_model->cartOperationCustomMulti($product_id, $quantity, $custome_id, $customekey, $customevalue, $this->user_id);
+            $session_cart = $this->Product_model->cartData($this->user_id);
         } else {
-            $session_cart = $this->Product_model->cartOperationCustomMulti($product_id, $quantity, $custome_id, $customekey, $customevalue,$extra_cost);
-            $session_cart = $this->Product_model->cartDataCustome();
+            $session_cart = $this->Product_model->cartOperationCustomMulti($product_id, $quantity, $custome_id, $customekey, $customevalue);
+            $session_cart = $this->Product_model->cartData();
         }
 
         $this->response($session_cart['products'][$product_id]);
@@ -646,7 +641,7 @@ class Api extends REST_Controller {
                         "buttons" => "cuff_s_button10001.png",
                     ), array(
                         "status" => "0",
-                        "title" => "Single Cuff Squred",
+                        "title" => "Single Cuff Squared",
                         "elements" => [ "cuff_m_squre20001.png"],
                         "insertele" => [ "cuff_m_cutaway30001.png"],
                         "inserteleo" => [ "cuff_m_cutaway30001.png"],
@@ -694,7 +689,7 @@ class Api extends REST_Controller {
                         "buttons" => "cuff_s_button20001.png",
                     ), array(
                         "status" => "0",
-                        "title" => "French Cuff Squred",
+                        "title" => "French Cuff Squared",
                         "sleeve1" => ["shirt_sleeve0001.png"],
                         "customization_category_id" => "3",
                         "elements" => [ "cuff_m_franch_squre_insert0001.png", "cuff_m_franch_squre0001.png"],

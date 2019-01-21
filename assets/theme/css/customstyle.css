@@ -703,3 +703,29 @@ form li label {
     color: red;
 }
 
+
+.selectedbutton {
+    background: green;
+    color: white;
+    border: #0dfd11;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.custome_summary_popup table tr  th {
+       border-bottom: 1px solid #ffff;
+}
+
+.custome_summary_popup table tr td {
+    border-bottom: 1px solid #ffff;
+}

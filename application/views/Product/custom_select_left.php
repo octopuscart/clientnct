@@ -27,7 +27,7 @@
                     <div class="media-body elementItemDesktop">
                         <h4 class="selected-element-title media-heading">{{screencustom.productobj.title}} - {{screencustom.productobj.item_name}}</h4>
                         <p class="selected-element-title_text">
-                            {{screencustom.productobj.short_description}}
+                           Quantity: {{screencustom.productobj.quantity}}
                         </p>
                         
                     </div>
@@ -95,11 +95,13 @@
                                             <div class="col-md-12 monogram_init">
                                                 <h6>Monogram Colors</h6>
                                                 <div class="row" style="margin: 0">
-                                                    <div class="col-md-2 col-xs-4 " style="padding-left: 0px;" ng-repeat="mgc in monogram_colors" ng-click="monogramColor(mgc)" >
-                                                        <div class="monogram_color_style" style="background: {{mgc.backcolor}};color:{{mgc.color}}">
-                                                            {{selecteElements[screencustom.fabric]['Monogram Initial']}}
-                                                        </div>
-                                                    </div>
+                                                    <div class="row" style="margin: 0">
+                                            <div class="col-md-2 col-xs-4 " style="padding-left: 0px;" ng-repeat="mgc in monogram_colors" ng-click="monogramColor(mgc)" >
+                                                <div class="monogram_color_style" style="background: {{mgc.backcolor}};{{k.style_side}};">
+
+                                                </div>
+                                            </div>
+                                        </div>
                                                 </div>
                                             </div>
 

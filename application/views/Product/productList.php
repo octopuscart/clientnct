@@ -29,6 +29,17 @@ $image2 = "";
             echo implode("", $linklist)
             ?>
         </ul>
+
+        <button class="btn btn-danger btn-small pull-right color_dark" style="  right: 100px;
+                top: 17px;
+                position: absolute;
+                background: black;
+                color: white;
+
+                " data-toggle="modal" data-target="#productcustome">
+            Order Now  <i class="icon-right d_inline_m fs_large"></i>
+        </button>
+
     </div>
 </section>
 
@@ -37,6 +48,8 @@ $image2 = "";
 <div class="shop-page-area" ng-controller="ProductController">
     <div class="container">
         <div class="row"  ng-if="productResults.products.length">
+
+
 
 
             <aside class="col-lg-2 col-md-2 col-sm-2 m_bottom_70 m_xs_bottom_30" style="    padding: 0;">
@@ -126,7 +139,7 @@ $image2 = "";
                                         case "1":
                                             ?>
                                             <img class="img-responsive" src="<?php echo custome_image_server; ?>/shirt/output/{{product.folder}}/shirt_model10001.png" alt="product" style="background: white;">
-                                              <img class="img-responsive" src="<?php echo base_url(); ?>assets/images/styleblank.png" style="background: url(<?php echo custome_image_server; ?>/shirt/output/{{product.folder}}/fabricx0001.png);    background-size: 145%;
+                                            <img class="img-responsive" src="<?php echo base_url(); ?>assets/images/styleblank.png" style="background: url(<?php echo custome_image_server; ?>/shirt/output/{{product.folder}}/fabricx0001.png);    background-size: 145%;
                                                  background-color: white;
                                                  background-repeat: no-repeat;" alt="product">
 
@@ -134,7 +147,7 @@ $image2 = "";
                                             break;
                                         case "2":
                                             ?>
-                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product" style="background: white;">
+                                            <img class="img-responsive" src="<?php echo custome_image_server; ?>/coman/output/{{product.folder}}/cutting20001.png" alt="product" style="background: white;">
                                             <img class="img-responsive" src="<?php echo base_url(); ?>assets/images/styleblank.png" style="background: url(<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/style_buttons.png);    background-size: 145%;
                                                  background-color: white;
                                                  background-repeat: no-repeat;" alt="product">
@@ -145,23 +158,23 @@ $image2 = "";
                                             ?>
                                             <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/pant_style10001.png" alt="product" style="background: white;">
 
-  <img class="img-responsive" src="<?php echo base_url(); ?>assets/images/styleblank.png" style="background: url(<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/fabricx0001.png);    background-size: 145%;
+                                            <img class="img-responsive" src="<?php echo base_url(); ?>assets/images/styleblank.png" style="background: url(<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/fabricx0001.png);    background-size: 145%;
                                                  background-color: white;
                                                  background-repeat: no-repeat;" alt="product">
-                                            <?php
-                                            break;
-                                        case "4":
-                                            ?>
+                                                 <?php
+                                                 break;
+                                             case "4":
+                                                 ?>
                                             <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png" alt="product" style="background: white;">
-  <img class="img-responsive" src="<?php echo base_url(); ?>assets/images/styleblank.png" style="background: url(<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/style_buttons.png);    background-size: 145%;
+                                            <img class="img-responsive" src="<?php echo base_url(); ?>assets/images/styleblank.png" style="background: url(<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/style_buttons.png);    background-size: 145%;
                                                  background-color: white;
                                                  background-repeat: no-repeat;" alt="product">
-                                            <?php
-                                            break;
-                                        default:
-                                            echo $custom_item;
-                                    }
-                                    ?>
+                                                 <?php
+                                                 break;
+                                             default:
+                                                 echo $custom_item;
+                                         }
+                                         ?>
 
 
                                 </div>
@@ -169,46 +182,48 @@ $image2 = "";
                             </div>
                             <figcaption>
                                 <h6 class="m_bottom_8"><a href="#" class="color_dark">{{product.title}} </a></h6>
-                                <div class="im_half_container m_bottom_10">
-                                    <!--<p class="color_dark w_sm_full d_sm_block d_xs_inline_m w_xs_half_column fw_ex_bold half_column d_inline_m t_align_c tr_all animate_fctl fp_price with_ie">{{<?php echo $item_price; ?>|currency:"<?php echo globle_currency; ?> "}}</p>-->	
-                                    <div class="half_column w_sm_full d_sm_block t_sm_align_c d_xs_inline_m w_xs_half_column d_inline_m t_align_r tr_all animate_fctr with_ie">
-                                        <ul class="rating_list d_inline_m hr_list tr_all">
-                                            <li class="relative active lh_ex_small">
-                                                <i class="icon-star-empty-1 color_grey_light_2 tr_all"></i>
-                                                <i class="icon-star-1 color_yellow tr_all"></i>
-                                            </li>
-                                            <li class="relative active lh_ex_small">
-                                                <i class="icon-star-empty-1 color_grey_light_2 tr_all"></i>
-                                                <i class="icon-star-1 color_yellow tr_all"></i>
-                                            </li>
-                                            <li class="relative active lh_ex_small">
-                                                <i class="icon-star-empty-1 color_grey_light_2 tr_all"></i>
-                                                <i class="icon-star-1 color_yellow tr_all"></i>
-                                            </li>
-                                            <li class="relative active lh_ex_small">
-                                                <i class="icon-star-empty-1 color_grey_light_2 tr_all"></i>
-                                                <i class="icon-star-1 color_yellow tr_all"></i>
-                                            </li>
-                                            <li class="relative lh_ex_small">
-                                                <i class="icon-star-empty-1 color_grey_light_2 tr_all"></i>
-                                                <i class="icon-star-1 color_yellow tr_all"></i>
-                                            </li>
-                                        </ul>
-                                    </div>
+
+                                <div class="product_description">
+                                    <p class="color_grey fs_medium m_bottom_8">
+                                        <span style="font-size: 12px">{{product.short_description}} </span>        
+                                    </p>
                                 </div>
-                                <div class="product_description d_none m_bottom_20">
-                                    <hr class="m_bottom_12">
-                                    <p class="color_grey fs_medium m_bottom_15">
-                                        <span style="font-size: 12px">{{product.short_description}} </span>                                    </p>
-                                    <hr>
-                                </div>
+
                                 <div class="clearfix fp_buttons">
                                     <div class="half_column w_md_full animate_fctl tr_all f_left with_ie f_md_none m_md_bottom_10">
-                                        <a href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" class="button_type_6 d_inline_b color_pink transparent r_corners vc_child tr_all add_to_cart_button "><span class="d_inline_m clerarfix"><i class="icon-basket f_left m_right_5 fs_small"></i><span class="fs_small">Customize</span></span></a>
+                                        <button type="button" ng-click="addToCart(product.product_id, 1, <?php echo $custom_id; ?>)" class="button_type_6 d_inline_b    r_corners vc_child tr_all  {{globleCartDatac.products[product.product_id]?'selectedbutton color_green ':'color_red'}} ">
+                                            <span class="d_inline_m clerarfix">
+
+
+                                                <span ng-if="addToCartState.state == 1">
+                                                    <span ng-if="addToCartState.product_id == product.product_id">
+                                                        <i class="fa fa-refresh fa-spin fa-1x fa-fw"></i>
+                                                    </span>
+                                                </span>
+
+                                                <span ng-if="addToCartState.product_id == product.product_id">
+                                                    <span ng-if="addToCartState.state == 0">
+                                                        <i class="icon-basket f_left m_right_5 fs_small"></i>
+                                                    </span>
+                                                </span>
+
+                                                <span ng-if="addToCartState.product_id != product.product_id">
+                                                    <i class="icon-basket f_left m_right_5 fs_small"></i>
+                                                </span>
+
+                                                Take
+
+
+                                                {{globleCartDatac.products[product.product_id]?"-"+globleCartDatac.products[product.product_id].quantity:""}}
+
+                                            </span>
+                                        </button>
 
                                     </div>
                                     <div class="half_column w_md_full animate_fctr tr_all f_left clearfix with_ie f_md_none">
-                                        <a href="#" class="button_type_6 m_left_5 relative tooltip_container f_right f_md_none d_md_inline_b d_block color_dark r_corners vc_child tr_all color_purple_hover t_align_c m_right_5 m_md_right_0"><i class="icon-heart d_inline_m fs_large"></i><span class="d_block r_corners color_default tooltip fs_small fw_normal tr_all">Add to Wishlist</span></a>
+                                        <a href="#" class="button_type_6 m_left_5 relative tooltip_container f_right f_md_none d_md_inline_b d_block color_dark r_corners vc_child tr_all color_purple_hover t_align_c m_right_5 m_md_right_0" ><i class="icon-heart d_inline_m fs_large"></i>
+
+                                        </a>
                                     </div>
                                 </div>
                             </figcaption>
@@ -238,12 +253,168 @@ $image2 = "";
         </div>
 
     </div>
+    <!-- Modal -->
+    <div class="modal  fade" id="productcustome" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="    z-index: 20000000;">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel" style="font-size: 15px">
+                        <?php
+                        echo $custom_item;
+                        ?>
+                    </h4>
+                </div>
+
+                <?php
+                $citem_id = $custom_id;
+                switch ($citem_id) {
+                    case '1':
+                        $item_array = array("title" => "Shirt(s)", "link" => site_url("Customization/customizationShirt"));
+                        break;
+                    case '2':
+                        $item_array = array("title" => "Suit(s)", "link" => site_url("Customization/customizationSuitV2/2"));
+                        break;
+                    case '5':
+                        $item_array = array("title" => "Tuxedo Suit(s)", "link" => site_url("Customization/customizationSuitV2/5"));
+                        break;
+                    case '6':
+                        $item_array = array("title" => "Tuxedo Jackets(s)", "link" => site_url("Customization/customizationSuitV2/6"));
+                        break;
+                    case '7':
+                        $item_array = array("title" => "Tuxedo Pants(s)", "link" => site_url("Customization/customizationSuitV2/7"));
+                        break;
+                    case '3':
+                        $item_array = array("title" => "Pant(s)", "link" => site_url("Customization/customizationSuitV2/3"));
+                        break;
+                    case '4':
+                        $item_array = array("title" => "Jacket(s)", "link" => site_url("Customization/customizationSuitV2/4"));
+                        break;
+                    default:
+                        $item_array = array("title" => "Shirt(s)", "link" => site_url("Customization/customizationSuitV2"));
+                }
+                ?>
+
+                <!-- Cart Details -->
+                <div class="modal-body checkout-form">
+                    <div class="custom_block_item">
+
+
+                        <div class="row cart-details" >
+                            <div class="col-sm-12 col-md-3" ng-repeat="product in globleCartDatanc.products" ng-if="product.item_id == '<?php echo $citem_id; ?>'">
+                                <div class="thumbnail">
+                                    <img src="{{product.file_name}}" alt="" style="width: auto;" alt="...">
+                                    <div class="caption">
+                                        <h5 style="font-size:15px;">{{product.title}}</h5>
+                                        <p><span class="price">Qnty.: {{product.quantity}}</span> <a href="#."  ng-click="removeCart(product.product_id)" class="pull-right"><i class="fa fa-remove"></i></a> </p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+                    <?php
+                    if (isset($session_last_custom[$citem_id])) {
+                        $customdict = $session_last_custom[$citem_id];
+                    } else {
+                        $customdict = array();
+                    }
+                    ?>
+
+                    <div ng-switch="designSelection.desing_status">
+
+                        <div class="alert_box info r_corners relative fs_medium" ng-switch-when="Shop Stored">
+                            Are you preferred the same design as used to be?
+                            <div class="btn-group pull-right" role="group" aria-label="..." style="    margin-top: -6px;
+                                 float: right;
+                                 margin-right: -46px;">
+                                <a href="<?php echo site_url("Customization/applyShopStored/" . $citem_id); ?>" class="btn btn-default" ng-click="changeDesingStyle('Shop Stored')">Yes</a>
+                                <button type="button" class="btn btn-default" ng-click="changeDesingStyle('New Design')">No</button>
+                            </div>
+                        </div>
+
+                        <div ng-switch-when="New Design">
+                            <div class="alert_box info r_corners relative fs_medium" >
+                                Are you expecting the same design on your now recently picked?
+                                <div class="btn-group pull-right" role="group" aria-label="..." style="    margin-top: -6px;
+                                     float: right;
+                                     margin-right: -46px;">
+                                    <a href="<?php echo site_url("Customization/applyLastCustom/" . $citem_id); ?>" class="btn btn-default" ng-click="changeDesingStyle('Shop Stored')">Yes</a>
+                                    <button type="button" class="btn btn-default" ng-click="changeDesingStyle('Customize Now')">No</button>
+                                    <button type="button" class="btn btn-default" ng-click="changeDesingStyle('Shop Stored')"><i class="fa fa-times d_inline_m fs_large"></i></button>
+                                </div>
+                            </div>
+                            <?php
+                            $custompredict = $session_last_custom[$citem_id];
+                            ?>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8">
+                                    <table class="table">
+                                        <?php
+                                        foreach ($custompredict as $key => $value) {
+                                            ?>
+                                            <tr>
+                                                <th>
+                                                    <?php
+                                                    echo $key;
+                                                    ?>
+                                                </th>
+                                                <td>
+                                                    <?php
+                                                    echo $value;
+                                                    ?>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                        }
+                                        ?>
+                                    </table>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+
+                        </div>
+                        <div class="alert_box info r_corners relative fs_medium" ng-switch-when="Customize Now">
+                            Create New Design
+                            <div class="btn-group pull-right" role="group" aria-label="..." style="    margin-top: -6px;
+                                 float: right;
+                                 margin-right: -46px;">
+                                <a href="<?php echo $item_array['link']; ?>" class="btn btn-default ">Customize Now <i class="fa fa-arrow-right d_inline_m fs_large"></i></a> 
+                                <button type="button" class="btn btn-default" ng-click="changeDesingStyle('New Design')"><i class="fa fa-times d_inline_m fs_large"></i></button>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer" ng-repeat="product in globleCartDatanc.products" ng-if="(product.item_id == '<?php echo $citem_id; ?>') && $index == 0">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Add More</button>
+                    <!--<a href="<?php echo $item_array['link']; ?>" class="btn btn-default pull-right">Customize Now <i class="fa fa-arrow-right"></i></a>--> 
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Shop Page Area End Here -->
 
 
+
 <script>
-    var category_id = <?php echo $category; ?>;</script>
+    var category_id = <?php echo $category; ?>;
+    var custom_id = <?php echo $custom_id; ?>;
+</script>
 <!--angular controllers-->
 <script src="<?php echo base_url(); ?>assets/theme/angular/productController.js"></script>
 

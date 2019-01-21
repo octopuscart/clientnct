@@ -2,6 +2,9 @@
  Shop Cart product controllers
  */
 App.controller('ShopController', function ($scope, $http, $timeout, $interval, $filter) {
+    $scope.tonumber = function (numberx) {
+        return Number(numberx);
+    }
 
 
     var searchProducts = new Bloodhound({
@@ -72,11 +75,11 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
             $scope.gcheckcart.status = 2;
             $scope.globleCartData = rdata.data;
             $scope.globleCartData['grand_total'] = $scope.globleCartData['total_price'];
-            
-            if($scope.globleCartData.total_quantity==0){
+
+            if ($scope.globleCartData.total_quantity == 0) {
                 $scope.gcheckcart.status = 0;
             }
-            
+
             $(".cartquantity").text($scope.globleCartData.total_quantity);
         }, function (r) {
             $scope.gcheckcart.status = 0;
@@ -84,9 +87,9 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
     }
     $scope.getCartData();
     //general cart
-    
-    
-        //cart non custome
+
+
+    //cart non custome
     $scope.gcheckcartnc = {'status': 1};
     var globlecartnc = baseurl + "Api/cartOperationNoCustom";
     $scope.product_quantitync = 1;
@@ -99,23 +102,23 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
             $scope.gcheckcartnc.status = 2;
             $scope.globleCartDatanc = rdata.data;
             $scope.globleCartDatanc['grand_total'] = $scope.globleCartDatanc['total_price'];
-            
-            
-            
-            if($scope.globleCartDatanc.total_quantity==0){
+
+
+
+            if ($scope.globleCartDatanc.total_quantity == 0) {
                 $scope.gcheckcartnc.status = 0;
             }
-            
-            
+
+
         }, function (r) {
             $scope.gcheckcartnc.status = 0;
         })
     }
     $scope.getCartDatanc();
     //general non custome
-    
-    
-          //cart  custome
+
+
+    //cart  custome
     $scope.gcheckcartc = {'status': 1};
     var globlecartc = baseurl + "Api/cartOperationCustom";
     $scope.product_quantitync = 1;
@@ -128,29 +131,29 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
             $scope.gcheckcartc.status = 2;
             $scope.globleCartDatac = rdata.data;
             $scope.globleCartDatac['grand_total'] = $scope.globleCartDatac['total_price'];
-            
-            if($scope.globleCartDatanc.total_quantity==0){
+
+            if ($scope.globleCartDatanc.total_quantity == 0) {
                 $scope.gcheckcartc.status = 0;
             }
-            
-         
+
+
         }, function (r) {
             $scope.gcheckcartc.status = 0;
         })
     }
     $scope.getCartDatac();
     //general  custome
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     //remove cart data
     $scope.removeCart = function (product_id) {
-         $http.get(globlecart+"Delete" + "/" + product_id).then(function (rdata) {
-            
+        $http.get(globlecart + "Delete" + "/" + product_id).then(function (rdata) {
+
             $scope.getCartData();
             $scope.getCartDatac();
             $scope.getCartDatanc();
@@ -168,14 +171,14 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
             }
         }
         if (oper == 'add') {
-            if (productobj.quantity > 5) {
-            }
-            else {
-                productobj.quantity = Number(productobj.quantity) + 1;
-            }
+//            if (productobj.quantity > 5) {
+//            }
+//            else {
+            productobj.quantity = Number(productobj.quantity) + 1;
+//            }
         }
         console.log(productobj.quantity)
-         $http.get(globlecart+"Put"  + "/" + productobj.product_id + "/" + productobj.quantity).then(function (rdata) {
+        $http.get(globlecart + "Put" + "/" + productobj.product_id + "/" + productobj.quantity).then(function (rdata) {
             $scope.getCartData();
             $scope.getCartDatac();
             $scope.getCartDatanc();
@@ -184,53 +187,61 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
     }
 
 //add cart product
+    $scope.addToCartState = {'state': 0, 'product_id': 0}
     $scope.addToCart = function (product_id, quantity, custome_id) {
         var productdict = {
             'product_id': product_id,
             'quantity': quantity,
             'custome_id': custome_id
         }
+        $scope.addToCartState.state = 1;
+        $scope.addToCartState.product_id = product_id;
+
         var form = new FormData()
         form.append('product_id', product_id);
         form.append('quantity', quantity);
         form.append('custome_id', custome_id);
-        swal({
-            title: 'Adding to Cart',
-            onOpen: function () {
-                swal.showLoading()
-            }
-        });
+//        swal({
+//            title: 'Adding to Cart',
+//            onOpen: function () {
+//                swal.showLoading()
+//            }
+//        });
         $http.post(globlecart, form).then(function (rdata) {
             swal.close();
+
+            $scope.addToCartState.state = 0;
+            $scope.addToCartState.product_id = 0;
+            
             $scope.getCartData();
             $scope.getCartDatac();
             $scope.getCartDatanc();
             //custome model
-           
-            //
-            
-            swal({
-                title: 'Added To Cart',
-                type: 'success',
-                html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, globlecurrency) + ", Quantity: " + rdata.data.quantity + "</p>",
-                imageUrl: rdata.data.file_name,
-                imageWidth: 100,
-                timer: 1500,
-//                 background: '#fff url(//bit.ly/1Nqn9HU)',
-                imageAlt: 'Custom image',
-                showConfirmButton: false,
-                animation: true
 
-            }).then(
-                    function () {
-                        
-                    },
-                    function (dismiss) {
-                        if (dismiss === 'timer') {
-                             $("#productcustome").modal("show");
-                        }
-                    }
-            )
+            //
+
+//            swal({
+//                title: 'Added To Cart',
+//                type: 'success',
+//                html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, globlecurrency) + ", Quantity: " + rdata.data.quantity + "</p>",
+//                imageUrl: rdata.data.file_name,
+//                imageWidth: 100,
+//                timer: 1500,
+////                 background: '#fff url(//bit.ly/1Nqn9HU)',
+//                imageAlt: 'Custom image',
+//                showConfirmButton: false,
+//                animation: true
+//
+//            }).then(
+//                    function () {
+//
+//                    },
+//                    function (dismiss) {
+//                        if (dismiss === 'timer') {
+//                            $("#productcustome").modal("show");
+//                        }
+//                    }
+//            )
         }, function () {
             swal.close();
             swal({
@@ -311,7 +322,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
     }, function (e) {
     })
 
-    $scope.projectDetailsModel = {'productobj': {}, 'quantity': 1, "link":""};
+    $scope.projectDetailsModel = {'productobj': {}, 'quantity': 1, "link": ""};
     //get product detail model
     $scope.viewShortDetails = function (detailobj, link) {
         $scope.projectDetailsModel.productobj = detailobj;
@@ -334,18 +345,34 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
         for (i in styleobj) {
             var ks = i;
             var kv = styleobj[i];
-            var summaryhtml = "<tr><th>" + ks + "</th><td>" + kv + "</td></tr>";
+            console.log(kv);
+            var checkdl = kv.indexOf("$");
+            if (checkdl > -1) {
+                var brkstr = kv.split(" ");
+                var brkstrl = brkstr.length;
+                var prestr = brkstr.splice(0, brkstrl - 1).join(" ");
+                console.log(brkstr, brkstrl, prestr);
+                var poststr = " <b class='extrapricesummry'>" + brkstr[0] + "</b>";
+                console.log(poststr);
+                var finalstr = prestr + poststr;
+                var summaryhtml = "<tr><th>" + ks + "</th><td>" + finalstr + "</td></tr>";
+            }
+            else {
+                var summaryhtml = "<tr><th>" + ks + "</th><td>" + kv + "</td></tr>";
+            }
             customhtmlarray.push(summaryhtml);
         }
         customhtmlarray = customhtmlarray.join("");
         var customdiv = "<div class='custome_summary_popup'><table>" + customhtmlarray + "</table></div>";
         swal({
-            title: product.title+" - "+product.item_name,
+            title: product.title + " - " + product.item_name,
             html: customdiv,
-             imageUrl: product.file_name,
-             imageWidth: 100,
-               confirmButtonClass: 'btn btn-default',
-        })
+            imageUrl: product.file_name,
+            imageWidth: 100,
+            confirmButtonClass: 'btn btn-default',
+        });
+
+
     }
 
 

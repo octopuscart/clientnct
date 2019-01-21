@@ -8,7 +8,6 @@ class Customization extends CI_Controller {
         parent::__construct();
         $this->load->model('Product_model');
         $this->load->library('session');
-        $this->checklogin = $this->session->userdata('logged_in');
         $this->user_id = $this->session->userdata('logged_in')['login_id'];
     }
 
@@ -144,70 +143,6 @@ class Customization extends CI_Controller {
     }
 
     //customization shirt
-    //shop stored
-    function applyShopStored($item_id) {
-        if ($this->checklogin) {
-            $session_cart1 = $this->Product_model->cartDataNoCustome($this->user_id);
-            $session_cart = $this->session->userdata('session_cart');
-        } else {
-            $session_cart1 = $this->Product_model->cartDataNoCustome();
-            $session_cart = $this->session->userdata('session_cart');
-        }
-
-        $productsdata = array();
-        
-        foreach ($session_cart1['products'] as $ckey => $cvalue) {
-            if($cvalue['item_id']==$item_id){
-                $productsdata[$cvalue['product_id']] = $cvalue;
-            }
-        }
-        
-        if (isset($_POST['submitonly'])) {
-            foreach ($productsdata as $skey => $svalue) {
-
-                $session_cart['products'][$svalue['product_id']]['custom_dict'] = array("Design Type" => "Shop Stored");
-            }
-            $this->session->set_userdata('session_cart', $session_cart);
-            redirect("Cart/details");
-        }
-        
-        
-        if (isset($_POST['submitcomment'])) {
-            foreach ($productsdata as $skey => $svalue) {
-
-                $session_cart['products'][$svalue['product_id']]['custom_dict'] = array(
-                    "Design Type" => "Shop Stored",
-                    "Comment" => $this->input->post('comment'),
-                    );
-            }
-            $this->session->set_userdata('session_cart', $session_cart);
-            redirect("Cart/details");
-        }
-        $data['custom_id'] = $item_id;
-         $this->load->view('Product/shopStoredData', $data);
-    }
-
-    //apply last custom data
-
-    function applyLastCustom($item_id) {
-        $session_last_custom = $this->session->userdata('session_last_custom');
-        $customdict = $session_last_custom[$item_id];
-        if ($this->checklogin) {
-            $session_cart1 = $this->Product_model->cartDataNoCustome($this->user_id);
-            $session_cart = $this->session->userdata('session_cart');
-        } else {
-            $session_cart1 = $this->Product_model->cartDataNoCustome();
-            $session_cart = $this->session->userdata('session_cart');
-        }
-        foreach ($session_cart1['products'] as $skey => $svalue) {
-
-            $session_cart['products'][$svalue['product_id']]['custom_dict'] = $customdict;
-        }
-        $this->session->set_userdata('session_cart', $session_cart);
-        redirect("Cart/details");
-    }
-
-    //end of last custom data
 
 
     function customizationShirt($product_id = 0) {
@@ -227,35 +162,8 @@ class Customization extends CI_Controller {
         $query = $this->db->get('custome_items');
         $customeitem = $query->row();
         $data = [];
-        $data['tuxedotype'] = "0";
-
+        $data["custom_item"] = $customeitem->item_name;
         $data['custom_id'] = $item_id;
-
-        switch ($item_id) {
-            case 2:
-                $data["custom_item"] = "Suit";
-                break;
-            case 3:
-                $data["custom_item"] = "Pant";
-                break;
-            case 4:
-                $data["custom_item"] = "Jacket";
-                break;
-            case 5:
-                $data["custom_item"] = "TuxedoSuit";
-                $data['tuxedotype'] = "1";
-                break;
-            case 6:
-                $data["custom_item"] = "TuxedoJacket";
-                $data['tuxedotype'] = "1";
-                break;
-            case 7:
-                $data["custom_item"] = "TuxedoPant";
-                $data['tuxedotype'] = "1";
-                break;
-            default:
-        }
-
         $this->load->view('customization/customization_suit_v2', $data);
     }
 

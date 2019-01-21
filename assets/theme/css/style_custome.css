@@ -40,7 +40,7 @@ code {
 .fixpos{
     position: absolute;
     left: 0;
-        height: 600px;
+        /*height: 600px;*/
 }
 
 
@@ -206,14 +206,14 @@ code {
     background-position: -40px -321px;
     background-size: 416px 416px;
     background-repeat: no-repeat;
-    border-radius: 50%;
+    /*border-radius: 50%;*/
 }
 
 
 .fabricblock{
-    background-size: 237px !important;
-    background-position: 0px -115px!important;
-    border-radius: 50%;
+    background-size: cover!important;
+    background-position: 0px 0px!important;
+    /*border-radius: 50%;*/
     opacity: 0.5;
     height: 100px;
     width:100px;
@@ -221,8 +221,8 @@ code {
 
 .fabricblock_a{
     padding: 5px;
-    border-bottom-left-radius: 50%!important;
-    border-top-left-radius: 50%!important;
+    /*border-bottom-left-radius: 50%!important;*/
+    /*border-top-left-radius: 50%!important;*/
 }
 
 
@@ -242,7 +242,7 @@ code {
 .monogramtext_posistion{
     color: white;
     padding: 0 2px;
-    background: black;
+ 
     height: 10px;
     z-index: 200;
     font-size: 8px;
@@ -256,28 +256,28 @@ code {
 }
 
 .monogramtext_posistion_collar {
-    left: 222px;
+   left: 227px;
     display: block;
-    top: 28px;
+    top: 26px;
     line-height: 10px;
     font-size: 8px;
     height: 9px;
 }
 
 .monogramtext_posistion_cuff_left{
-     left: 329px;
+        left: 334px;
     display: block;
-    top: 308px;
-    transform: rotate(59deg);
+    top: 310px;
+    transform: rotate(41deg);
     line-height: 7px;
     font-size: 7px;
     height: 8px;
 }
 
 .monogramtext_posistion_left_pocket{
-        left: 273px;
+       left: 282px;
     display: block;
-    top: 135px;
+    top: 132px;
     line-height: 10px;
     font-size: 7px;
     height: 10px;
@@ -330,16 +330,13 @@ code {
 }
 
 p.fabric_title {
-    position: absolute;
-    margin-top: -34px;
-    width: 65px;
-    margin-left: 27px;
+       position: absolute;
+    margin-top: -12px;
+    width: 101%;
+    margin-left: -5px;
     text-align: center;
     background: #000;
-    font-size: 12px;
-    /* border-bottom-left-radius: 50%; */
-    /* border-bottom-right-radius: 50%; */
-    border-radius: 43%;
+    color: white;
 }
 
 .summary_title{
@@ -658,7 +655,7 @@ p.selected-element-title_text_price{
 }
 
 .fabricblock.active{
-    border: 2px solid ;
+    /*border: 2px solid ;*/
     opacity: 1;
 }
 
@@ -683,3 +680,8 @@ p.selected-element-title_text_price{
     color:white;
 }
 
+.selectedbutton {
+    background: green;
+    color: white;
+    border: #0dfd11;
+}

@@ -142,7 +142,7 @@ $this->load->view('layout/header');
 <!-- Slider -->
 
 
-<div class="" ng-controller="customizationShirt">
+<div class="" ng-controller="customizationSuitMulti">
     <!-- Slider -->
 <!--    <section class="sub-bnr" data-stellar-background-ratio="0.5" style="font-weight: 300;
              font-size: 20px;">
@@ -161,33 +161,70 @@ $this->load->view('layout/header');
         <!--======= PAGES INNER =========-->
         <section class="item-detail-page padding-top-30 ">
             <div class="container" style="width: 100%">
-                <div class="row m_bottom_30"> 
-
+                <div class="row"> 
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class='custom_block_slide'> 
+                                <div class="item"   ng-repeat="fab in cartFabrics">
+                                    <div class=" fabricblockmobile ">
+                                        <a href="#fabric_{{fab.folder}}" class="fabricblock_a" aria-controls="collars_area" role="tab" data-toggle="tab" ng-click="selectFabric(fab)">
+                                            <div class="elementStyle customization_box_elements fabricblock {{  fab.folder == screencustom.fabric?'active' :'noselected' }}" style="background:url('<?php echo custome_image_server; ?>/coman/output/{{fab.folder}}/cutting20001.png');" > </div>
+                                            <p class="fabric_title">{{fab.sku}}</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <!--======= IMAGES SLIDER =========-->
 
 
-                    <div class="col-sm-5 large-detail shirtcontainer customization_margin_top_<?php echo $custom_id; ?> " >
+                    <div class="col-sm-5 large-detail shirtcontainer multicustom " style="    height: 530px;">
+                        <div class="col-sm-3 col-xs-12 fabricblockdesktop customization_items " style="padding: 0">
+                            <ul class="nav nav-tabs tabs-left">
+                                <li role="presentation" class="{{$index === 0?'active':''}} " ng-repeat="fab in cartFabrics" >
+                                    <a href="#fabric_{{fab.folder}}" class="fabricblock_a" aria-controls="collars_area" role="tab" data-toggle="tab" ng-click="selectFabric(fab)">
+                                        <div class="elementStyle customization_box_elements fabricblock {{  fab.product_id == screencustom.fabric?'active' :'noselected' }}" style="background:url('<?php echo custome_image_server; ?>/coman/output/{{fab.folder}}/cutting20001.png');" > </div>
+                                        <p class="fabric_title">{{fab.sku}}</p>
+                                    </a>
 
-                        <div class="col-sm-12 col-xs-12"  style="padding: 0">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-9 col-xs-12"  style="padding: 0">
                             <div class="tab-content">
 
-                        
+                                <div class="tab-pane {{$index === 0?'active':''}}" ng-repeat="fab in cartFabrics" id="fabric_{{fab.folder}}">
+                                    <!--                                    <button class="btn btn-default btn-lg custom_rotate_button" ng-click="rotateModel()">
+                                                                            <i class="icon ion-refresh"></i>
+                                                                        </button>
+                                                                        <button class="btn btn-default btn-lg custom_rotate_button show_shirt_button" ng-click="show_shirt('with_shirt')" style="margin-right: 65px;">
+                                                                            <img src="<?php echo base_url(); ?>assets/images/customization_suit/jacket_with_shirt.png" class="show_shirt_image" >
+                                                                        </button>
+                                                                        <button class="btn btn-default btn-lg custom_rotate_button show_shirt_button" ng-click="show_shirt('without_shirt')">
+                                                                            <img src="<?php echo base_url(); ?>assets/images/customization_suit/jacket_without_shirt.png" class="show_shirt_image" >
+</button>-->
+
+                                    <?php
+                                    $this->load->view('customization/suitBlock');
+                                    ?>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <!--======= ITEM DETAILS =========-->
-                    <div class="col-sm-7 col-xs-12 mobile_bottom_20">
+                    <div class="col-sm-7 col-xs-12">
                         <!--shirt customization-->
                         <div class="row" style="margin-top: 10px;">
                             <?php
                             $this->load->view('Product/custome_support_suit2');
-                            ?> 
+                            ?>
                         </div>
                     </div>
                 </div>
 
-                <div class="row customization_order_block bg_gradiant">
+                <div class="row customization_order_block">
 
                     <?php
                     $this->load->view('Product/custom_bottom');
@@ -205,7 +242,7 @@ $this->load->view('layout/header');
 </div>
 
 <script>
-    var product_id = <?php echo $productdetails['id']; ?>;
+
     var defaut_view = "<?php echo $custom_item; ?>";
     var gcustome_id = <?php echo $custom_id; ?>;
 </script>
