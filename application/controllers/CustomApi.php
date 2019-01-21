@@ -2026,7 +2026,7 @@ class CustomApi extends REST_Controller {
                         "buttons2" => ["buttons_20001"],
                         "button_hole" => ["button_1_hole10001.png", "button_1_hole20001.png"],
                         "show_buttons" => "false",
-                        "overlay" => ["singleoverlay2.png", "singleoverlay.png"],
+                        "overlay" => ["singleoverlay2.png", "singleoverlay.png", "singlebottomoverlay.png", "singlebottomoverlay2.png.png"],
                         "overlayinner" => ["singleoverlayinner.png"]
                     )
                     , array(
@@ -2041,7 +2041,9 @@ class CustomApi extends REST_Controller {
                         "buttons" => ["button_4_10001", "button_4_30001", "button_4_40001"],
                         "buttons2" => ["button_4_20001"],
                         "show_buttons" => "true",
-                        "overlay" => ["body_double_overlay2.png", "body_double_overlay.png"],
+                       
+                        "overlay" => ["singleoverlay2.png", "singleoverlay.png", "doublebottomoverlay.png", "singlebottomoverlay2.png.png"],
+
                     )
                     , array(
                         "status" => "0",
@@ -2055,7 +2057,7 @@ class CustomApi extends REST_Controller {
                         "buttons2" => ["button_4_20001"],
                         "image" => "suit_elements/suittype/62_button.png",
                         "show_buttons" => "true",
-                        "overlay" => ["body_double_overlay2.png", "body_double_overlay.png"],
+                        "overlay" => ["singleoverlay2.png", "singleoverlay.png", "doublebottomoverlay.png", "singlebottomoverlay2.png.png"],
                     )
                 ],
                 "Lapel Style" => [
