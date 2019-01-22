@@ -77,7 +77,7 @@ switch ($citem_id) {
                                     <td data-title="Description">
                                         <h6 class="m_bottom_5"><a href="#" class="color_dark tr_all">{{product.title}} <br/> {{product.item_name}}</a></h6>
                                         <div ng-if="designSelection.desing_status == 'Shop Stored No'" >
-                                            Please give comments in the box.
+                                            Please write comment in the box.
                                             <div class="btn-group pull-right" role="group" aria-label="..." style="    margin-top: -6px;
                                                  float: right;
                                                  margin-right: -46px;">
@@ -116,7 +116,7 @@ switch ($citem_id) {
 
                                 <div ng-switch-when="Shop Stored No">
                                     <div class="alert_box info r_corners relative fs_medium" >
-                                        Please give comments in the box.
+                                        Please write comment in the box.
                                         <div class="btn-group pull-right" role="group" aria-label="..." style="    margin-top: -6px;
                                              float: right;
                                              margin-right: -46px;">
