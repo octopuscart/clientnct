@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Order No#</title>
+        <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <style>
             .carttable{
@@ -63,17 +63,13 @@
           background: rgb(225, 225, 225);
           font-family: sans-serif;">
         <div class="" style="padding:50px 0px">
-            <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background: #000;padding: 0 20px">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background: #fff;padding: 0 20px">
                 <tr>
                     <td >
                         <center><img src="<?php echo site_mail_logo; ?> " style="margin: 10px;
                                      height: 50px;
                                      width: auto;"/><br/>
-                            <h4 style="color: white;    margin-top: 0px;"> Your Appointment <br>
-                                    <small>
-                                        Appointment Date & Time: <?php echo date_format(date_create($appointment['select_date'] . ' ' . $appointment['select_time']), "l, d F Y"); ?> (<?php echo $appointment['select_time']; ?>)
-                                    </small>
-                            </h4>
+                            <h4 style="color: black;"> <?php echo $subject; ?> </h4>
                         </center>
                     </td>
 
@@ -88,14 +84,34 @@
                 <tr>
                     <td colspan="6" style="font-size: 12px;">
 
-                        <p>Dear <?php echo $appointment['first_name']; ?> <?php echo $appointment['last_name']; ?>,</p><br/>
-
-                        <p> Thank you for choosing to book an appointment with <?php echo email_sender_name;?>. </p>
-                        <p>We have booked your appointment to see our Chief Tailor, on <b><?php echo date_format($opdater = date_create($appointment['select_date'] . ' ' . $appointment['select_time']), "l, d F Y"); ?>, <?php echo $appointment['select_time']; ?></b> at our shop.</p> 
-
+                        <p>Hello <?php echo $name; ?>,</p><br/>
+                        E:<?php echo $email; ?><br/>
+                        T:<?php echo $contact ? $contact : '-'; ?>
 
                         <br/>
-                          <?php echo EMAIL_FOOTER; ?>
+                        <p>Thank you for price enquiry for <?php echo $item; ?> fabric.</p>
+                        <p>Our team will send price of your selected product soon.</p>
+
+                        <table>
+                            <?php
+                            foreach ($products as $key => $value) {
+                                ?>
+                                <tr>
+                                    <td>
+                                        <img src="<?php echo custome_image_server; ?>/coman/output/<?php echo $value['folder']; ?>/cutting20001.png" alt="" style="width: 100px;" alt="...">
+
+                                    </td>
+                                    <td>
+                                        <b><?php echo $value['title']; ?></b><br/><?php echo $value['short_description']; ?>
+                                    </td>
+                                </tr>
+                                <?php
+                            }
+                            ?>
+                        </table>
+                         <?php echo EMAIL_FOOTER; ?>
+                        </div>
+                       
 
                     </td>
                 </tr>

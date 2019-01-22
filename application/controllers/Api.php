@@ -1007,7 +1007,7 @@ class Api extends REST_Controller {
     function priceAsk_post() {
         $product_id = $this->post('product_id');
         $item_id = $this->post('item_id');
-        $product_details = $this->productDetails($product_id, $item_id);
+        $product_details = $this->Product_model->productDetails($product_id, $item_id);
         $session_enquiry_price = $this->session->userdata('session_enquiry_price');
         if ($session_enquiry_price) {
             if (isset($session_enquiry_price[$item_id])) {
@@ -1019,8 +1019,6 @@ class Api extends REST_Controller {
             $session_enquiry_price = array($item_id => array($product_id => $product_details));
         }
         $this->session->set_userdata('session_enquiry_price', $session_enquiry_price);
-
-        $this->response($session_enquiry_price[$product_id]);
     }
 
     function priceAsk_get($item_id) {
@@ -1029,10 +1027,18 @@ class Api extends REST_Controller {
             $rdata = $session_enquiry_price[$item_id];
         } else {
             $session_enquiry_price = array($item_id => array());
-            $rdata  = $session_enquiry_price;
+            $rdata = $session_enquiry_price[$item_id];
             $this->session->set_userdata('session_enquiry_price', $session_enquiry_price);
         }
         $this->response($rdata);
+    }
+
+    function priceAskDelete_get($item_id, $product_id) {
+        $session_enquiry_price = $this->session->userdata('session_enquiry_price');
+
+        unset($session_enquiry_price[$item_id][$product_id]);
+
+        $this->session->set_userdata('session_enquiry_price', $session_enquiry_price);
     }
 
 }

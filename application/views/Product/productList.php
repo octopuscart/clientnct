@@ -209,7 +209,7 @@ $image2 = "";
 
                                         </div>
                                         <div class="half_column w_md_full animate_fctr tr_all f_left clearfix with_ie f_md_none">
-                                            <button type="button" class="button_type_6 m_left_5 relative tooltip_container f_right f_md_none d_md_inline_b d_block color_dark r_corners vc_child tr_all color_purple_hover t_align_c m_right_5 m_md_right_0" >Ask Price
+                                            <button type="button" class="button_type_6 m_left_5 relative tooltip_container f_right f_md_none d_md_inline_b d_block color_dark r_corners vc_child tr_all color_purple_hover t_align_c m_right_5 m_md_right_0" ng-click="askPriceSelection(product.product_id)">Ask Price
 
                                             </button>
                                         </div>
@@ -407,6 +407,91 @@ $image2 = "";
                     <div class="modal-footer" ng-repeat="product in globleCartDatanc.products" ng-if="(product.item_id == '<?php echo $citem_id; ?>') && $index == 0">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Add More</button>
                         <!--<a href="<?php echo $item_array['link']; ?>" class="btn btn-default pull-right">Customize Now <i class="fa fa-arrow-right"></i></a>--> 
+                    </div>
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Modal -->
+        <div class="modal  fade" id="productprice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="    z-index: 20000000;">
+            <div class="modal-dialog " role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel" style="font-size: 15px">
+                            Price Enquiry For 
+                            <?php
+                            echo $custom_item;
+                            ?>
+                        </h4>
+                    </div>
+
+
+
+                    <!-- Cart Details -->
+                    <div class="modal-body checkout-form">
+                        <div class="custom_block_item">
+
+
+                            <div class="row cart-details" >
+                                <div class="col-sm-12 col-md-3" ng-repeat="product in askpricedata" ng-if="product.item_id == '<?php echo $citem_id; ?>'">
+                                    <div class="thumbnail">
+                                        <img src="<?php echo custome_image_server; ?>/coman/output/{{product.folder}}/cutting20001.png" alt="" style="width: auto;" alt="...">
+                                        <div class="caption">
+                                            <h5 style="font-size:15px;" class="text-center m_bottom_10">{{product.title}}</h5>
+                                            <p><a href="#."  ng-click="removePriceData(product.id)" class="btn btn-danger btn-xs btn-block"><i class="fa fa-remove d_inline_m fs_large"></i> Remove</a> </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <form method="post" action="#">
+                                        <ul>
+                                            <input type="hidden" name="item" value="<?php echo $custom_item; ?>" />
+                                            <input type="hidden" name="item_id" value="<?php echo $citem_id; ?>" />
+
+                                            <span ng-repeat="product in askpricedata">
+                                                <input type="hidden" name="productid[]" value="{{product.id}}" />
+                                            </span>
+                                            <li class="row m_bottom_10">
+                                                <div class="col-lg-6 col-md-6 col-sm-6 w_xs_full m_xs_bottom_10">
+                                                    <input type="text" name="last_name" placeholder="Last Name*" class="w_full r_corners fw_light" required="">
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-6 w_xs_full m_xs_bottom_10" >
+                                                    <input type="text" name="first_name" placeholder="First Name*" class="w_full r_corners fw_light" required="">
+                                                </div>
+
+                                            </li>  
+                                            <li class="m_bottom_10">
+                                                <input type="email" name="email" placeholder="Email*" class="w_full r_corners fw_light" required="">
+                                            </li>
+                                            <li class="m_bottom_10">
+                                                <input type="tel" name="contact" placeholder="Contact No." class="w_full r_corners fw_light">
+                                            </li>
+
+                                            <li class="m_bottom_10">
+                                                <button type="submit" name="priceenquiry" class="button_type_2  color_red  r_corners fs_medium tr_all m_right_10 m_sm_bottom_10">Submit</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Add More</button>
+
+                                            </li>
+                                        </ul>
+                                    </form>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
                     </div>
 
 
