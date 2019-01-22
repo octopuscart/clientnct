@@ -145,7 +145,7 @@ class Customization extends CI_Controller {
 
     //customization shirt
     //shop stored
-    function applyShopStored($item_id, $option = 0) {
+    function applyShopStored($item_id) {
         if ($this->checklogin) {
             $session_cart1 = $this->Product_model->cartDataNoCustome($this->user_id);
             $session_cart = $this->session->userdata('session_cart');
@@ -162,20 +162,22 @@ class Customization extends CI_Controller {
             }
         }
 
-        if ($option=='no') {
-            foreach ($productsdata as $skey => $svalue) {
+        if (isset($_GET['option'])) {
+            if ($_GET['option'] == 'no') {
+                foreach ($productsdata as $skey => $svalue) {
 
-                $session_cart['products'][$svalue['product_id']]['custom_dict'] = array("Design Type" => "Shop Stored");
+                    $session_cart['products'][$svalue['product_id']]['custom_dict'] = array("Design Type" => "Shop Stored");
+                }
+                $this->session->set_userdata('session_cart', $session_cart);
+                redirect("Cart/details");
             }
-            $this->session->set_userdata('session_cart', $session_cart);
-            redirect("Cart/details");
         }
 
 
         if (isset($_POST['submitcomment'])) {
 
             $productcomments = array();
-            
+
             $cproduct_id = $this->input->post('product_id');
             $productcomments = $this->input->post('productcomment');
             foreach ($cproduct_id as $ckey => $cvalue) {
@@ -185,7 +187,7 @@ class Customization extends CI_Controller {
             foreach ($productsdata as $skey => $svalue) {
                 $session_cart['products'][$svalue['product_id']]['custom_dict'] = array(
                     "Design Type" => "Shop Stored",
-                    "Comment" =>  $this->input->post('comment') ."<br/>". ($productcomments[$svalue['product_id']] ?  $svalue['title']." - ".$productcomments[$svalue['product_id']]:""),
+                    "Comment" => $this->input->post('comment') . "<br/>" . ($productcomments[$svalue['product_id']] ? $svalue['title'] . " - " . $productcomments[$svalue['product_id']] : ""),
                 );
             }
             $this->session->set_userdata('session_cart', $session_cart);

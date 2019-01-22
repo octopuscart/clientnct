@@ -108,7 +108,7 @@ switch ($citem_id) {
                                          float: right;
                                          margin-right: -46px;">
 
-                                        <a href="<?php echo site_url('Customization/applyShopStored/'.$custom_id.'/no');?>" class="btn btn-success" >Yes</a>
+                                        <a href="<?php echo site_url('Customization/applyShopStored/'.$custom_id.'?option=no');?>" class="btn btn-success" >Yes</a>
                                         <button type="button" class="btn btn-danger" ng-click="changeDesingStyle('Shop Stored No')">No</button>
                                     </div>
 
