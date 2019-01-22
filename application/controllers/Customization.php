@@ -145,7 +145,7 @@ class Customization extends CI_Controller {
 
     //customization shirt
     //shop stored
-    function applyShopStored($item_id) {
+    function applyShopStored($item_id, $option = 0) {
         if ($this->checklogin) {
             $session_cart1 = $this->Product_model->cartDataNoCustome($this->user_id);
             $session_cart = $this->session->userdata('session_cart');
@@ -155,14 +155,14 @@ class Customization extends CI_Controller {
         }
 
         $productsdata = array();
-        
+
         foreach ($session_cart1['products'] as $ckey => $cvalue) {
-            if($cvalue['item_id']==$item_id){
+            if ($cvalue['item_id'] == $item_id) {
                 $productsdata[$cvalue['product_id']] = $cvalue;
             }
         }
-        
-        if (isset($_POST['submitonly'])) {
+
+        if ($option=='no') {
             foreach ($productsdata as $skey => $svalue) {
 
                 $session_cart['products'][$svalue['product_id']]['custom_dict'] = array("Design Type" => "Shop Stored");
@@ -170,21 +170,29 @@ class Customization extends CI_Controller {
             $this->session->set_userdata('session_cart', $session_cart);
             redirect("Cart/details");
         }
-        
-        
-        if (isset($_POST['submitcomment'])) {
-            foreach ($productsdata as $skey => $svalue) {
 
+
+        if (isset($_POST['submitcomment'])) {
+
+            $productcomments = array();
+            
+            $cproduct_id = $this->input->post('product_id');
+            $productcomments = $this->input->post('productcomment');
+            foreach ($cproduct_id as $ckey => $cvalue) {
+                $productcomments[$cvalue] = $productcomments[$ckey];
+            }
+
+            foreach ($productsdata as $skey => $svalue) {
                 $session_cart['products'][$svalue['product_id']]['custom_dict'] = array(
                     "Design Type" => "Shop Stored",
-                    "Comment" => $this->input->post('comment'),
-                    );
+                    "Comment" =>  $this->input->post('comment') ."<br/>". ($productcomments[$svalue['product_id']] ?  $svalue['title']." - ".$productcomments[$svalue['product_id']]:""),
+                );
             }
             $this->session->set_userdata('session_cart', $session_cart);
             redirect("Cart/details");
         }
         $data['custom_id'] = $item_id;
-         $this->load->view('Product/shopStoredData', $data);
+        $this->load->view('Product/shopStoredData', $data);
     }
 
     //apply last custom data

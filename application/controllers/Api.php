@@ -67,9 +67,6 @@ class Api extends REST_Controller {
     }
 
     //end of multiple customization
-
-
-
     function cartOperationNoCustom_get() {
         if ($this->checklogin) {
             $session_cart = $this->Product_model->cartDataNoCustome($this->user_id);
@@ -222,7 +219,7 @@ class Api extends REST_Controller {
             $value['attr'] = $this->Product_model->singleProductAttrs($value['product_id']);
             $item_price = $this->Product_model->category_items_prices_id($value['category_items_id'], $custom_id);
 
-            $value['price'] =$item_price ? $item_price->price :0;
+            $value['price'] = $item_price ? $item_price->price : 0;
             array_push($productListSt, $value['product_id']);
             array_push($pricecount, $value['price']);
             array_push($productListFinal, $value);
@@ -475,10 +472,10 @@ class Api extends REST_Controller {
         $extra_cost = $this->post('extra_price');
 
         if ($this->checklogin) {
-            $session_cart = $this->Product_model->cartOperationCustomMulti($product_id, $quantity, $custome_id, $customekey, $customevalue,$extra_cost, $this->user_id);
+            $session_cart = $this->Product_model->cartOperationCustomMulti($product_id, $quantity, $custome_id, $customekey, $customevalue, $extra_cost, $this->user_id);
             $session_cart = $this->Product_model->cartDataCustome($this->user_id);
         } else {
-            $session_cart = $this->Product_model->cartOperationCustomMulti($product_id, $quantity, $custome_id, $customekey, $customevalue,$extra_cost);
+            $session_cart = $this->Product_model->cartOperationCustomMulti($product_id, $quantity, $custome_id, $customekey, $customevalue, $extra_cost);
             $session_cart = $this->Product_model->cartDataCustome();
         }
 
@@ -1004,6 +1001,38 @@ class Api extends REST_Controller {
             
         }
         $this->response($customeele);
+    }
+
+    //function for product list
+    function priceAsk_post() {
+        $product_id = $this->post('product_id');
+        $item_id = $this->post('item_id');
+        $product_details = $this->productDetails($product_id, $item_id);
+        $session_enquiry_price = $this->session->userdata('session_enquiry_price');
+        if ($session_enquiry_price) {
+            if (isset($session_enquiry_price[$item_id])) {
+                $session_enquiry_price[$item_id][$product_id] = $product_details;
+            } else {
+                $session_enquiry_price[$item_id] = array($product_id => $product_details);
+            }
+        } else {
+            $session_enquiry_price = array($item_id => array($product_id => $product_details));
+        }
+        $this->session->set_userdata('session_enquiry_price', $session_enquiry_price);
+
+        $this->response($session_enquiry_price[$product_id]);
+    }
+
+    function priceAsk_get($item_id) {
+        $session_enquiry_price = $this->session->userdata('session_enquiry_price');
+        if ($session_enquiry_price) {
+            $rdata = $session_enquiry_price[$item_id];
+        } else {
+            $session_enquiry_price = array($item_id => array());
+            $rdata  = $session_enquiry_price;
+            $this->session->set_userdata('session_enquiry_price', $session_enquiry_price);
+        }
+        $this->response($rdata);
     }
 
 }
