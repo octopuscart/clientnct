@@ -64,6 +64,9 @@ class Product extends CI_Controller {
                 foreach ($products as $key => $value) {
                     $product_details = $this->Product_model->productDetails($value, $item_id);
                     array_push($productarray, $product_details);
+                    $session_enquiry_price = $this->session->userdata('session_enquiry_price');
+                    unset($session_enquiry_price[$item_id][$value]);
+                    $this->session->set_userdata('session_enquiry_price', $session_enquiry_price);
                 }
 
 
@@ -82,10 +85,10 @@ class Product extends CI_Controller {
                 $this->email->print_debugger();
                 $send = $this->email->send();
                 if ($send) {
-                   // echo json_encode("send");
+                    // echo json_encode("send");
                 } else {
                     $error = $this->email->print_debugger(array('headers'));
-                  //  echo json_encode($error);
+                    //  echo json_encode($error);
                 }
             }
         }
