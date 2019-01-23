@@ -76,7 +76,7 @@
                 <tr>
                     <td >
                         <center><img src="<?php echo site_mail_logo; ?> " style="margin: 10px;
-                                     height: 50px;
+                                     height: 100px;
                                      width: auto;"/><br/>
                             <h4 style="color: #000;"> Order No.: <?php echo $order_data->order_no; ?></h4>
                         </center>
