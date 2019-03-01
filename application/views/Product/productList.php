@@ -115,7 +115,7 @@ $image2 = "";
                 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 m_top_10">
                     <div class="shop_isotope_container t_xs_align_c three_columns m_bottom_15" data-isotope-options='{"itemSelector" : ".shop_isotope_item","layoutMode" : "fitRows","transitionDuration":"0.7s"}'>
                         <!--product-->
-                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12"  ng-repeat="(k, product) in productResults.products" style="padding:10px; ">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"  ng-repeat="(k, product) in productResults.products" style="padding:10px; ">
 
                             <figure class="fp_item t_align_c d_xs_inline_b" >
                                 <div class="relative r_corners d_xs_inline_b d_mxs_block wrapper m_bottom_23">
