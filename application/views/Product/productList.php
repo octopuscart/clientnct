@@ -136,9 +136,7 @@ $image2 = "";
                                             case "2":
                                                 ?>
                                                 <img class="img-responsive" src="<?php echo custome_image_server; ?>/suitsfabrics/{{product.folder}}.jpg" alt="product" style="background: white;">
-                                                <img class="img-responsive" src="<?php echo base_url(); ?>assets/images/styleblank.png" style="background: url(<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png);    background-size: 145%;
-                                                     background-color: white;
-                                                     background-repeat: no-repeat;" alt="product">
+                                                <img class="img-responsive" src="<?php echo custome_image_server; ?>/jacket/output/{{product.folder}}/s1_master_style60001.png"  alt="product">
 
                                                 <?php
                                                 break;
